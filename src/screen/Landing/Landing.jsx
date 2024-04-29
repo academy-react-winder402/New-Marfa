@@ -1,9 +1,11 @@
+import { Toplanding } from "../../component/LandingComponent/TopLanding/Toplanding";
+
 const Landing = () => {
     return ( 
-        <div>
-            Landing
-
-        {/* section one ax*/}
+        <div  className="z-0 h-auto w-full bg-bluec">
+            
+        {/* section one Top Landing*/}
+        <Toplanding/>
 
         </div>
      );
