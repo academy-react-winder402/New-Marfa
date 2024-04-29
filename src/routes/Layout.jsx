@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { Nav } from "../component/header/Nav";
 
 const LayOut = () => {
     return ( 
         <>
-            Header
+           <Nav />
             <Outlet/>
             Footer
         </>
