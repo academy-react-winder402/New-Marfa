@@ -13,7 +13,7 @@ return (
     
     <ul className="hidden md:flex md:flex-row md:flex-grow md:items-center">
       <li className="p-4"><Link to="/"> صفحه اصلی</Link></li>
-      <li className="p-4"><Link to="/">دوره ها</Link></li>
+      <li className="p-4"><Link to="/courses">دوره ها</Link></li>
       <li className="p-4"><Link to="/">اساتید</Link></li>
       <li className="p-4"><Link to="/">اخبار</Link></li>
       <li className="p-4"><Link to="/">ارتباط با ما</Link></li>
