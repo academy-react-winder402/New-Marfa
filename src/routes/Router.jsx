@@ -2,6 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LayOut from "./Layout";
 import Landing from "../screen/Landing/Landing";
 import Courses from "../screen/Cources/Courses";
+import { Logo } from "../component/header/Logo";
+import { Login } from "../screen/Login/Login";
 
 const routes = createBrowserRouter([
     {
@@ -15,7 +17,11 @@ const routes = createBrowserRouter([
         {
           path:"/courses",
           element:<Courses/>
-        },        
+        }, 
+        {
+          path:"/login",
+          element:<Login/>
+        },       
 
       ]
   
