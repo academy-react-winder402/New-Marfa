@@ -17,7 +17,7 @@ export const Leftmenu = () => {
       </svg>
       </Link>
       </li>
-      <li className="p-4"><Link className="text-300 flex flex-row-reverse text-nowrap rounded-lg bg-blue-500 px-4 py-3 text-center text-[10px] text-white">ورود به سایت 
+      <li className="p-4"><Link  className="text-300 flex flex-row-reverse text-nowrap rounded-lg bg-blue-500 px-4 py-3 text-center text-[10px] text-white">ورود به سایت 
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="h-3 w-3">
       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
       </svg>
