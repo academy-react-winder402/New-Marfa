@@ -11,7 +11,7 @@ return (
 
   <div className="flex justify-start items-center px-4 max-w-[1240px] h-24 text-nowrap text-white">
     
-    <ul className="hidden md:flex md:flex-row md:flex-grow md:items-center">
+    <ul className="md:flex md:flex-row md:flex-grow md:items-center hidden">
       <li className="p-4"><Link to="/"> صفحه اصلی</Link></li>
       <li className="p-4"><Link to="/courses">دوره ها</Link></li>
       <li className="p-4"><Link to="/">اساتید</Link></li>
@@ -24,10 +24,10 @@ return (
     </div>
     <div className={nav ? "fixed z-[1] h-64 text-end bg-opacity-80 top-11 right-11 bg-violec rounded-lg  w-[30%] ease-in-out duration-500" : "fixed right-[-100%]"} >
     <ul className="p-4">
-      <li className="p-4 hover:shadow-lg"><Link to="/course">دوره ها</Link></li>
-      <li className="p-4 hover:shadow-lg"><Link to="/professor">اساتید</Link></li>
-      <li className="p-4 hover:shadow-lg"><Link to="/contactus">ارتباط با ما</Link></li>
-      <li className="p-4 hover:shadow-lg"><Link to="/news">اخبار</Link></li>
+      <li className="hover:shadow-lg p-4"><Link to="/course">دوره ها</Link></li>
+      <li className="hover:shadow-lg p-4"><Link to="/professor">اساتید</Link></li>
+      <li className="hover:shadow-lg p-4"><Link to="/contactus">ارتباط با ما</Link></li>
+      <li className="hover:shadow-lg p-4"><Link to="/news">اخبار</Link></li>
     </ul>
     </div>
   </div>
