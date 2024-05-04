@@ -23,6 +23,11 @@ const routes = createBrowserRouter([
             
       ]
     },
+<<<<<<< HEAD
+    
+    
+  
+=======
     {
       path:"/login",
       element:<Login />
@@ -35,6 +40,7 @@ const routes = createBrowserRouter([
       path:"/forget",
       element:<Forget />
     }
+>>>>>>> 1aa28b7b59dd1339e628302a735f846d073cd2a3
   ]) 
 
 const Router = () => {
