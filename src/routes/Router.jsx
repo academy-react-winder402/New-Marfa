@@ -8,46 +8,36 @@ import Register from "../screen/Register/Register";
 import Forget from "../screen/Forget/Forget";
 
 const routes = createBrowserRouter([
-    {
-      path: "/",
-      element:<LayOut/>,
-      children:[
-        {
-          path:"/",
-          element:<Landing/>
-        },
-        {
-          path:"/courses",
-          element:<Courses/>
-        }, 
-            
-      ]
-    },
-<<<<<<< HEAD
-    
-    
-  
-=======
-    {
-      path:"/login",
-      element:<Login />
-    },
-    {
-      path:"/register",
-      element:<Register/>
-    },
-    {
-      path:"/forget",
-      element:<Forget />
-    }
->>>>>>> 1aa28b7b59dd1339e628302a735f846d073cd2a3
-  ]) 
+  {
+    path: "/",
+    element: <LayOut />,
+    children: [
+      {
+        path: "/",
+        element: <Landing />,
+      },
+      {
+        path: "/courses",
+        element: <Courses />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/forget",
+    element: <Forget />,
+  },
+]);
 
 const Router = () => {
-    return ( 
-        <RouterProvider router={routes}/>
+  return <RouterProvider router={routes} />;
+};
 
-     );
-}
- 
 export default Router;
