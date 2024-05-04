@@ -5,7 +5,7 @@ import { useState } from "react";
 import '../../App.css'
 import RegisterIcon from "./RegisterIcon";
 import FirstSection from "./FirstSection";
-const RegisterForm = () => {
+const RegisterForm = ({title , description}) => {
   
     return ( 
         <>
@@ -13,8 +13,8 @@ const RegisterForm = () => {
               <div className="w-full pt-5 ">
               <RegisterIcon />
               </div>
-              <div className="w-full text-center text-[#6359f0] text-nowrap text-3xl">ثبت نام</div>
-              <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> جهت دریافت کد یک بار مصرف شماره تلفن خود را وارد کنید.</div>
+              <div className="w-full text-center text-[#6359f0] text-nowrap text-3xl">{title}</div>
+              <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> {description}</div>
               <FirstSection />
           </div>
   </>
