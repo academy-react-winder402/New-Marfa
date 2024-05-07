@@ -2,18 +2,17 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LayOut from "./Layout";
 import Landing from "../screen/Landing/Landing";
 import Courses from "../screen/Cources/Courses";
-
 import { Login } from "../screen/Loginpage/Login";
 import Register from "../screen/Register/Register";
 import Forget from "../screen/Forget/Forget";
 import LayoutProfile from "./LayoutProfile";
 import LandingProfile from "../screen/Profile/LandingProfile";
-
 import NewsPage from "../screen/NewsPage/NewsPage";
 import LayoutLogin from "./LayoutLogin";
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
 const routes = createBrowserRouter([
+
     {
       path: "/",
       element:<LayOut/>,
@@ -74,13 +73,8 @@ const routes = createBrowserRouter([
       ]
     }
   ]) 
-
 const Router = () => {
-    return ( 
-      
-        <RouterProvider router={routes}/>
+  return <RouterProvider router={routes} />;
+};
 
-     );
-}
- 
 export default Router;
