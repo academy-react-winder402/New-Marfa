@@ -9,19 +9,19 @@ import {
 
 const ProfessorCard = () => {
   return (
-    <>
-   <div className='group relative mx-auto mt-20 flex flex-col items-center justify-center py-10 md:w-[80%] md:flex-row lg:w-full'>
-     <div className='mb-6 flex h-56 w-96 items-center rounded-lg bg-violet-500 shadow-lg md:h-64 md:w-[90%]'>
+  
+   <div className='flex md:flex-row flex-col justify-center items-center mx-auto mt-20 py-10 md:w-[80%] group'>
+     <div className='relative flex justify-start items-center bg-violet-500 shadow-lg mx-auto rounded-lg w-96 md:w-[90%] h-56 md:h-64'>
      
-           <div className=''>
+           <div className='-top-20 left-32 absolute mx-auto w-[40%] ]'>
              <img src={professorpic} alt=""
-              className="border--4 duration-400 absolute -top-10 right-24 z-10 mx-auto block transform rounded-full border-white text-center transition-transform hover:scale-110 md:right-28 lg:right-32" /> 
+              className="border--4 border-white rounded-full transform transition-transform duration-400 hover:scale-110" /> 
            </div>
        
      
-      <div className="m-10 mt-20 text-nowrap text-start text-white md:w-[80%]"> 
-           <div className='flex w-full flex-col'>
-              <h3 className="w-full text-xl font-semibold">مدرس مارفا تک تیک</h3> 
+      <div className="mt-8 ml-20 p-5 w-full md:w-[80%] text-nowrap text-start text-white"> 
+           <div className='flex flex-col w-full'>
+              <h3 className="w-full font-semibold text-xl">مدرس مارفا تک تیک</h3> 
               <span className="my-5 text-sm"> 
                 مدرس دوره ری اکت
               </span>
@@ -31,8 +31,8 @@ const ProfessorCard = () => {
            </div> 
       </div> 
        
-      <div className='absolute flex w-14 flex-col items-center gap-12 text-white duration-500 ease-in-out'>
-          <div  className='invisible absolute -top-28 right-72 mx-auto rounded-b-lg bg-indigo-700 p-5 group-hover:visible md:-top-32 md:right-96 lg:right-[20rem]'>
+      <div className='relative flex flex-col items-center gap-12 w-14 text-white duration-500 ease-in-out'>
+          <div  className='group-hover:visible -top-28 md:-top-32 left-5 absolute bg-indigo-700 mx-auto p-5 rounded-b-lg invisible'>
               <RiInstagramLine  size={30}/>
               <IoLogoLinkedin className='my-3' size={30}/>
               <RiTelegramLine size={30} /> 
@@ -41,7 +41,7 @@ const ProfessorCard = () => {
       </div>
     </div> 
    </div>
-   </>
+  
   )
 }
 
