@@ -5,6 +5,7 @@ import elipse1 from "../../assets/image/Login/Ellipse1.png"
 import elipse2 from "../../assets/image/Login/Ellipse2.png"
 import elipse3 from "../../assets/image/Login/Ellipse3.png"
 import LoginForm from "../../component/LoginComponent/LoginForm"
+import { Outlet } from "react-router-dom"
 
 export const Login = () => {
     return(
@@ -17,7 +18,8 @@ export const Login = () => {
                 <img className="object-contain sm:w-full sm:h-full" src={login} />
             </div>
             <div className="w-[70%] bg-white bg-opacity-85 rounded-b-lg  md:rounded-l-lg z-10 md:w-2/3 md:h-[60%]">
-                <LoginForm />
+                {/* <LoginForm /> */}
+                <Outlet />
             </div>
                
             </div>
@@ -30,6 +32,7 @@ export const Login = () => {
             <div className="w-full relative mt-8 ">
             <License />
             </div>
+
            
         </div>
         
