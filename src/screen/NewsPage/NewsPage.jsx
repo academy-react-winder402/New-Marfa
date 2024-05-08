@@ -1,6 +1,11 @@
+import React from "react";
+
+
 const NewsPage = () => {
     return ( 
-        <div>news page</div>
+        <div>
+            
+        </div>
      );
 }
  

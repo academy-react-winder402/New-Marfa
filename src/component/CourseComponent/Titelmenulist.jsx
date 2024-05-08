@@ -7,50 +7,50 @@ import { RxTextAlignCenter } from "react-icons/rx";
 
 const Titelmenulist = () => {
   return (
-    <div className=''>
-      <div className='m-12 flex flex-row flex-wrap items-center justify-center gap-8 px-5 md:m-20 md:flex-row lg:flex-nowrap'>
-        <div className='float-right flex h-14 w-48 flex-row items-center justify-center gap-2 text-nowrap rounded-2xl border-4 border-violet-100 pr-1 text-lg hover:bg-gray-50 md:w-52 md:gap-2 md:rounded-2xl md:text-sm'>
+    
+      <div className='flex flex-row md:flex-row flex-wrap lg:flex-nowrap justify-center items-center gap-8 m-12 mx-auto px-12 w-[85%]'>
+        <div  className='float-right flex flex-row justify-center items-center gap-2 md:gap-2 border-4 border-violet-100 hover:bg-gray-50 pr-1 rounded-2xl md:rounded-2xl w-48 md:w-52 h-14 text-lg focus:outline-none focus:ring-2 text-nowrap md:text-sm'>
         <span > فیلتر ها</span>
-        <RxTextAlignCenter size={40}/>
+        <RxTextAlignCenter size={40}/> 
         </div>
-        <div className='flex h-14 w-48 flex-row items-center justify-center rounded-2xl border-4 border-violet-100 md:w-64 md:gap-2 md:rounded-2xl'>
-            <div className='flex h-[100%] w-[100%] items-center justify-center rounded-xl hover:bg-gray-50'><CiCircleList size={40}/> </div> 
-            <div className='flex h-[100%] w-[100%] items-center justify-center rounded-xl hover:bg-gray-50'><BsGrid3X3GapFill size={40}/></div>
+        <div className='flex flex-row justify-center items-center md:gap-2 border-4 border-violet-100 rounded-2xl md:rounded-2xl w-48 md:w-64 h-14'>
+            <div className='flex justify-center items-center hover:bg-gray-50 rounded-xl w-[100%] h-[100%]'><CiCircleList size={40}/> </div> 
+            <div className='flex justify-center items-center hover:bg-gray-50 rounded-xl w-[100%] h-[100%]'><BsGrid3X3GapFill size={40}/></div>
             
         </div>
         
-        <div className='h-12 w-full'> 
+        <div className='w-[70%] h-12'> 
         <form>   
-             <label for="search" class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">جستجو</label>
-          <div class="relative rounded-3xl border-violet-100 md:rounded-2xl">
-             <div class="pointer-events-none absolute inset-y-0 end-0 flex items-center ps-3">
-                <svg class="ml-5 h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+             <label for="search" class="mb-2 font-medium text-gray-900 text-sm dark:text-white sr-only">جستجو</label>
+          <div class="relative border-violet-100 rounded-3xl md:rounded-2xl">
+             <div class="absolute inset-y-0 flex items-center pointer-events-none end-0 ps-3">
+                <svg class="ml-5 w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                 </svg>
             </div>
-            <input type="search" id="search" class="block h-14 w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" placeholder="جستجو" required />
+            <input type="search" id="search" class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-4 border focus:border-blue-500 dark:focus:border-blue-500 rounded-lg w-full h-14 text-gray-900 text-sm dark:text-white ps-10 focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:ring-blue-500" placeholder="جستجو" required />
             
           </div>
           </form>
         </div>
-        <div className='float-left h-14 w-72 lg:w-96'>
-            <button type="button" className="flex w-full items-center justify-between gap-3 text-nowrap rounded-2xl border-b border-violet-100 bg-gray-50 px-5 py-5 font-medium text-gray-500 md:w-full rtl:text-right dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+        <div className='float-left w-52 lg:w-96'>
+            <button type="button" className="rtl:text-right flex justify-between items-center gap-3 border-violet-100 dark:border-gray-700 bg-gray-50 px-5 py-5 border-b rounded-2xl w-full md:w-full h-14 font-medium text-gray-500 text-nowrap dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
               <span>دسته بندی ها</span>
-              <svg data-accordion-icon className="h-3 w-4 shrink-0 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <svg data-accordion-icon className="w-4 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
               </svg>
             </button>
         </div>
-        <div className='h-14 w-52'>
-            <button type="button" className="flex w-full items-center justify-between gap-3 rounded-2xl border-b border-gray-200 border-violet-100 bg-gray-50 px-5 py-5 font-medium text-gray-500 rtl:text-right dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+        <div className='w-52'>
+            <button type="button" className="rtl:text-right flex justify-between items-center gap-3 border-gray-200 border-violet-100 dark:border-gray-700 bg-gray-50 px-5 py-5 border-b rounded-2xl w-full h-14 font-medium text-gray-500 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
             <span> صعودی </span>
-            <svg data-accordion-icon className="h-3 w-4 shrink-0 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <svg data-accordion-icon className="w-4 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
             </svg>
             </button>
         </div>
       </div>
-    </div>
+  
   )
 }
 

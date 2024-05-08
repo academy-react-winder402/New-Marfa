@@ -1,5 +1,6 @@
+import Data from "../CourseComponent/Data.json"
 import { CardItem } from "../../common/Cource/CardItem";
-import Data from "./Date.json"
+
 export const Cardcomponentcourses = () => {
   return (
     <>
@@ -7,7 +8,7 @@ export const Cardcomponentcourses = () => {
         {Data.map((result, index) => {
           return (
             <div key={index} className="mx-auto md:w-[45%] lg:w-[30%]">
-              <div className="bg-violet-50 mt-4 mb-10 p-[1rem] rounded-[0.9375rem]">
+              <div className="bg-violet-50 mt-1 mb-10 p-[1rem] rounded-[0.9375rem]">
                 <CardItem
                   title={result.title}
                   img={result.img}
