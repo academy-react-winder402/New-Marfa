@@ -1,16 +1,16 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LayOut from "./Layout";
 import Landing from "../screen/Landing/Landing";
-import Courses from "../screen/Cources/Courses";
+import NewsPage from "../screen/NewsPage/NewsPage";
 import { Login } from "../screen/Loginpage/Login";
 import Register from "../screen/Register/Register";
 import Forget from "../screen/Forget/Forget";
 import LayoutProfile from "./LayoutProfile";
 import LandingProfile from "../screen/Profile/LandingProfile";
-import NewsPage from "../screen/NewsPage/NewsPage";
 import LayoutLogin from "./LayoutLogin";
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
+import { Courses } from "../screen/Cources/Courses";
 const routes = createBrowserRouter([
 
     {
@@ -23,7 +23,7 @@ const routes = createBrowserRouter([
         },
         {
           path:"/courses",
-          element:<Courses/>
+          element:<Courses />
         }, 
         {
           path:"/news",
@@ -51,7 +51,6 @@ const routes = createBrowserRouter([
           path:"/profile/myselected",
           element:<LandingProfile />
         }
-
       ]
     },
     {

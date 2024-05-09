@@ -1,17 +1,20 @@
 import React from 'react'
 
-const Minicategorycart = ({title,image}) => {
+const Minicategorycart = ({title,image,id}) => {
+  
+  const bg = (Number(id)%2===0) ? `top-0` : `top-20`;
+  
   return (
-    <>
-      
-        <div className='md:[20%] z-50 h-52 w-[45%] rounded-2xl rounded-bl-[5rem] bg-violet-600 lg:w-[18%]'>
-            <div className='mx-auto mt-10 flex h-20 w-[40%] items-center justify-center'>
-              <img src={image}  alt="" />
+        <div className={` relative z-50 bg-violet-600 hover:bg-[#EBE0FF] rounded-2xl rounded-bl-[5rem] w-[45%] lg:w-[18%] h-52 text-white hover:text-[#6D53F2] ${bg}`}>
+            <div className='flex justify-center items-center mx-auto mt-10 w-[40%] h-20 hover:text-[#6D54F3]'>
+              <img src={image} className=''  alt="" />
+              {/* <svg width={20} height={20}>
+                <img src={image} />
+              </svg> */}
             </div>
-            <div className='text-center text-xl text-white'>{title}</div>
+            <div className='text-center text-xl'>{title}</div>
         </div>
-    
-    </>
+  
   )
 }
 

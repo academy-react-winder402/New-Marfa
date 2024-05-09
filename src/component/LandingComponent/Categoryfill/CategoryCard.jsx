@@ -1,51 +1,56 @@
 import React from 'react'
 
 import border from '../../../assets/image/Vector 34.png'
-import Group from "../../../assets/image/Group 89.png"
-import Grouplay from "../../../assets/image/Group.png" 
-import data from "../../../assets/image/data.png"
-import vector from "../../../assets/image/Vector.png"
+import Group from "../../../assets/image/svg/Group.svg"
+import game from "../../../assets/image/svg/game.svg"
+import data from "../../../assets/image/svg/data.svg"
+import vector from "../../../assets/image/svg/Vector.svg"
 import Minicategorycart from './Minicategorycart'
-
 const CategoryCard = () => {
   const category = [
       {
+      "id": "1",
       "title":"امنیت شبکه " ,
       "img": Group ,
       
       
   },
   {
+    "id": "2",
       "title":"بازی   " ,
-      "img": Grouplay ,
+      "img": game ,
       },
   {
+    "id": "3",
       "title":"وب دیزاین " ,
       "img": data ,
   },
   {
+    "id": "4",
     "title":"تحلیل داده " ,
     "img": vector ,
 }
 ]
   return (
     <>
-    <div className='relative my-10 md:w-[95%]'>
+    <div className='relative my-10 w-full'>
       
-      <div className="mb-3 flex flex-col items-center text-start text-lg">
+      <div className="flex flex-col items-center mb-3 text-lg text-start">
               <span className="block w-36 text-2xl text-indigo-900"> دسته بندی  </span>
-              <span className="block w-36 bg-gradient-to-l from-violet-900 to-transparent py-[2px]"></span>
+              <span className="block bg-gradient-to-l from-violet-900 to-transparent py-[2px] w-36"></span>
       </div>
-      <div className='absolute left-0 top-0 h-full w-full'>
-        <img src={border} alt=""  className='w-100rem] object- h-full'/>
-      </div>
-      <div className='mt-10 flex w-[100%] flex-row flex-wrap items-center justify-center gap-5 p-5 md:flex-nowrap md:gap-16'>
+     
+      <div className='flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-5 md:gap-16 mt-10 p-5 w-[100%]'>
           {category.map((category , index) => {
                   return (
-                      <Minicategorycart title={category.title} image={category.img} />              
+                    
+                      <Minicategorycart id={category.id} title={category.title} image={category.img} />              
                   )
               })} 
       </div>
+       <div className='top-0 left-0 absolute w-full h-full'>
+        <img src={border} alt=""  className='w-full h-full object'/>
+       </div>
       
     </div>
    
