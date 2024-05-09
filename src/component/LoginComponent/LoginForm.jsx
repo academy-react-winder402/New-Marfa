@@ -14,14 +14,8 @@ const LoginForm = () => {
     }
     return ( 
         <>
-<<<<<<< HEAD
-        {/* w-[28rem] sm:w-[40rem] md:w-[48rem] lg:[64rem] xl:[80rem] 2xl:[96rem] */}
-        <div className="w-[100%] h-[100%] bg-[#5c5cad] bg-opacity-5 mx-auto">
-              <div className="w-full ">
-=======
         <div className="bg-[#5c5cad] bg-opacity-5 mx-auto rounded-b-lg md:rounded-l-lg w-full h-full">
               <div className="w-full">
->>>>>>> 845842db1b8879b5e53b6b022bc0cd63166df0c8
               <IconMenuLogin />
               </div>
               <div className="w-full text-[#6359f0] text-3xl text-center text-nowrap">ورود به سایت</div>
@@ -48,13 +42,8 @@ const LoginForm = () => {
                           </div>
 
                       </div>
-<<<<<<< HEAD
-                      <div className="w-[80%] mr-6 h-6 flex justify-end items-center">
-                          <Link to='/login/forget' className="hover:text-[#6359f0] flex text-left text-[#A193FF] text-[10px] md:text-[16px]">فراموشی رمز؟</Link>
-=======
                       <div className="flex justify-end items-center mr-6 w-[80%] h-6">
-                          <Link to='/forget' className="flex text-[#A193FF] text-[10px] text-left md:text-[16px] hover:text-[#6359f0]">فراموشی رمز؟</Link>
->>>>>>> 845842db1b8879b5e53b6b022bc0cd63166df0c8
+                          <Link to='/login/forget' className="flex text-[#A193FF] text-[10px] text-left md:text-[16px] hover:text-[#6359f0]">فراموشی رمز؟</Link>
                       </div>
 
                       <div className="flex justify-start items-center my-2 w-full h-6">
@@ -67,13 +56,8 @@ const LoginForm = () => {
                       </div>
                   </Form>    
               </Formik>  
-<<<<<<< HEAD
-              <div className="w-[80%] text-center text-[14px] md:text-[18px] mt-8 mr-7 mb-4 text-[#A193FF] text-nowrap  ">
-                    <Link className="hover:text-[#6359f0]" to='/login/register'>حساب کاربری ندارید؟ ثبت نام</Link>
-=======
               <div className="mt-8 mr-7 mb-4 w-[80%] text-[#A193FF] text-[14px] text-center text-nowrap md:text-[18px]">
-                    <Link className="hover:text-[#6359f0]" to='/register'>حساب کاربری ندارید؟ ثبت نام</Link>
->>>>>>> 845842db1b8879b5e53b6b022bc0cd63166df0c8
+                    <Link className="hover:text-[#6359f0]" to='/login/register'>حساب کاربری ندارید؟ ثبت نام</Link>
               </div>
               </div> 
           </div>

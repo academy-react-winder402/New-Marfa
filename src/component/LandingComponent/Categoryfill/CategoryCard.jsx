@@ -1,10 +1,9 @@
 import React from 'react'
-
 import border from '../../../assets/image/Vector 34.png'
-import Group from "../../../assets/image/svg/Group.svg"
-import game from "../../../assets/image/svg/game.svg"
-import data from "../../../assets/image/svg/data.svg"
-import vector from "../../../assets/image/svg/Vector.svg"
+import Group from "../../../assets/image/Group 89.png"
+import game from "../../../assets/image/Group.png"
+import data from "../../../assets/image/data.png"
+import vector from "../../../assets/image/Vector.png"
 import Minicategorycart from './Minicategorycart'
 const CategoryCard = () => {
   const category = [
@@ -12,7 +11,6 @@ const CategoryCard = () => {
       "id": "1",
       "title":"امنیت شبکه " ,
       "img": Group ,
-      
       
   },
   {
@@ -52,11 +50,7 @@ const CategoryCard = () => {
         <img src={border} alt=""  className='w-full h-full object'/>
        </div>
       
-    </div>
-   
-     
-    
-  
+    </div>  
     </>
   )
 }

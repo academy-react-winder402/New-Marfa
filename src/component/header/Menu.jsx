@@ -15,7 +15,7 @@ return (
       <li className="p-4"><Link to="/"> صفحه اصلی</Link></li>
       <li className="p-4"><Link to="/courses">دوره ها</Link></li>
       <li className="p-4"><Link to="/">اساتید</Link></li>
-      <li className="p-4"><Link to="/">اخبار</Link></li>
+      <li className="p-4"><Link to="/news">اخبار</Link></li>
       <li className="p-4"><Link to="/">ارتباط با ما</Link></li>
     </ul>
     <div onClick={handleNav} className="block md:hidden">
