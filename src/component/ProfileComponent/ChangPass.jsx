@@ -9,7 +9,7 @@ const ChangePass = () => {
         )
     }
     return ( 
-        <div className="w-[40rem] md:w-[48rem] lg:[64rem] xl:[80rem] 2xl:[96rem] mx-auto">
+        <div className="w-[28rem] sm:w-[40rem] md:w-[48rem] lg:[64rem] xl:[80rem] 2xl:[96rem] mx-auto">
             <div className="w-[80%]  mx-auto">
 
                <Formik initialValues={{currentPass:'' , newPass:'', confirmNewPass:''}} onSubmit={handleSubmit}>

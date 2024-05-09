@@ -14,7 +14,8 @@ const LoginForm = () => {
     }
     return ( 
         <>
-        <div className="w-full h-full bg-[#5c5cad] bg-opacity-5 mx-auto rounded-b-lg md:rounded-l-lg  ">
+        {/* w-[28rem] sm:w-[40rem] md:w-[48rem] lg:[64rem] xl:[80rem] 2xl:[96rem] */}
+        <div className="w-[100%] h-[100%] bg-[#5c5cad] bg-opacity-5 mx-auto">
               <div className="w-full ">
               <IconMenuLogin />
               </div>
@@ -43,7 +44,7 @@ const LoginForm = () => {
 
                       </div>
                       <div className="w-[80%] mr-6 h-6 flex justify-end items-center">
-                          <Link to='/forget' className="hover:text-[#6359f0] flex text-left text-[#A193FF] text-[10px] md:text-[16px]">فراموشی رمز؟</Link>
+                          <Link to='/login/forget' className="hover:text-[#6359f0] flex text-left text-[#A193FF] text-[10px] md:text-[16px]">فراموشی رمز؟</Link>
                       </div>
 
                       <div className="w-full h-6 flex justify-start items-center my-2">
@@ -59,7 +60,7 @@ const LoginForm = () => {
                   </Form>    
               </Formik>  
               <div className="w-[80%] text-center text-[14px] md:text-[18px] mt-8 mr-7 mb-4 text-[#A193FF] text-nowrap  ">
-                    <Link className="hover:text-[#6359f0]" to='/register'>حساب کاربری ندارید؟ ثبت نام</Link>
+                    <Link className="hover:text-[#6359f0]" to='/login/register'>حساب کاربری ندارید؟ ثبت نام</Link>
               </div>
               </div> 
           </div>

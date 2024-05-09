@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const RegisterIcon = () => {
     return (  
-        <div className="flex flex-row-reverse justify-between mx-3">
+        <div className="flex flex-row-reverse justify-between mx-3 items-center">
             <div className="w-3/3">
             <ul className="flex flex-row items-center">
                    
