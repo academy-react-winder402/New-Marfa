@@ -43,7 +43,7 @@ const LoginForm = () => {
 
                       </div>
                       <div className="flex justify-end items-center mr-6 w-[80%] h-6">
-                          <Link to='/login/forget' className="flex text-[#A193FF] text-[10px] text-left md:text-[16px] hover:text-[#6359f0]">فراموشی رمز؟</Link>
+                          <Link to='/auth/forget' className="flex text-[#A193FF] text-[10px] text-left md:text-[16px] hover:text-[#6359f0]">فراموشی رمز؟</Link>
                       </div>
 
                       <div className="flex justify-start items-center my-2 w-full h-6">
@@ -57,7 +57,7 @@ const LoginForm = () => {
                   </Form>    
               </Formik>  
               <div className="mt-8 mr-7 mb-4 w-[80%] text-[#A193FF] text-[14px] text-center text-nowrap md:text-[18px]">
-                    <Link className="hover:text-[#6359f0]" to='/login/register'>حساب کاربری ندارید؟ ثبت نام</Link>
+                    <Link className="hover:text-[#6359f0]" to='/auth/register'>حساب کاربری ندارید؟ ثبت نام</Link>
               </div>
               </div> 
           </div>
