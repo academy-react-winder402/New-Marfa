@@ -1,5 +1,7 @@
 import { Formik , Field , Form  } from "formik";
 import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Stepper, Button, Group } from '@mantine/core';
 const FirstSection = () => {
     const handleSubmit = () =>{
         return(
@@ -7,6 +9,42 @@ const FirstSection = () => {
                 hhhhhh
             </div>
         )
+    }
+
+//  steper function
+
+    const steper = () => {
+        const [active, setActive] = useState(1);
+        const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
+        const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+
+        return (
+            <>
+             <Group justify="center" mt="xl" className=" w-[80%] md:w-[90%] text-center text-[16px] 
+             md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
+                <Button onClick={nextStep} className="text-[#2416E9] bg-[#E7E2FF] py-2 px-4 rounded-md ml-28">Next step</Button>
+                <Button variant="default" onClick={prevStep} className="text-[#2416E9] bg-[#E7E2FF] py-2 px-4 rounded-md">Back</Button>
+                
+            </Group>
+            <Stepper active={active} onStepClick={setActive} className="flex flex-col w-[80%] md:w-[90%] 
+            text-center text-[16px] md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
+                <Stepper.Step label="First step" description="Create an account" className="border-4 w-[41px] h-[41px] rounded-full border-[#A193FF]">
+                Step 1 content: Create an account
+                </Stepper.Step>
+                <Stepper.Step label="Second step" description="Verify email">
+                Step 2 content: Verify email
+                </Stepper.Step>
+                <Stepper.Step label="Final step" description="Get full access">
+                Step 3 content: Get full access
+                </Stepper.Step>
+                <Stepper.Completed>
+                Completed, click back button to get to previous step
+                </Stepper.Completed>
+            </Stepper>
+
+           
+            </>
+        );
     }
     return ( 
         
@@ -27,7 +65,7 @@ const FirstSection = () => {
                 </div>
             </Form>    
         </Formik>  
-        <div className="flex flex-row justify-between w-[80%] md:w-[90%] text-center text-[16px] md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
+        {/* <div className="flex flex-row justify-between w-[80%] md:w-[90%] text-center text-[16px] md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
             
              <div> <Link className="text-[#2416E9] bg-[#E7E2FF] py-2 px-4 rounded-md" to='/register'> مرحله بعد </Link></div>
              <div> <Link className="text-[#A193FF] bg-[#E7E2FF] py-2 px-4 rounded-md" to='/register'>مرحله قبل</Link></div>
@@ -45,7 +83,10 @@ const FirstSection = () => {
                         <div className="   text-[#A193FF] text-nowrap" >دریافت کد</div>
                         
                         <div className=" text-nowrap text-[#4E447D]">شماره تماس</div>
-         </div>
+         </div> */}
+            <div className="flex flex-row justify-between w-[80%] md:w-[90%] text-center text-[16px] md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
+            {steper()}
+            </div>
         </div> 
      );
 }

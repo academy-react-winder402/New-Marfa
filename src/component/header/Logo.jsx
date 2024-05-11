@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/image/MARFApic_prev_ui.png";
+import logo from "../../assets/image/Logo/logo.png";
 export const Logo = () => {
     return (
         <NavLink to="/" className="w-full">
-        <img className=" w-44 h-24  text-white" src={logo} alt="" />
+        <img className=" object-contain  text-white" src={logo} alt="" />
         </NavLink>
     );
   };

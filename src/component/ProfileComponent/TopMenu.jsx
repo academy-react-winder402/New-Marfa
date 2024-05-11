@@ -16,7 +16,7 @@ const TopMenu = () => {
        
                     </div>
                     <div className={nav ? "fixed z-[1]  h-full text-end bg-opacity-80 top-[5rem] right-[5rem] rounded-lg ease-in-out duration-500 lg:hidden" : "fixed right-[-100%]"} >
-                        <LeftMenu />
+                        <LeftMenu setNav={setNav} />
                     </div>  
                 </div>
                 <div>داشبورد</div>

@@ -1,7 +1,8 @@
 export const DashboardTopComponent = () => {
   return (
     <>
-      <div className=" relative flex justify-between flex-wrap flex-row  gap-5 border-2 border-slate-400 rounded-lg m-3 p-5">
+      <div className=" relative flex justify-between flex-wrap flex-row  gap-5 border-2
+       border-slate-400 rounded-lg m-3 p-5 ">
         <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500">
           نام و نام خانوادگی :
           <span className="text-fuchsia-700"> بیتا قنبری </span>

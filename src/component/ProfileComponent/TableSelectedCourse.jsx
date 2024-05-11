@@ -59,7 +59,11 @@ export const TableSelectedCourse = () => {
     <>
     <div className="overflow-x-scroll ">
 
-      <div className="  bg-white min-w-[600px]">
+      <div className="block sm:hidden">
+
+      </div>
+
+      <div className="  bg-white min-w-[600px] ">
         <table className="table-fixed  w-full border-spacing-3 whitespace-nowrap  ">
           <thead className="bg-purple-700 text-white">
             <tr className="flex  flex-row  justify-around p-3 ">

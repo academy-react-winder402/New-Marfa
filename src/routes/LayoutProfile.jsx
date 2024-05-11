@@ -8,19 +8,19 @@ const LayoutProfile = () => {
     return ( 
         <>
             <div className="w-full bg-bluec h-screen">
-                <div className="shadow-2xl shadow-[#d7d5ff] pt-5 w-fit mx-auto m-w-[1920px]">
+                <div className="shadow-2xl shadow-[#d7d5ff] pt-5 mx-auto ">
 
                 {/* [#d7d5ff]  */}
                         <div className="w-[95%] flex flex-col gap-3 mx-auto justify-center pt-6 md:flex-row">
                             <div className="hidden lg:block lg:w-[22rem] bg-gradient-to-b from-[#8C80F6] to-[#2E11B7] rounded-xl ">
                                 <LeftMenu />
                             </div>
-                            <div className="rounded-xl bg-white flex flex-col">
+                            <div className="w-full rounded-xl bg-white flex flex-col">
                                 <div className=" h-[4rem] pt-3 mb-4 ">
                                     <TopMenu />
                                 </div>
                                 <div className=" h-[1px] bg-gray-400 mx-auto "></div>
-                                <div className="w-full mb-2 ">
+                                <div className=" mb-2 ">
                                     {/* <ChangePass /> */}
                                     <Outlet />
                                     {/* <UserAccount /> */}

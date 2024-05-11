@@ -12,26 +12,28 @@ export const Menu = () => {
   const textColor = location.pathname=='/' ? `text-[#E3d4ff]` : `text-[#3f40ea]`;
   const textColorHambergerMenu = location.pathname=='/' ? `text-violec` : `text-[#3f40ea]`;
   const displayMENU = location.pathname=='/' ? `hidden` : `block`;
+
 return (
 
   <div className="flex justify-center items-center px-4  h-24 text-nowrap ">
     
     <ul className={`sm:flex sm:flex-row sm:flex-grow sm:items-center sm:gap-10 hidden  ${textColor}`}>
-      <li className={` ${displayMENU}`} ><Link to="/"> صفحه اصلی</Link></li>
-      <li className="p-4"><Link to="/courses">دوره ها</Link></li>
+      <li className={` ${displayMENU}`} ><Link to="/" onClick={()=>setNav(false)}> صفحه اصلی</Link></li>
+      <li className="p-4"><Link to="/courses" onClick={()=>setNav(false)}>دوره ها</Link></li>
       {/* <li className="p-4"><Link to="/">اساتید</Link></li> */}
-      <li className=""><Link to="/news">  اخبار و مقالات </Link></li>
+      <li className=""><Link to="/news" onClick={()=>setNav(false)}>  اخبار و مقالات </Link></li>
       {/* <li className="p-4"><Link to="/">ارتباط با ما</Link></li> */}
     </ul>
+
     <div onClick={handleNav} className="block sm:hidden">
-        {!nav ? <AiOutlineMenu className={`cursor-pointer ${textColor}`} size={30} /> : <AiOutlineClose size={30} className={`z-[3] cursor-pointer ${textColor}`} />  }
-       
+        {!nav ? <AiOutlineMenu className={`cursor-pointer ${textColor}`} size={30} /> : <AiOutlineClose size={30} className={`z-[3] cursor-pointer ${textColor}`} />  }       
     </div>
+    
     <div className={nav ? "fixed z-[1] h-auto bg-opacity-90  text-right top-11 right-11 bg-white rounded-lg w-[80%] ease-in-out duration-500" : "fixed right-[-100%]"} >
     <ul className={`p-4 ${textColorHambergerMenu}`}>
-      <li className={`p-4 ${displayMENU}`}><Link to="/"> صفحه اصلی</Link></li>
-      <li className="hover:shadow-lg p-4"><Link to="/courses">دوره ها</Link></li>
-      <li className="hover:shadow-lg p-4"><Link to="/news">اخبار و مقالات</Link></li>
+      <li className={`p-4 ${displayMENU}`}><Link to="/" onClick={()=>setNav(false)}> صفحه اصلی</Link></li>
+      <li className="hover:shadow-lg p-4"><Link to="/courses" onClick={()=>setNav(false)}>دوره ها</Link></li>
+      <li className="hover:shadow-lg p-4"><Link to="/news" onClick={()=>setNav(false)}>اخبار و مقالات</Link></li>
     </ul>
     </div>
   </div>

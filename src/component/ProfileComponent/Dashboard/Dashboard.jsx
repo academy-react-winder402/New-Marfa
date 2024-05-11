@@ -20,7 +20,7 @@ export const Dashboard = () => {
     },
   ];
   return (
-    <div className="bg-white">
+    <div className="bg-white 2xl:w-[72rem]">
       <DashboardTopComponent/>
       <div className="flex md:flex-row justify-center flex-col text-xs ">
         <div className="">

@@ -9,11 +9,11 @@ const ChangePass = () => {
         )
     }
     return ( 
-        <div className="w-[28rem] sm:w-[40rem] md:w-[48rem] lg:[64rem] xl:[80rem] 2xl:[96rem] mx-auto">
-            <div className="w-[80%]  mx-auto">
+       
+            <div className="w-full mx-auto">
 
                <Formik initialValues={{currentPass:'' , newPass:'', confirmNewPass:''}} onSubmit={handleSubmit}>
-                  <Form className=" mt-3 flex flex-col text-gray-500 items-center justify-center ">
+                  <Form className=" mt-3 flex flex-col text-gray-500 items-center justify-center w-full">
                       <div className="w-full flex flex-col text-gray-500 items-center justify-center  ">
 
                           <div className="w-[80%] flex flex-col  " >
@@ -37,11 +37,11 @@ const ChangePass = () => {
                       rounded-lg bg-gradient-to-r from-[#7b2aff] to-[#4545ff] w-[60%] py-2 md:py-4 text-center  
                       text-white " type="submit" >  ثبت اطلاعات </button>
                       </div>
-                  </Form>    
+                  </Form>
               </Formik>  
             </div>
        
-        </div>
+        
      );
 }
  
