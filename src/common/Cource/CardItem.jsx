@@ -1,6 +1,7 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const CardItem = ({
+  id,
   title,
   img,
   countStudio,
@@ -13,14 +14,14 @@ export const CardItem = ({
   priceCourse,
 }) => {
   return (
-    <>
+    <Link to={`/CourcesDetailPage/${id}`}>
       <div className="mx-auto mb-5 w-full">
         <img className="rounded-[0.625rem] object-fill" src={img} alt="" />
       </div>
-      <div className="mb-5 text-start text-[1.25rem] leading-[1.25rem]">
+      <div className="mb-5 text-[1.25rem] text-start leading-[1.25rem]">
         {title}
       </div>
-      <div className="flex h-auto flex-row justify-between text-[0.625rem] leading-[0.625rem] text-slate-500">
+      <div className="flex flex-row justify-between h-auto text-[0.625rem] text-slate-500 leading-[0.625rem]">
         <span className="flex flex-row gap-2 bg-[] {sectionCours}">
           {sectionCours}
           <svg
@@ -29,7 +30,7 @@ export const CardItem = ({
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-4 w-4"
+            class="w-4 h-4"
           >
             <path
               stroke-linecap="round"
@@ -46,7 +47,7 @@ export const CardItem = ({
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-4 w-4"
+            class="w-4 h-4"
           >
             <path
               stroke-linecap="round"
@@ -63,7 +64,7 @@ export const CardItem = ({
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-4 w-4"
+            class="w-4 h-4"
           >
             <path
               stroke-linecap="round"
@@ -73,8 +74,8 @@ export const CardItem = ({
           </svg>
         </span>
       </div>
-      <div className="mt-8 divide-y-2 divide-slate-200 text-xs text-slate-500">
-        <div className="mb-5 flex flex-row-reverse justify-between">
+      <div className="mt-8 divide-y-2 divide-slate-200 text-slate-500 text-xs">
+        <div className="flex flex-row-reverse justify-between mb-5">
           <div className="flex flex-row gap-2">
             {master}
             <svg
@@ -83,7 +84,7 @@ export const CardItem = ({
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="h-4 w-4"
+              class="w-4 h-4"
             >
               <path
                 stroke-linecap="round"
@@ -93,7 +94,7 @@ export const CardItem = ({
             </svg>
           </div>
           <div className="flex gap-2">
-            <span className="flex h-[1.625rem] w-[3.125rem] flex-row items-center justify-center gap-2 rounded-[0.3125rem] bg-slate-200">
+            <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
               {like}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +102,7 @@ export const CardItem = ({
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="h-4 w-4"
+                class="w-4 h-4"
               >
                 <path
                   stroke-linecap="round"
@@ -110,7 +111,7 @@ export const CardItem = ({
                 />
               </svg>
             </span>
-            <span className="flex h-[1.625rem] w-[3.125rem] flex-row items-center justify-center gap-2 rounded-[0.3125rem] bg-slate-200">
+            <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
               {disLike}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +119,7 @@ export const CardItem = ({
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="h-4 w-4"
+                class="w-4 h-4"
               >
                 <path
                   stroke-linecap="round"
@@ -133,7 +134,7 @@ export const CardItem = ({
           <div className="flex gap-4">
             <span className="text-[1rem] leading-[1rem]">تومان</span>
 
-            <span className="flex text-[1.25rem] leading-[1.25rem] text-violet-700">
+            <span className="flex text-[1.25rem] text-violet-700 leading-[1.25rem]">
               {priceCourse}
             </span>
           </div>
@@ -145,7 +146,7 @@ export const CardItem = ({
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="h-4 w-4"
+              class="w-4 h-4"
             >
               <path
                 stroke-linecap="round"
@@ -156,6 +157,6 @@ export const CardItem = ({
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };

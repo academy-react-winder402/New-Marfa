@@ -11,7 +11,10 @@ import LayoutLogin from "./LayoutLogin";
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
 import { Courses } from "../screen/Cources/Courses";
+<<<<<<< HEAD
 import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
+=======
+>>>>>>> arezoo/edit-coursesDetailpage
 import { CourcesDetailPage } from "../screen/CourcesDetail/CourcesDetailPage";
 const routes = createBrowserRouter([
 
@@ -28,9 +31,15 @@ const routes = createBrowserRouter([
           element:<Courses />
         }, 
         {
+<<<<<<< HEAD
           path:"/coursedetailpage/:id",
           element:<CourcesDetailPage />
         }, 
+=======
+          path:"/CourcesDetailPage/:id",
+          element:<CourcesDetailPage/>
+        },   
+>>>>>>> arezoo/edit-coursesDetailpage
         {
           path:"/news",
           element:<NewsPage />
