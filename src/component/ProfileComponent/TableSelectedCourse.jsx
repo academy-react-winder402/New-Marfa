@@ -1,9 +1,10 @@
 // import { ProfileButtomComponent } from "./ProfileButtomComponent";
 // import { ProfileTopComponent } from "./ProfileTopComponent";
-import html from "../assets/image/3.jpg";
-import { TableComponent } from "./TableComponent";
+import html from "../../assets/image/3.jpg";
+import { TableRowComponent } from "./TableRowComponent";
 
-export const Table = () => {
+
+export const TableSelectedCourse = () => {
   const Data = [
     {
       id: 1,
@@ -56,8 +57,10 @@ export const Table = () => {
   ];
   return (
     <>
-      <div className="overflow-x-auto bg-white">
-        <table className="table-fixed border-collapse border border-slate-400 w-full border-spacing-3 whitespace-nowrap min-w-[700px] ">
+    <div className="overflow-x-scroll ">
+
+      <div className="  bg-white min-w-[600px]">
+        <table className="table-fixed  w-full border-spacing-3 whitespace-nowrap  ">
           <thead className="bg-purple-700 text-white">
             <tr className="flex  flex-row  justify-around p-3 ">
               <th className="">تصویر</th>
@@ -72,7 +75,7 @@ export const Table = () => {
           <tbody>
             {Data.map((result, index) => {
               return (
-                <TableComponent
+                <TableRowComponent
                   key={index}
                   title={result.title}
                   img={result.img}
@@ -84,6 +87,7 @@ export const Table = () => {
             })}
           </tbody>
         </table>
+                </div>
       </div>
     </>
   );

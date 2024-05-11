@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TableComponent = ({
+export const TableRowComponent = ({
   title,
   img,
   master,

@@ -11,6 +11,7 @@ import LayoutLogin from "./LayoutLogin";
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
 import { Courses } from "../screen/Cources/Courses";
+import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
 const routes = createBrowserRouter([
 
     {
@@ -49,24 +50,24 @@ const routes = createBrowserRouter([
         },
         {
           path:"/profile/myselected",
-          element:<LandingProfile />
+          element:<TableSelectedCourse />
         }
       ]
     },
     {
-      path: "/login",
+      path: "/auth",
       element:<LayoutLogin />,
       children:[
         {
-          path:"/login",
+          path:"/auth/login",
           element:<Login />
         },
         {
-          path:"/login/register",
+          path:"/auth/register",
           element:<Register />
         },
         {
-          path:"/login/forget",
+          path:"/auth/forget",
           element:<Forget />
         }
       ]

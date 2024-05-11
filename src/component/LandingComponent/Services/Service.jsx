@@ -24,9 +24,9 @@ export const Service = () => {
     ]
     return (
         <>
-        <div className="mt-24 flex dark:bg-gray-400 w-full flex-col items-center text-start text-lg md:text-nowrap md:text-2xl">
-            <span className="block w-16 md:w-28 md:text-2xl">خدمات ما</span>
-            <span className="block w-16 bg-gradient-to-l from-slate-600 to-transparent py-[2px]"></span>
+        <div className="mt-24 flex dark:bg-gray-400 w-full flex-col items-center text-lg md:text-nowrap md:text-2xl">
+            <span className="block w-16 md:w-28 md:text-2xl text-[#121242]">خدمات ما</span>
+            <span className="block w-16 md:w-28 bg-gradient-to-l from-borderGradiant via-transparent to-transparent py-[2px]"></span>
         </div>
         <div className="mt-10 flex h-auto w-full flex-col items-end gap-5 p-5 md:flex-row md:justify-center" >
             {service.map((service , index) => {
