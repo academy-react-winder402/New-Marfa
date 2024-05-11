@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logo2 from "../../assets/image/logoWhite2.png"
+import logo2 from "../../assets/image/Logo/logo2-2.png"
 import location from "../../assets/image/Vector.svg"
 import svg2 from "../../assets/image/Rectangle 109.svg"
 import svg3 from "../../assets/image/Rectangle 110.svg"
@@ -16,8 +16,8 @@ export const Footer = () => {
       <div className='flex md:flex-row flex-col justify-between items-center md:mb-10 border-b-2 w-full'>
       <div className='md:w-[65%]' >
         <div className='relative flex justify-start px-20'>
-          <img className='right-48 absolute mt-8 h-10' src={svg2} alt="logo2" />
-          <img className='h-24' src={logo2} alt="logo" /> 
+          <img className='right-40 absolute mt-9 h-12' src={svg2} alt="logo2" />
+          <img className='w-40 h-32' src={logo2} alt="logo" /> 
         </div>
         <div>
               <div className='relative flex justify-start my-4 md:text-xl'>
