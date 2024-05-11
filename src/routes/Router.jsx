@@ -11,6 +11,7 @@ import LayoutLogin from "./LayoutLogin";
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
 import { Courses } from "../screen/Cources/Courses";
+import { CourcesDetailPage } from "../screen/CourcesDetail/CourcesDetailPage";
 const routes = createBrowserRouter([
 
     {
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
           path:"/courses",
           element:<Courses />
         }, 
+        {
+          path:"/CourcesDetailPage/:id",
+          element:<CourcesDetailPage/>
+        },   
         {
           path:"/news",
           element:<NewsPage />
