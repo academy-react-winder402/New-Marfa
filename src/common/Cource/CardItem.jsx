@@ -14,9 +14,9 @@ export const CardItem = ({
   priceCourse,
 }) => {
   return (
-    <Link to={`/CourcesDetailPage/${id}`}>
+    <Link to={`/courses/${id}`}>
       <div className="mx-auto mb-5 w-full">
-        <img className="rounded-[0.625rem] object-fill" src={img} alt="" />
+        <img className="rounded-lg object-fill" src={img} alt="" />
       </div>
       <div className="mb-5 text-[1.25rem] text-start leading-[1.25rem]">
         {title}
