@@ -10,6 +10,7 @@ export const Cardcomponentcourses = () => {
             <div key={index} className="mx-auto md:w-[45%] lg:w-[30%]">
               <div className="bg-violet-50 mt-1 mb-10 p-[1rem] rounded-[0.9375rem]">
                 <CardItem
+                  id={result.id}
                   title={result.title}
                   img={result.img}
                   sectionCours={result.sectionCours}

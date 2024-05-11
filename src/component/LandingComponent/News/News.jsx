@@ -12,7 +12,7 @@ const News = () => {
         
         <div className="flex md:flex-row flex-col flex-wrap justify-center items-center gap-5 mx-auto w-full md:w-[95%]">
          
-          {DataNews.map((item) => {
+          {DataNews.map((item ,index) => {if(index <2)
             return(
             <div  className='w-[95%] md:w-[45%]'  key={item.id}> 
               <CardNews 
