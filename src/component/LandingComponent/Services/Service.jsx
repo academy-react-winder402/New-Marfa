@@ -24,7 +24,7 @@ export const Service = () => {
     ]
     return (
         <div>
-        <div className="dark:bg-gray-400 mt-24 flex dark:bg-gray-400 w-full flex-col items-center text-lg md:text-nowrap md:text-2xl">
+        <div className=" mt-24 flex dark:bg-gray-400 w-full flex-col items-center text-lg md:text-nowrap md:text-2xl">
             <span className="block w-16 md:w-28 md:text-2xl text-[#121242]">خدمات ما</span>
             <span className="block w-16 md:w-28 bg-gradient-to-l from-borderGradiant via-transparent to-transparent py-[2px]"></span>
         </div>

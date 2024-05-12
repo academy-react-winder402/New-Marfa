@@ -8,7 +8,7 @@ import License from "../../component/LoginComponent/License";
 const Register = () => {
     return ( 
         <>
-             <div className="w-[80%] h-[80%] md:w-[45rem] md:h-[30rem] xl:w-[60rem] 2xl:w-[70rem] 2xl:h-[32rem] mx-auto flex flex-col items-center mt-5 md:mt-[8rem] 
+             <div className="w-[80%] h-[80%] md:w-[48rem] md:h-[30rem] lg:w-[64rem] lg:h-[32rem] xl:w-[80rem] xl:h-[32rem] mx-auto flex flex-col items-center mt-5 md:mt-[8rem] 
               md:flex-row md:justify-center md:items-center">
                     <div className="w-full h-1/3 md:w-1/3 md:h-full bg-white  bg-opacity-35 
                     rounded-t-2xl md:rounded-t-none md:rounded-r-2xl  
