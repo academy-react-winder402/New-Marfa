@@ -25,6 +25,7 @@ const News = () => {
               date={item.date}
               description={item.description}
               />
+
             </div>
             )
           })}

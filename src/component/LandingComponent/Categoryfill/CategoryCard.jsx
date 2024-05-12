@@ -5,6 +5,7 @@ import game from "../../../assets/image/Group.png"
 import data from "../../../assets/image/data.png"
 import vector from "../../../assets/image/Vector.png"
 import Minicategorycart from './Minicategorycart'
+import TitrComponent from '../../../common/TitrComponent/TitrComponent'
 const CategoryCard = () => {
   const category = [
       {
@@ -33,10 +34,12 @@ const CategoryCard = () => {
     <>
     <div className='relative mt-80 w-full'>
       
-      <div className="flex flex-col items-center mb-3 text-lg text-start">
+      {/* <div className="flex flex-col items-center mb-3 text-lg text-start">
               <span className="block w-36 text-2xl text-indigo-900"> دسته بندی  </span>
               <span className="block bg-gradient-to-l from-violet-900 to-transparent py-[2px] w-36"></span>
-      </div>
+      </div> */}
+        <TitrComponent title="  دسته بندی ها  "/>
+
      
       <div className='flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-5 md:gap-16 mt-10 p-5 w-[100%]'>
           {category.map((category , index) => {
