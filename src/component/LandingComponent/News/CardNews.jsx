@@ -2,8 +2,10 @@ import React from 'react'
 
 import { IoEyeOutline } from "react-icons/io5";
 import { CiCalendarDate } from "react-icons/ci";
+import { Link } from 'react-router-dom';
+
 // import image from "../../assets/image/N1.png"
-const CardNews = ({title , img, view , date, description}) => {
+const CardNews = ({id,title , img, view , date, description}) => {
   return (
        
      <div className="flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 shadow mx-auto my-10 border rounded-lg w-full">
@@ -26,12 +28,12 @@ const CardNews = ({title , img, view , date, description}) => {
                 <p className="mt-10 font-normal text-gray-700 dark:text-gray-400">{description}</p>
             </div>
             <div className='flex justify-end items-end mb-10'>
-           <a href="#" className="relative align-bottom md:items-center hover:bg-indigo-700 dark:hover:bg-blue-700 dark:bg-blue-600 ml-2 p-3 rounded-lg w-36 font-medium text-center text-indigo-900 text-sm focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800">
+           <Link  to={`/news/${id}`} className="relative align-bottom md:items-center hover:bg-indigo-700 dark:hover:bg-blue-700 dark:bg-blue-600 ml-2 p-3 rounded-lg w-36 font-medium text-center text-indigo-900 text-sm hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800">
              ادامه مطلب
              <svg className="left-5 absolute flex -mt-3 w-3 h-2 transform rotate-180"  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
              </svg>
-           </a>
+           </Link>
            </div>
          </div>
       </div> 

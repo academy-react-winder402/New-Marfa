@@ -13,6 +13,7 @@ import UserAccount from "../component/ProfileComponent/UserAccount";
 import { Courses } from "../screen/Cources/Courses";
 import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
 import { CourcesDetailPage } from "../screen/CourcesDetail/CourcesDetailPage";
+import NewsDitailsPage from "../screen/NewsPage/NewsDetailsPage";
 const routes = createBrowserRouter([
 
     {
@@ -34,7 +35,11 @@ const routes = createBrowserRouter([
         {
           path:"/news",
           element:<NewsPage />
-        }
+        },
+        {
+          path:"/news/:id",
+          element:<NewsDitailsPage />
+        },
       ]
     },
     {
