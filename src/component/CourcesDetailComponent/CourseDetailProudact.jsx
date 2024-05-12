@@ -1,8 +1,8 @@
 import React from 'react'
 import AllButton from '../../common/button/AllButton'
-import student from '../../assets/image/SVG/student.svg'
-import statos  from '../../assets/image/SVG/status.svg'
-import datacours from '../../assets/image/SVG/datacours.svg'
+import student from '../../assets/image/svg/student.svg'
+import statos  from '../../assets/image/svg/status.svg'
+import datacours from '../../assets/image/svg/datacours.svg'
 import TeacherIntroducing from './TeacherIntroducing'
 
 
