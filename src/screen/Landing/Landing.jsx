@@ -8,7 +8,7 @@ import { Toplanding } from "../../component/LandingComponent/TopLanding/Toplandi
 
 const Landing = () => {
     return ( 
-        <div  className="z-0 bg-bluec w-full h-auto">
+        <div  className="z-0 bg-bluec shadow-2xl shadow-bg-bluec w-full h-auto">
             
             {/* section one Top Landing*/}
             <Toplanding/>
