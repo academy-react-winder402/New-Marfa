@@ -11,7 +11,7 @@ const ProfessorCard = () => {
   return (
   
    <div className='flex md:flex-row flex-col justify-center items-center mx-auto mt-20 py-10 md:w-[80%] group'>
-     <div className='relative flex justify-start items-center bg-violet-500 shadow-lg mx-auto rounded-lg w-96 md:w-[90%] h-56 md:h-64'>
+     <div className='relative flex justify-start items-center bg-gradient-to-l from-[#6B3FEA] to-[#7070FF] shadow-lg mx-auto rounded-lg w-96 md:w-[90%] h-56 md:h-64'>
      
            <div className='-top-20 left-32 absolute mx-auto w-[40%] ]'>
              <img src={professorpic} alt=""

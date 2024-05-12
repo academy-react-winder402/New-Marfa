@@ -31,7 +31,7 @@ const CategoryCard = () => {
 ]
   return (
     <>
-    <div className='relative my-10 w-full'>
+    <div className='relative mt-80 w-full'>
       
       <div className="flex flex-col items-center mb-3 text-lg text-start">
               <span className="block w-36 text-2xl text-indigo-900"> دسته بندی  </span>
