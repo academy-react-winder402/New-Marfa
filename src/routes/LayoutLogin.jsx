@@ -10,7 +10,7 @@ const LayoutLogin = () => {
         <>
            <div className="w-full bg-[#d7d5ff]">
                 <div className="shadow-2xl shadow-bluec mx-auto m-w-[1920px]">
-                   <div className="md:h-svh  border-4 md:max-h-[840px]   mx-auto shadow-2xl shadow-[#d7d5ff] bg-bluec
+                   <div className="md:h-svh  border-4 md:max-h-[840px] mx-auto shadow-2xl shadow-[#d7d5ff] bg-bluec
                     relative ">
                     
                      {/* CILDERN */}
