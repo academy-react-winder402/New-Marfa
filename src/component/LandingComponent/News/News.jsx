@@ -2,6 +2,7 @@ import CardNews from "./CardNews";
 import DataNews from "../../NewsDetailsComponent/DataNews.json";
 import TitrComponent from "../../../common/TitrComponent/TitrComponent";
 import AllButton from "../../../common/button/AllButton";
+import { Link } from "react-router-dom";
 
 
 
@@ -28,7 +29,7 @@ const News = () => {
          
         </div>
        
-        <AllButton title="نمایش بیشتر " />
+        <Link to="/news"><AllButton title="نمایش بیشتر " /></Link>
       </div>
 
   );

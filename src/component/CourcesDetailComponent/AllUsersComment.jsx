@@ -1,7 +1,7 @@
 import React from 'react'
 import SiteUserComponent from './SiteUserComponent'
 import RerplayCommentUser from './RerplayCommentUser'
-import comment from '../../assets/image/SVG/comment.svg'
+import comment from '../../assets/image/svg/comment.svg'
 // comment all user
 
 const AllUsersComment = () => {

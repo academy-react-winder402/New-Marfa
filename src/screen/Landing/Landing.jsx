@@ -5,6 +5,7 @@ import Professors from "../../component/LandingComponent/Professors/Professors";
 import { Service } from "../../component/LandingComponent/Services/Service";
 import { Toplanding } from "../../component/LandingComponent/TopLanding/Toplanding";
 
+
 const Landing = () => {
     return ( 
         <div  className="z-0 bg-bluec w-full h-auto">
@@ -17,6 +18,7 @@ const Landing = () => {
 
             {/* section Three Cource Cart in landing*/}
             <Card/>
+            
 
             {/* section four Category in landing*/}
             <CategoryCard/>
