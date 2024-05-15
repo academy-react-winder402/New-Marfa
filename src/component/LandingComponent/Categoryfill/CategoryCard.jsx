@@ -4,8 +4,8 @@ import Group from "../../../assets/image/Group 89.png"
 import game from "../../../assets/image/Group.png"
 import data from "../../../assets/image/data.png"
 import vector from "../../../assets/image/Vector.png"
-import Minicategorycart from './Minicategorycart'
 import TitrComponent from '../../../common/TitrComponent/TitrComponent'
+import Minicategorycart from './Minicategorycart'
 const CategoryCard = () => {
   const category = [
       {
@@ -41,7 +41,7 @@ const CategoryCard = () => {
         <TitrComponent title="  دسته بندی ها  "/>
 
      
-      <div className='flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-5 md:gap-16 mt-10 p-5 w-[100%]'>
+      <div className='flex flex-row flex-wrap md:flex-nowrap justify-center items-center gap-5 md:gap-16 mt-8 p-5 w-[100%]'>
           {category.map((category , index) => {
                   return (
                     
