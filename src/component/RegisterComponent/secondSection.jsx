@@ -3,65 +3,21 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 // import { Stepper, Button, Group } from '@mantine/core';
 import './StyleStepper.css'
-import axios from "axios";
-import http from "../../core/services/interceptore"
 
-
-const FirstSection = ({description , setCount}) => {
+const SecondSection = ({setCount , description}) => {
 
     const handleSubmit =async (values) =>{
         // console.log(values)
         // const res=await http.post('/Sign/SendVerifyMessage',values)
         // console.log(res.success);
-        setCount(2)
+        setCount(3)
     }
-
-//  steper function
-
-    // const steper = () => {
-    //     const [active, setActive] = useState(1);
-    //     const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
-    //     const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-
-    //     return (
-    //         <>
-    //          <Group justify="center" mt="xl" className=" w-[80%] md:w-[90%] text-center text-[16px] 
-    //          md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
-    //             <Button onClick={nextStep} className="text-[#2416E9] bg-[#E7E2FF] py-2 px-4 rounded-md ml-28">Next step</Button>
-    //             <Button variant="default" onClick={prevStep} className="text-[#2416E9] bg-[#E7E2FF] py-2 px-4 rounded-md">Back</Button>
-                
-    //         </Group>
-    //         <Stepper active={active} onStepClick={setActive} className="flex flex-col w-[80%] md:w-[90%] 
-    //         text-center text-[16px] md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
-    //             <Stepper.Step label="First step" description="Create an account" className="border-4 w-[41px] h-[41px] rounded-full border-[#A193FF]">
-    //             Step 1 content: Create an account
-    //             </Stepper.Step>
-    //             <Stepper.Step label="Second step" description="Verify email">
-    //             Step 2 content: Verify email
-    //             </Stepper.Step>
-    //             <Stepper.Step label="Final step" description="Get full access">
-    //             Step 3 content: Get full access
-    //             </Stepper.Step>
-    //             <Stepper.Completed>
-    //             Completed, click back button to get to previous step
-    //             </Stepper.Completed>
-    //         </Stepper>
-
-           
-    //         </>
-    //     );
-    // }
-
-
-
-
 
 
     return ( 
-        
         <div className="w-full">
-            <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> {description}</div>
-            <Formik initialValues={{phoneNumber:''}} onSubmit={handleSubmit}>
+            <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> شماره و کد را وترد کنید</div>
+            <Formik initialValues={{phoneNumber:'' ,verifyCode:''}} onSubmit={handleSubmit}>
                 <Form className="">
                     <div className="w-full mt-3 flex flex-col">
                         <div className="w-[80%] flex flex-col" >
@@ -69,6 +25,13 @@ const FirstSection = ({description , setCount}) => {
                             
                             <Field id="email" className="w-full h-10 rounded-lg pr-3 my-4 border-2 border-[#a193ff] mr-6" type='text' name='phoneNumber' placeholder='   شماره موبایل خود را وارد کنید '/>
                         </div>
+
+                        <div className="w-[80%] flex flex-col" >
+                            {/* <label for="email" className=" text-[16px] mr-6 text-nowrap my-1 "> شماره موبایل یا ایمیل </label> */}
+                            
+                            <Field id="verifyCode" className="w-full h-10 rounded-lg pr-3 my-4 border-2 border-[#a193ff] mr-6" type='text' name='verifyCode' placeholder='   کد  خود را وارد کنید '/>
+                        </div>
+                        
                     </div>
                     <div className="w-[80%] mr-6 mt-4">
                     <button className="flex justify-center mb-5 text-sm md:text-lg font-bold mx-auto text-nowrap 
@@ -80,7 +43,7 @@ const FirstSection = ({description , setCount}) => {
             <div className="flex flex-row justify-between w-[80%] md:w-[90%] text-center text-[16px] md:text-[18px] mt-8 mr-7 pb-8 text-[#A193FF] text-nowrap  ">
                 
 
-                {/* <div className="text-[#A193FF] bg-[#E7E2FF] py-2 px-4 rounded-md">مرحله قبل</div> */}
+                <div className="text-[#A193FF] bg-[#E7E2FF] py-2 px-4 rounded-md" onClick={() => setCount(1)}>مرحله قبل</div>
             </div>
             <div className="flex w-[80%] md:w-[90%] pb-1 text-[#3F40EA] mx-auto justify-around items-center text-center 2xl:max-w-2xl">
                             <div className=" border-4 w-[41px] h-[41px] rounded-full border-[#A193FF] flex items-center justify-center">3</div>
@@ -107,4 +70,4 @@ const FirstSection = ({description , setCount}) => {
      );
 }
  
-export default FirstSection;
+export default SecondSection;
