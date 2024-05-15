@@ -5,7 +5,11 @@ import { useState } from "react";
 import '../../App.css'
 import RegisterIcon from "./RegisterIcon";
 import FirstSection from "./FirstSection";
+import SecondSection from "./secondSection";
+import ThirdSection from "./thirdSection";
 const RegisterForm = ({title , description}) => {
+
+    const [Count, setCount] = useState(1);
   
     return ( 
         <>
@@ -14,8 +18,9 @@ const RegisterForm = ({title , description}) => {
               <RegisterIcon />
               </div>
               <div className="w-full text-center text-[#6359f0] text-nowrap text-3xl">{title}</div>
-              <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> {description}</div>
-              <FirstSection />
+                {Count === 1 && <FirstSection setCount={setCount} description={description}/>}
+                {Count === 2 && <SecondSection setCount={setCount}  description={description}/>}
+                {Count === 3 && <ThirdSection setCount={setCount}  description={description}/>}
           </div>
   </>
      );

@@ -13,6 +13,7 @@
     "@mantine/core": "^7.9.1",
     "@mantine/hooks": "^7.9.1",
     "@tabler/icons-react": "^3.3.0",
+    "axios": "^1.6.8",
     "flowbite-react": "^0.9.0",
     "formik": "^2.4.6",
     "icon.react": "^0.2.3",
