@@ -1,8 +1,8 @@
 import React from 'react'
 import Topheaderseconde from '../CourseComponent/Topheaderseconde'
-import ItemFilterNews from '../NewsDetailsComponent/ItemFilterNews'
 import CardNews from '../LandingComponent/News/CardNews'
 import DataNews from '../NewsDetailsComponent/DataNews.json'
+import ItemFilterNews from '../NewsDetailsComponent/SortFilterItem/ItemFilterNews'
 
 
 const NewsPageComponent = () => {
@@ -11,7 +11,7 @@ const NewsPageComponent = () => {
 
     <div  className= "w-full bg-bluec">
      
-       <div className="bg-[#D7D5FF] shadow-2xl shadow-bg-bluec mx-auto max-w-[1920px]">
+       <div className="bg-[#D7D5FF] dark:bg-violet-950 shadow-2xl dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
        {/* <div className='absolute'>
       <svg className='top-0 left-0 absolute w-full' width="full" height="1242" viewBox="0 0 1440 1242" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0H1440V754.717L0 1242V0Z" fill="#B0B0FC"/>
