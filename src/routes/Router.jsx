@@ -10,10 +10,10 @@ import LandingProfile from "../screen/Profile/LandingProfile";
 import LayoutLogin from "./LayoutLogin";
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
-import { Courses } from "../screen/Cources/Courses";
 import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
-import { CourcesDetailPage } from "../screen/CourcesDetail/CourcesDetailPage";
 import NewsDitailsPage from "../screen/NewsPage/NewsDetailsPage";
+import Courses from "../screen/Cources/Courses";
+import { CourcesDetailPageComponent } from "../component/CourseComponent/CouecesMainPage/CourcesDetailPageComponent";
 const routes = createBrowserRouter([
 
     {
@@ -30,7 +30,7 @@ const routes = createBrowserRouter([
         }, 
         {
           path:"/courses/:id",
-          element:<CourcesDetailPage/>
+          element:<CourcesDetailPageComponent/>
         },   
         {
           path:"/news",

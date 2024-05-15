@@ -1,3 +1,4 @@
+import { Button } from 'flowbite-react';
 import React from 'react'
 
 import { BsGrid3X3GapFill } from "react-icons/bs";
@@ -32,15 +33,28 @@ const Titelmenulist = () => {
             
           </div>
           </form>
+        
         </div>
-        <div className='float-left w-52 lg:w-96'>
-            <button type="button" className="rtl:text-right flex justify-between items-center gap-3 border-violet-100 dark:border-gray-700 bg-gray-50 px-5 py-5 border-b rounded-2xl w-full md:w-full h-14 font-medium text-gray-500 text-nowrap dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+        {/* start acardeon1 */}
+        <div id="accordion-open" data-accordion="open">
+          <div className='float-left w-52 lg:w-96'  id="accordion-open-heading-1">
+            <button type="button" className="rtl:text-right flex justify-between items-center gap-3 border-violet-100 dark:border-gray-700 bg-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 px-5 py-5 p-5 border border-b rounded-2xl rounded-t-xl w-full md:w-full h-14 font-medium text-gray-500 text-nowrap dark:text-gray-400 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
               <span>دسته بندی ها</span>
               <svg data-accordion-icon className="w-4 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
               </svg>
             </button>
+          </div>
+          <div id="accordion-open-body-1" className="hidden" aria-labelledby="accordion-open-heading-1">
+            <div className="border-gray-200 dark:border-gray-700 dark:bg-gray-900 p-5 border border-b-0">
+              <p className="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+              
+            </div>
+          </div>
         </div>
+
+        
+       {/* end acardion 1 */}
         <div className='w-52'>
             <button type="button" className="rtl:text-right flex justify-between items-center gap-3 border-gray-200 border-violet-100 dark:border-gray-700 bg-gray-50 px-5 py-5 border-b rounded-2xl w-full h-14 font-medium text-gray-500 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
             <span> صعودی </span>
