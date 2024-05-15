@@ -1,23 +1,12 @@
 import React from 'react'
+import NewsDetailsPageComponent from '../../component/NewsComponent/NewsDetailsPageComponent'
 
-import NewsDetailTopComponent from '../../component/NewsDetailsComponent/NewsDetailTopComponent'
-import NewsDtailsExplanation from '../../component/NewsDetailsComponent/NewsDtailsExplanation'
-import NewsDetailShare from '../../component/NewsDetailsComponent/NewsDetailShare'
-import AllUsersComment from '../../component/CourcesDetailComponent/AllUsersComment'
-
-const NewsDitailsPage = () => {
+const NewsDetailsPage = () => {
   return (
-    <div className='bg-bluec w-full'>
-        <div className="shadow-2xl shadow-bg-bluec mx-auto max-w-[1920px]">
-            <NewsDetailTopComponent/>
-            <NewsDtailsExplanation/>
-            <NewsDetailShare/>
-            <AllUsersComment/>
-            
-        </div>
-      
+    <div>
+      <NewsDetailsPageComponent/>
     </div>
   )
 }
 
-export default NewsDitailsPage
+export default NewsDetailsPage
