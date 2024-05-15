@@ -9,7 +9,7 @@ import DesignSvgComponent from "../../SvgComponent/DesignSvgComponent";
 
 const News = () => {
   return (
-      <div className="relative mt-80 w-full">
+      <div className="relative mt-48 w-full">
         <DesignSvgComponent className=""/>
         <TitrComponent title=" اخبار و مقالات "/>
         
@@ -25,6 +25,7 @@ const News = () => {
               date={item.date}
               description={item.description}
               />
+
             </div>
             )
           })}
