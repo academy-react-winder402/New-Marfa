@@ -14,14 +14,14 @@ export const CardItem = ({
   priceCourse,
 }) => {
   return (
-    <Link to={`/courses/${id}`}>
+    <Link to={`/courses/${id}`} >
       <div className="mx-auto mb-5 w-full">
         <img className="rounded-lg object-fill" src={img} alt="" />
       </div>
-      <div className="mb-5 text-[1.25rem] text-start leading-[1.25rem]">
+      <div className="mb-5 text-[1.25rem] text-start dark:text-violet-200 leading-[1.25rem]">
         {title}
       </div>
-      <div className="flex flex-row justify-between h-auto text-[0.625rem] text-slate-500 leading-[0.625rem]">
+      <div className="flex flex-row justify-between h-auto text-[0.625rem] text-slate-500 dark:text-violet-200 leading-[0.625rem]">
         <span className="flex flex-row gap-2 bg-[] {sectionCours}">
           {sectionCours}
           <svg
@@ -75,7 +75,7 @@ export const CardItem = ({
         </span>
       </div>
       <div className="mt-8 divide-y-2 divide-slate-200 text-slate-500 text-xs">
-        <div className="flex flex-row-reverse justify-between mb-5">
+        <div className="flex flex-row-reverse justify-between mb-5 dark:text-violet-200">
           <div className="flex flex-row gap-2">
             {master}
             <svg
@@ -94,7 +94,7 @@ export const CardItem = ({
             </svg>
           </div>
           <div className="flex gap-2">
-            <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
+            <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 dark:bg-violet-500 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
               {like}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ export const CardItem = ({
                 />
               </svg>
             </span>
-            <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
+            <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 dark:bg-violet-500 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
               {disLike}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,14 +131,14 @@ export const CardItem = ({
           </div>
         </div>
         <div className="flex justify-between pt-5">
-          <div className="flex gap-4">
+          <div className="flex gap-4 dark:text-violet-200">
             <span className="text-[1rem] leading-[1rem]">تومان</span>
 
-            <span className="flex text-[1.25rem] text-violet-700 leading-[1.25rem]">
+            <span className="flex text-[1.25rem] text-violet-700 dark:text-violet-200 leading-[1.25rem]">
               {priceCourse}
             </span>
           </div>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 dark:text-violet-200">
             {countStudio}
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -24,11 +24,11 @@ export const Service = () => {
     ]
     return (
         <div>
-        <div className=" mt-24 flex dark:bg-gray-400 w-full flex-col items-center text-lg md:text-nowrap md:text-2xl">
-            <span className="block w-16 md:w-28 md:text-2xl text-[#121242]">خدمات ما</span>
-            <span className="block w-16 md:w-28 bg-gradient-to-l from-borderGradiant via-transparent to-transparent py-[2px]"></span>
+        <div className="flex flex-col items-center dark:bg-violet-950 mt-24 w-full text-lg md:text-nowrap md:text-2xl">
+            <span className="block w-16 md:w-28 text-[#121242] md:text-2xl dark:text-violet-200">خدمات ما</span>
+            <span className="block bg-gradient-to-l via-transparent to-transparent py-[2px] from-borderGradiant w-16 md:w-28"></span>
         </div>
-        <div className="mt-10 dark:bg-gray-400 flex h-auto w-full flex-col items-end gap-5 p-5 md:flex-row md:justify-center" >
+        <div className="flex md:flex-row flex-col md:justify-center items-end gap-5 dark:bg-violet-950 mt-10 p-5 w-full h-auto dark:text-violet-200" >
             {service.map((service , index) => {
                 return (
                     <ServiceCart title={service.title} image={service.img} description={service.description}/>              
