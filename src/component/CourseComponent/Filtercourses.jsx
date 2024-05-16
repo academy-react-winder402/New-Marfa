@@ -7,9 +7,9 @@ const Filtercourses = () => {
         <div className="leading-10">
 
             {/* filter  topic */}
-            <div className="md:flex-row flex-col md:space-x-10 rtl:space-x-reverse border-gray-100 md:border-0 dark:border-gray-700 bg-gray-100 md:bg-white md:dark:bg-gray-900 dark:bg-gray-800 mt-4 md:mt-0 pb-8 border rounded-lg w-full md:w-auto">
+            <div className="md:flex-row flex-col md:space-x-10 rtl:space-x-reverse border-gray-100 md:border-0 dark:border-violet-700 bg-violet-100 md:bg-white md:dark:bg-violet-900 dark:bg-violet-900 mt-4 md:mt-0 pb-8 border rounded-lg w-full md:w-auto">
   
-              <p className="m-3 p-2 border-b-[1px] border-blue-200 text-violec">
+              <p className="m-3 p-2 border-b-[1px] border-blue-200 text-violec dark:text-violet-200">
 
                 بر اساس موضوع
               </p>
@@ -27,7 +27,7 @@ const Filtercourses = () => {
             </div>
             {/* filter  price */}
 
-            <div className="bg-gray-100 my-6 p-5 rounded-lg">
+            <div className="bg-gray-100 dark:bg-violet-900 my-6 p-5 rounded-lg dark:text-violet-200">
               <p> بر اساس قیمت</p>
               <Checboxcourscomponent titel='خریدنی'/>
               <Checboxcourscomponent titel='رایگان'/>
@@ -36,7 +36,7 @@ const Filtercourses = () => {
             </div>
             {/* filter  time */}
 
-            <div className="bg-gray-100 mb-5 p-3 rounded-lg">
+            <div className="bg-gray-100 dark:bg-violet-900 mb-5 p-3 rounded-lg dark:text-violet-200">
               <p> بر اساس مدت زمان دوره</p>
 
               <Checboxcourscomponent titel='یک ماه'/>
