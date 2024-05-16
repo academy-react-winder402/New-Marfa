@@ -7,119 +7,119 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import './style.css'
-
+import Data from "../../CourseComponent/Data.json"
 // import required modules
 import { Pagination } from "swiper/modules";
 import html from '../../../assets/image/3.jpg'
 import { CardItem } from "../../../common/Cource/CardItem";
 
 export const SwipperComponent = () => {
-  const Data = [
-    {
-      id: 1,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 2,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 3,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 4,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 5,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 6,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 7,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-    {
-      id: 8,
-      img: html,
-      title: "html آموزش مقدماتی",
-      sectionCours: "199",
-      timeCours: "14 ساعت",
-      calender: "آذر 1402",
-      master: "بحرالعلوم",
-      like: "32",
-      disLike: "2",
-      priceCourse: "500000",
-      countStudio: "257",
-    },
-  ];
+  // const Data = [
+  //   {
+  //     id: 1,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 3,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 4,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 5,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 6,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 7,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  //   {
+  //     id: 8,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     sectionCours: "199",
+  //     timeCours: "14 ساعت",
+  //     calender: "آذر 1402",
+  //     master: "بحرالعلوم",
+  //     like: "32",
+  //     disLike: "2",
+  //     priceCourse: "500000",
+  //     countStudio: "257",
+  //   },
+  // ];
 
   return (
     <>
@@ -151,7 +151,7 @@ export const SwipperComponent = () => {
             return (
               <SwiperSlide key={index}>
                 <div className="max-w-[310px]">
-                  <div className="mb-10  bg-violet-50 mt-4 p-[1rem]  rounded-[0.9375rem]  ">
+                  <div className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-4 mb-10 p-[1rem] rounded-[0.9375rem]">
                     <CardItem
                       title={result.title}
                       img={result.img}
@@ -172,8 +172,8 @@ export const SwipperComponent = () => {
         </div>
       </Swiper>
 
-      {/* <div className="h-10 flex justify-center mb-5 mt-10">
-        <button className="rounded-[0.9375rem] p-2 text-xl text-white bg-blue-700">
+      {/* <div className="flex justify-center mt-10 mb-5 h-10">
+        <button className="bg-blue-700 p-2 rounded-[0.9375rem] text-white text-xl">
           مشاهده همه
         </button>
       </div> */}

@@ -8,7 +8,7 @@ import AllUsersComment from '../CourcesDetailComponent/AllUsersComment'
 const NewsDetailsPageComponent = () => {
   return (
     <div className='bg-bluec w-full'>
-        <div className="shadow-2xl shadow-bg-bluec mx-auto max-w-[1920px]">
+        <div className="dark:bg-violet-950 shadow-2xl shadow-bg-bluec mx-auto max-w-[1920px]">
             <NewsDetailTopComponent/>
             <NewsDtailsExplanation/>
             <NewsDetailShare/>

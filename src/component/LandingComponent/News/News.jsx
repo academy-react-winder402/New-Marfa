@@ -9,7 +9,7 @@ import DesignSvgComponent from "../../SvgComponent/DesignSvgComponent";
 
 const News = () => {
   return (
-      <div className="relative mt-48 w-full">
+      <div className="relative dark:bg-violet-950 mt-48 w-full">
         <DesignSvgComponent className=""/>
         <TitrComponent title=" اخبار و مقالات "/>
         

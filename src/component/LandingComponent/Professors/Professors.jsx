@@ -3,7 +3,7 @@ import DesignSvgComponent from '../../SvgComponent/DesignSvgComponent';
 import ProfessorCard from './ProfessorCard'
 const Professors = () => {
   return (
-    <div className="relative w-full">
+    <div className="relative dark:bg-violet-950 w-full">
     {/* <div className="flex flex-col items-center mt-80 mb-5 w-full text-end text-lg">
       <span className="block w-36 text-2xl text-indigo-900">اساتید برتر</span>
       <span className="block bg-gradient-to-l from-violet-900 to-transparent py-[2px] w-36"></span>
