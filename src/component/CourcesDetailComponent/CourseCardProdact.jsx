@@ -9,7 +9,7 @@ import { RatingStarComponent } from './RatingStarComponent';
 
    return (
    //  component right top course
-   <div className="flex flex-col justify-center items-center hover:bg-[#D7D5FF] dark:hover:bg-gray-700 dark:bg-gray-800 mx-auto mb-2 md:mb-10 rounded-md w-[520px] md:w-full">
+   <div className="flex flex-col justify-center items-center dark:border-2 dark:border-violet-700 hover:bg-[#D7D5FF] dark:hover:bg-violet-800 dark:bg-violet-900 mx-auto mb-2 md:mb-10 rounded-md w-[520px] md:w-full">
      <div className="mx-auto my-5 px-8 rounded-t-lg md:rounded-none md:rounded-s-lg w-full h-auto">
       <object data="" type=""></object><img className="mx-auto rounded-t-lg object-cover"  src={imagecours} alt="" />
      </div>

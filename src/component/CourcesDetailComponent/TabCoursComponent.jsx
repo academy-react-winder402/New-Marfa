@@ -8,7 +8,7 @@ const TabCoursComponent = ()=> {
     const iconStyle = { width: rem(12), height: rem(12) };
   
     return (
-      <Tabs className='w-full text-xl'   defaultValue="Detail">
+      <Tabs className='w-full text-xl'    defaultValue="Detail">
         <Tabs.List className='flex justify-center md:justify-start border-[#B8B8FF] mx-auto px-2 pt-5 border-b-2 w-[95%] text-[#8765FF] text-nowrap'>
           <Tabs.Tab className='bg-violet-400 focus:bg-[#8765FF] px-8 py-3 rounded-t-2xl hover:text-white focus:text-white' value="Detail" >
             توضیحات
