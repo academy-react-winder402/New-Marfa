@@ -14,6 +14,7 @@ import { Courses } from "../screen/Cources/Courses";
 import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
 import { CourcesDetailPage } from "../screen/CourcesDetail/CourcesDetailPage";
 import NewsDitailsPage from "../screen/NewsPage/NewsDetailsPage";
+import NewPannel from "../component/NewPannel/NewPannel";
 const routes = createBrowserRouter([
 
     {
@@ -81,7 +82,13 @@ const routes = createBrowserRouter([
           element:<Forget />
         }
       ]
-    }
+    },
+
+    {
+      path:"/newPannel",
+      element:<NewPannel />
+    },
+
   ]) 
 const Router = () => {
   return <RouterProvider router={routes} />;
