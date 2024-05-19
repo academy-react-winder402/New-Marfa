@@ -2,24 +2,24 @@ import React from 'react'
 //detail component for exampel 
 const NewsDtailsExplanation = () => {
   return (
-    <div className='bg-[#D7D5FF] w-full'>
-        <div className='border-[#3F40EA]/20 mx-auto p-14 border-b-2 w-[90%] text-[#03001C]/50 text-justify leading-10'>
-            <h1 className='mb-4 text-2xl'>چگونه آموزش ببینیم ؟</h1>
-            <h3 className='my-4 text-xl leading-10'>
+    <div className='bg-[#D7D5FF] dark:bg-violet-950 mx-auto w-full'>
+        <div className='border-[#3F40EA]/20 dark:border-violet-100 dark:bg-violet-950 mx-auto p-14 border-b-2 dark:border-b-4 w-[90%] text-[#03001C]/50 text-justify leading-10'>
+            <h1 className='mb-4 text-2xl dark:text-violet-200'>چگونه آموزش ببینیم ؟</h1>
+            <h3 className='my-4 text-xl dark:text-violet-200 leading-10'>
             قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش خاصی رو برای همه افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر گرفت. ولی خب هدف تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی از اون مطلب است ولی آیا برای تمامی افراد آموزش دیدن به این جا ختم میشود و همه به درک عمیقی از اون مطلب میرسند؟
              قطعا خیر. در ادامه به نحوه رسیدن به درک عمیق مطلب، مناسب برای تمامی افراد صحبت خواهیم کرد.
             </h3>
-            <h1 className='my-4 text-2xl'>مثال:</h1>
-            <h3 className='my-4 text-xl leading-10'>   
+            <h1 className='my-4 text-2xl dark:text-violet-200'>مثال:</h1>
+            <h3 className='my-4 text-xl dark:text-violet-200 leading-10'>   
                فرض کنید شما در حال خواندن یک کتاب هستید، در صفحه 30 یک چیزی را متوجه نشدین.
                در حالت عادی شما به یک صفحه قبل میروید و دوباره خواندن را شروع میکنید و فرض کنید در صفحه 40 هم دقیقا همین اتفاق میافتد و به یک صفحه قبل برمیگردید و دوباره خواندن را شروع میکنید و تا رسیدن به آخرین صفحه این کتاب این چرخه بارها و بارها اتفاق میافتد. نکته و البته جواب ما اینجاست که شما اگر در صفحه 30 نکته را متوجه نشدین، برای رسیدن به درک عمیق باید به جای صفحه قبلی، به صفحه 1 کتاب برگردین و کتاب را از اول دوباره بخوانید، دوباره اگر در صفحه 50 نکته ای را متوجه نشدین، دوباره کتاب را از اول شروع کنید. شما تا پایان این کتاب به درک عمیق اون مطلبی که قرار بود آموزش ببینید میرسید.
             </h3>
-            <h3 className='my-4 text-xl leading-10'>
+            <h3 className='my-4 text-xl dark:text-violet-200 leading-10'>
             این مثال برای آموزش از روی کتاب بود
              ولی برای ویدئو یا پادکست یا هر آنچه که میتوانید از آن مطلبی یاد بگیرید هم صدق میکند. شما در مثال بالا با هر بار از نو آموزش دیدن، هم مطلب را مرور میکنید و هم نکته هایی مهم که در طول آموزش متوجه نشده بودین را متوجه میشوید و این اصل قضیه است.
             </h3>
-            <h3 className='my-8 text-xl'>امیدوارم مقاله مفیدی برای شما واقع بوده باشه.</h3>
-            <h3 className='my-4 text-2xl' >با تشکر از: گروه مارفا تک تیک</h3>
+            <h3 className='my-8 text-xl dark:text-violet-200'>امیدوارم مقاله مفیدی برای شما واقع بوده باشه.</h3>
+            <h3 className='my-4 text-2xl dark:text-violet-200' >با تشکر از: گروه مارفا تک تیک</h3>
         </div>
       
     </div>
