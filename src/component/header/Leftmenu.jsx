@@ -12,7 +12,7 @@ export const Leftmenu = () => {
     const moonSvgLitgh = location.pathname=='/' ? `stroke-[#e3d4ff]` : `stroke-[#3F40EA]`;
 
     const handleDark = ()=>{
-      document.documentElement.classList.toggle('dark')
+     document.documentElement.classList.toggle('dark')
     }
 
     
@@ -49,7 +49,7 @@ export const Leftmenu = () => {
             </li> */}
 
             <li className="p-4">
-              <Link to="/auth/login"  className="text-300 flex flex-row-reverse text-nowrap gap-2 items-center rounded-lg bg-gradient-to-r from-[#732aff] to-[#4136c9] px-6 py-3 text-center text-[12px] text-white">ورود به سایت 
+              <Link to="/auth/login"  className="flex flex-row-reverse items-center gap-2 bg-gradient-to-r from-[#732aff] to-[#4136c9] px-6 py-3 rounded-lg text-[12px] text-300 text-center text-nowrap text-white">ورود به سایت 
                 <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.21857 1.33301H14.3768V15.4997C14.3768 16.6174 13.5568 17.5235 12.5452 17.5235H5.21857" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M7.96613 12.464L10.7136 9.42831M10.7136 9.42831L7.96613 6.39258M10.7136 9.42831H1.55536" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

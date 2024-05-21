@@ -3,7 +3,7 @@ import coverLanding from '../../../assets/image/Rectangle 70.png'
 import studdent from '../../../assets/image/student.png'
 import teacher from '../../../assets/image/teacher.png'
 import learn from '../../../assets/image/learn.png'
-import '../../../App.css'
+import '../../../App/App.css'
 
 export const Toplanding = () => {
     return(
@@ -21,7 +21,7 @@ export const Toplanding = () => {
             
 
             <div className="absolute mt-60 md:mt-[22rem] w-full">
-            <input type="text" id="search" className="md:top-80 text-right bg-[#F0E8FF] ring-opacity-30 pr-6 rounded-md w-full h-[3rem] ring-[#E3D4FF] dark:placeholder-violet-200 dark:bg-violet-950 ring-8" placeholder="چه چیزی می خوای یاد بگیری..." />
+            <input type="text" id="search" className="md:top-80 text-right bg-[#F0E8FF] dark:bg-violet-950 ring-opacity-30 pr-6 rounded-md w-full h-[3rem] ring-[#E3D4FF] ring-8 dark:placeholder-violet-200" placeholder="چه چیزی می خوای یاد بگیری..." />
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="top-[0.8rem] left-3 absolute w-6 h-6 text-[#121242] dark:text-violet-200 text-opacity-40">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
