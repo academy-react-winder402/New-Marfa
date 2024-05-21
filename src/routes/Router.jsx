@@ -1,19 +1,22 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import LayOut from "./Layout";
+
 import Landing from "../screen/Landing/Landing";
 import NewsPage from "../screen/NewsPage/NewsPage";
 import { Login } from "../screen/Loginpage/Login";
 import Register from "../screen/Register/Register";
 import Forget from "../screen/Forget/Forget";
-import LayoutProfile from "./LayoutProfile";
+
 import LandingProfile from "../screen/Profile/LandingProfile";
-import LayoutLogin from "./LayoutLogin";
+;
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
 import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
 import NewsDitailsPage from "../screen/NewsPage/NewsDetailsPage";
 import Courses from "../screen/Cources/Courses";
 import { CourcesDetailPageComponent } from "../component/CourseComponent/CouecesMainPage/CourcesDetailPageComponent";
+import LayOut from "../LayOut/Layout";
+import LayoutProfile from '../LayOut/LayoutProfile'
+import LayoutLogin from '../LayOut/LayoutLogin'
 const routes = createBrowserRouter([
 
     {

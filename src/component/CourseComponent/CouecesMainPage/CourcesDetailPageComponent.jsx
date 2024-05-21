@@ -14,7 +14,6 @@ export const CourcesDetailPageComponent = () => {
 
   const x = document.documentElement.classList
 
-  console.log(x);
 
   //  const getCourseDetail =async() => {
   //   const res = await axios.get(`https://classapi.sepehracademy.ir/api/Home/GetCourseDetails?CourseId=${params.id}`)

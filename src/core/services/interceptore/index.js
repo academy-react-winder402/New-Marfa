@@ -1,12 +1,6 @@
 import axios from "axios";
 import { json } from "react-router-dom";
 
-
-
-
-
-
-
 // const baseURL = 'https://classapi.sepehracademy.ir/api'
 const baseURL = import.meta.env.VITE_BASE_URL
 
@@ -15,12 +9,9 @@ const instance = axios.create({
     baseURL: baseURL,
 });
 
-
 instance.interceptors.request.use(opt => {
 
     //const user = useSelector(state => state.user)
-
-
 
       opt.headers['MessageTest'] = "Hello World"; 
     //  opt.headers['Content-Type'] = "application/json";

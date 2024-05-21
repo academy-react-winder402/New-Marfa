@@ -6,6 +6,7 @@ import Router from '../routes/Router'
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+
 function App() {
   const client = new QueryClient()
 
