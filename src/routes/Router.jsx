@@ -42,6 +42,8 @@ const routes = createBrowserRouter([
         },
       ]
     },
+
+    
     {
       path: "/profile",
       element:<LayoutProfile />,

@@ -4,15 +4,20 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Router from './routes/Router'
 import { MantineProvider } from '@mantine/core'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const client = new QueryClient()
+
 
   return (
     <>
-    <MantineProvider>
-      <Router/>
-    </MantineProvider>
+      <QueryClientProvider client={client}>
+        <MantineProvider>
+          <Router/>
+        </MantineProvider>           
+      </QueryClientProvider>
+
     </>
   )
 }

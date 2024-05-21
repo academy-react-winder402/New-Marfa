@@ -14,6 +14,8 @@ export const Leftmenu = () => {
     const handleDark = ()=>{
       document.documentElement.classList.toggle('dark')
     }
+
+    
     return (
         <div className="flex justify-end ml-6">
           <ul className="flex flex-row items-center">
