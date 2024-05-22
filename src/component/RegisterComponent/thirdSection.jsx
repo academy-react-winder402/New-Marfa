@@ -17,11 +17,6 @@ const ThirdSection = ({setCount}) => {
             <Formik initialValues={{phoneNumber:'' ,password:'', gmail:''}} onSubmit={handleSubmit}>
                 <Form className="">
                     <div className="w-full mt-3 flex flex-col">
-                        <div className="w-[80%] flex flex-col" >
-                            {/* <label for="email" className=" text-[16px] mr-6 text-nowrap my-1 "> شماره موبایل یا ایمیل </label> */}
-                            
-                            <Field id="phoneNumber" className="w-full h-10 rounded-lg pr-3 my-4 border-2 border-[#a193ff] mr-6" type='text' name='phoneNumber' placeholder='   شماره موبایل خود را وارد کنید '/>
-                        </div>
 
                         <div className="w-[80%] flex flex-col" >
                             {/* <label for="email" className=" text-[16px] mr-6 text-nowrap my-1 "> شماره موبایل یا ایمیل </label> */}

@@ -14,7 +14,7 @@ export const CoursesComponent = () => {
       <Topheaderseconde />
       <Titelmenulist/>
       <div className='flex flex-row flex-nowrap justify-center items-center mx-auto w-[90%] h-full'>
-      <div  className="lg:inline-block flex hidden md:item-between md:mr-10 md:w-[20%]">
+      <div  className="lg:inline-block flex  md:item-between md:mr-10 md:w-[20%]">
         <Filtercourses/>
         </div> 
       <div className="flex flex-row flex-wrap w-full md:w-[70%]">
