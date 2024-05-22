@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import AllUsersComment from "../../CourcesDetailComponent/AllUsersComment";
 import CoursProudactComponents from "../../CourcesDetailComponent/CoursProudactComponents";
 import CourseProudactMenuTabUL from "../../CourcesDetailComponent/CourseProudactMenuTabUL";
 import OrderCourseComponent from "../../CourcesDetailComponent/OrderCourseComponent";
+import handleTheme from "../../../core/services/handleTheme";
 
 
 
 
 export const CourcesDetailPageComponent = () => {
+
+  useEffect(() => {
+    handleTheme();
+  }, []);
     return (
         
           <div className="bg-bluec w-full">
