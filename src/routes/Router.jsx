@@ -7,7 +7,7 @@ import Register from "../screen/Register/Register";
 import Forget from "../screen/Forget/Forget";
 
 import LandingProfile from "../screen/Profile/LandingProfile";
-;
+
 import ChangePass from "../component/ProfileComponent/ChangPass";
 import UserAccount from "../component/ProfileComponent/UserAccount";
 import { TableSelectedCourse } from "../component/ProfileComponent/TableSelectedCourse";
