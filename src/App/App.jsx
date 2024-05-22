@@ -5,19 +5,33 @@ import "./App.css";
 import Router from "../routes/Router";
 import { MantineProvider } from "@mantine/core";
 import handleTheme from "../core/services/handleTheme";
+import './App.css';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 import '@mantine/core/styles.css';
+
+
 function App() {
+  const client = new QueryClient()
+
 
   useEffect(() => {
     handleTheme();
   }, []);
   return (
     <>
-      <MantineProvider>
-        <Router />
 
-      </MantineProvider>
+    <Provider store={store}>
+        <QueryClientProvider client={client}>
+          <MantineProvider>
+            <Router />
+          </MantineProvider>           
+        </QueryClientProvider>
+    </Provider>
+
+
     </>
   );
 }

@@ -16,15 +16,10 @@ const SecondSection = ({setCount , description}) => {
 
     return ( 
         <div className="w-full">
-            <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> شماره و کد را وترد کنید</div>
+            <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap "> شماره و کد را وارد کنید</div>
             <Formik initialValues={{phoneNumber:'' ,verifyCode:''}} onSubmit={handleSubmit}>
                 <Form className="">
                     <div className="w-full mt-3 flex flex-col">
-                        <div className="w-[80%] flex flex-col" >
-                            {/* <label for="email" className=" text-[16px] mr-6 text-nowrap my-1 "> شماره موبایل یا ایمیل </label> */}
-                            
-                            <Field id="email" className="w-full h-10 rounded-lg pr-3 my-4 border-2 border-[#a193ff] mr-6" type='text' name='phoneNumber' placeholder='   شماره موبایل خود را وارد کنید '/>
-                        </div>
 
                         <div className="w-[80%] flex flex-col" >
                             {/* <label for="email" className=" text-[16px] mr-6 text-nowrap my-1 "> شماره موبایل یا ایمیل </label> */}
