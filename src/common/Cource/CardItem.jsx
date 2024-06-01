@@ -14,7 +14,7 @@ export const CardItem = ({
   priceCourse,
 }) => {
   return (
-    <Link to={`/courses/${id}`} >
+    <Link  to={`/courses/${id}`} >
       <div className="mx-auto mb-5 w-full">
         <img className="rounded-lg object-fill" src={img} alt="" />
       </div>

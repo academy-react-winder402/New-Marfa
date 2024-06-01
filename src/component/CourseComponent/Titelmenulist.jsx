@@ -9,20 +9,46 @@ import { RxTextAlignCenter } from "react-icons/rx";
 import {DropdownComponent } from '../../common/dropdown/DropdownComponent';
 import { ButtonMenu} from '../../common/dropdown/ButtonMenu';
 import { Button } from '@mantine/core';
+import  {onsetFiltershowChange} from '../../redux/slices/setFiltershow'
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { onshowTypeChange } from '../../redux/slices/showType';
 
 
 
-const Titelmenulist = () => {
+const Titelmenulist = ({showType, setShowType}) => {
+
+
+  // const showType = useSelector(state=>state.showType.showType)
+  // const setChangeType1 = () => {
+  //  console.log(setFiltershow);
+  //    dispatch(onshowTypeChange(1))
+  // }
+  // const setChangeType2 = () => {
+  //   console.log(setFiltershow);
+  //     dispatch(onshowTypeChange(2))
+  //  }
+
+
+  const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
+  const dispatch= useDispatch()
+   const  handelsetFilter=()=>{
+    // console.log(setFiltershow);
+     dispatch(onsetFiltershowChange(!setFiltershow))
+  }
+  
+  const bgIconGrid = showType ? `bg-violet-300` : `transparent`
+  const bgIconTitle = !showType ? `bg-violet-300` : `transparent`
   return (
     
       <div className='flex flex-row md:flex-row flex-wrap lg:flex-nowrap justify-center items-center gap-8 m-12 mx-auto px-12 w-[85%]'>
-        <div  className='float-right flex flex-row justify-center items-center gap-2 md:gap-2 border-4 border-violet-100 hover:bg-gray-50 dark:hover:bg-violet-800 pr-1 rounded-2xl md:rounded-2xl w-48 md:w-52 h-14 text-lg text-nowrap focus:outline-none focus:ring-2 md:text-sm dark:text-violet-200'>
+        <div  onClick={handelsetFilter} className='float-right flex flex-row justify-center items-center gap-2 md:gap-2 border-4 border-violet-100 hover:bg-gray-50 dark:hover:bg-violet-800 pr-1 rounded-2xl md:rounded-2xl w-48 md:w-52 h-14 text-lg text-nowrap focus:outline-none focus:ring-2 md:text-sm dark:text-violet-200'>
         <span > فیلتر ها</span>
         <RxTextAlignCenter size={40}/> 
         </div>
         <div className='flex flex-row justify-center items-center md:gap-2 border-4 border-violet-100 rounded-2xl md:rounded-2xl w-48 md:w-64 h-14 dark:text-violet-200'>
-            <div className='flex justify-center items-center hover:bg-gray-50 dark:hover:bg-violet-800 rounded-xl w-[100%] h-[100%]'><CiCircleList size={40}/> </div> 
-            <div className='flex justify-center items-center hover:bg-gray-50 dark:hover:bg-violet-800 rounded-xl w-[100%] h-[100%]'><BsGrid3X3GapFill size={40}/></div>
+            <div  onClick={() => setShowType(false)} className={`flex justify-center items-center cursor-pointer dark:hover:bg-violet-800 rounded-xl w-[100%] h-[100%] ${bgIconTitle}`}><CiCircleList size={40}/> </div> 
+            <div onClick={() => setShowType(true)} className={`flex justify-center items-center cursor-pointer dark:hover:bg-violet-800 rounded-xl w-[100%] h-[100%] ${bgIconGrid}`}><BsGrid3X3GapFill size={40}/></div>
             
         </div>
         

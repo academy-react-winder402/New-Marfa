@@ -17,6 +17,7 @@ import { CourcesDetailPageComponent } from "../component/CourseComponent/Coueces
 import LayOut from "../LayOut/Layout";
 import LayoutProfile from '../LayOut/LayoutProfile'
 import LayoutLogin from '../LayOut/LayoutLogin'
+
 const routes = createBrowserRouter([
 
     {
