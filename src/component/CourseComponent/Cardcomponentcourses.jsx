@@ -1,24 +1,32 @@
-import Data from "../CourseComponent/Data.json"
 import { CardItem } from "../../common/Cource/CardItem";
-import { useQuery } from "react-query";
-import axios from "axios";
 import http from "../../core/services/interceptore"
+import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+// import { getList } from "../../function/getList";
 
-export const Cardcomponentcourses = () => {
+
+
+export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum}) => {
+
+
   const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
   const cardSize=setFiltershow?`w-[22rem]`:`w-[24rem]`
-    const getCourseList =async() => {
-      const res = await http.get("/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0")
-      //console.log(res.data.courseFilterDtos);
 
-      return res
-     }
+  const [searchQuery , setSearchQuery] =useState('')
 
-      const {data , isLoading ,isError , error} = useQuery("courseList1", getCourseList)
+  const handleSearch = (e)=>{
+    console.log(e.target.value);
+    setSearchQuery(`&Query=${e.target.value}`)
+    if(!e.target.value){
+      setSearchQuery('')
+    }
+  }
+
   return (
     <>
-      <div className="flex md:flex-row flex-col md:flex-wrap justify-center md:justify-center items-center gap-10 md:gap-3 mx-auto w-[95%]">
+     <div className="flex flex-col">
+     <div className="flex md:flex-row flex-col md:flex-wrap justify-center md:justify-center items-center gap-10 md:gap-3 mx-auto w-[95%]">
         {data?.courseFilterDtos.map((result, index) => {
           return (
             <div key={index} className={` mx-auto  ${cardSize}`}>
@@ -37,11 +45,20 @@ export const Cardcomponentcourses = () => {
                   countStudio={result.currentRegistrants}
                 />
               </div>
+              
             </div>
           );
         })}
       </div>
-      
+      {/* <button onClick={() => setPageNum(PageNum+1)}>nextpage </button> */}
+      <div className="flex flex-row justify-center items-center gap-2 font-[18px]">
+      {paginationArray.length>0 && paginationArray.map(item => {
+          return(
+            <div className="border-2 w-[30px] h-[30px] text-center cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
+          )
+        }) }
+      </div>
+     </div>
     </>
   );
 };

@@ -16,7 +16,7 @@ import { onshowTypeChange } from '../../redux/slices/showType';
 
 
 
-const Titelmenulist = ({showType, setShowType}) => {
+const Titelmenulist = ({showType, setShowType ,handleSearch }) => {
 
 
   // const showType = useSelector(state=>state.showType.showType)
@@ -61,7 +61,7 @@ const Titelmenulist = ({showType, setShowType}) => {
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                 </svg>
             </div>
-            <input type="search" id="search" className="block border-2 border-violet-100 dark:border-violet-200 bg-gray-50 dark:bg-violet-950 p-4 rounded-2xl w-full h-14 text-gray-900 text-sm ps-10 focus:ring-violet-500 dark:text-violet-200 dark:placeholder-violet-200" placeholder="جستجو" required />
+            <input onChange={handleSearch} type="search" id="search" className="block border-2 border-violet-100 dark:border-violet-200 bg-gray-50 dark:bg-violet-950 p-4 rounded-2xl w-full h-14 text-gray-900 text-sm ps-10 focus:ring-violet-500 dark:text-violet-200 dark:placeholder-violet-200" placeholder="جستجو" required />
             
           </div>
           </form>
