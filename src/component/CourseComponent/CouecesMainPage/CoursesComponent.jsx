@@ -30,9 +30,7 @@ export const CoursesComponent = () => {
     return res
    }
 
-   
    const {data , isLoading ,isError , error} = useQuery(["courseList1",PageNum,searchQuery],getCourseList,
-    
    {
      onSuccess:(data)=>{
        setpaginationSize(Math.ceil(data.totalCount/6))
@@ -41,12 +39,13 @@ export const CoursesComponent = () => {
 
 
    var pageArr=[]
+   
     useEffect(() => {
       for(let i=1 ; i<=paginationSize ;i++){
         pageArr.push(i)
-        setPaginationArray(pageArr)
       }
-    },[]);
+      setPaginationArray(pageArr)
+    },[paginationArray]);
 
   const ref = useRef();
   const handleSearch = (e)=>{
@@ -70,7 +69,7 @@ export const CoursesComponent = () => {
       
       <Topheaderseconde />
       <Titelmenulist  handleSearch={handleSearch} showType={showType} setShowType={setShowType}/>
-      <div className='flex flex-row flex-nowrap justify-center items-center mx-auto w-[90%] h-full'>
+      <div className='flex flex-row flex-nowrap justify-center mx-auto w-[90%] h-full'>
       <div  className={`lg:inline-block flex md:item-between md:mr-10 ${show}`}>
         <Filtercourses/>
       </div> 

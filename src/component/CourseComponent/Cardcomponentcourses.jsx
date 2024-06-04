@@ -1,6 +1,6 @@
 import { CardItem } from "../../common/Cource/CardItem";
-import http from "../../core/services/interceptore"
-import { useQuery } from "react-query";
+// import http from "../../core/services/interceptore"
+// import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 // import { getList } from "../../function/getList";
@@ -8,16 +8,13 @@ import { useEffect, useState } from "react";
 
 
 export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum}) => {
+ 
 
-
-
+  
   const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
   const cardSize=setFiltershow?`w-[22rem]`:`w-[24rem]`
-    const getCourseList =async() => {
-      const res = await http.get("/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0")
-      //console.log(res.data.courseFilterDtos);
-      return res
-     }
+  
+ 
 
   return (
     <>
@@ -47,10 +44,10 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
         })}
       </div>
       {/* <button onClick={() => setPageNum(PageNum+1)}>nextpage </button> */}
-      <div className="flex flex-row justify-center items-center gap-2 font-[18px]">
+      <div className="flex flex-row justify-center items-center gap-2 font-[24px] text-center">
       {paginationArray?.length>0 && paginationArray?.map(item => {
           return(
-            <div key={item.index} className="border-2 w-[30px] h-[30px] text-center cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
+            <div  className="border-2 hover:bg-violet-300 w-[40px] h-[40px] cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
           )
         }) }
       </div>

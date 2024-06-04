@@ -19,7 +19,7 @@ CardItem = ({
       <div className="relative group">
       <div >
       <div className="mx-auto mb-5 w-full">
-        <img className="rounded-lg w-[310px] h-[175px] object-fill" src={img} alt=""/>
+        <img className="mx-auto rounded-lg w-[310px] h-[175px] object-fill" src={img} alt=""/>
       </div>
       <div className="mb-5 h-9 text-[1.25rem] text-start dark:text-violet-200 leading-[1.25rem]">
         {title}
