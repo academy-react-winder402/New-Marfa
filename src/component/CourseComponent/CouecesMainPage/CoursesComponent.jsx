@@ -70,7 +70,8 @@ export const CoursesComponent = () => {
       <div className='flex flex-row flex-nowrap justify-center items-center mx-auto w-[90%] h-full'>
       <div  className={`lg:inline-block flex md:item-between md:mr-10 ${show}`}>
         <Filtercourses/>
-        </div> 
+      </div> 
+
       {showType ?  <div className={`flex flex-row flex-wrap w-full ${cardWidth} `}>
       <Cardcomponentcourses data={data && data} paginationArray={paginationArray} PageNum={PageNum} setPageNum={setPageNum}/> 
       </div> : <CardItem/>} 

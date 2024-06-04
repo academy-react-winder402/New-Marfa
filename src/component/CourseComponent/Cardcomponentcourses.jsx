@@ -22,6 +22,15 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
       setSearchQuery('')
     }
   }
+export const Cardcomponentcourses = () => {
+
+  const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
+  const cardSize=setFiltershow?`w-[22rem]`:`w-[24rem]`
+    const getCourseList =async() => {
+      const res = await http.get("/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0")
+      //console.log(res.data.courseFilterDtos);
+      return res
+     }
 
   return (
     <>
