@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const CardItem = ({
+export const 
+CardItem = ({
   id,
   title,
   img,
@@ -14,11 +15,13 @@ export const CardItem = ({
   priceCourse,
 }) => {
   return (
-    <Link to={`/courses/${id}`} >
+    <Link  to={`/courses/${id}`} >
+      <div className="relative group">
+      <div >
       <div className="mx-auto mb-5 w-full">
-        <img className="rounded-lg object-fill" src={img} alt="" />
+        <img className="rounded-lg w-[310px] h-[175px] object-fill" src={img} alt=""/>
       </div>
-      <div className="mb-5 text-[1.25rem] text-start dark:text-violet-200 leading-[1.25rem]">
+      <div className="mb-5 h-9 text-[1.25rem] text-start dark:text-violet-200 leading-[1.25rem]">
         {title}
       </div>
       <div className="flex flex-row justify-between h-auto text-[0.625rem] text-slate-500 dark:text-violet-200 leading-[0.625rem]">
@@ -156,6 +159,15 @@ export const CardItem = ({
             </svg>
           </div>
         </div>
+      </div>
+      </div>
+
+      <div className="group-hover:visible top-[-1px] left-[-16px] z-20 absolute bg-violet-300 dark:shadow-lg dark:shadow-violet-600 p-1 rounded-tr-lg rounded-br-lg w-12 invisible">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+</svg>
+
+      </div>
       </div>
     </Link>
   );
