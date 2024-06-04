@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Cardcomponentcourses } from "../Cardcomponentcourses";
 import Filtercourses from "../Filtercourses";
 import Titelmenulist from "../Titelmenulist";
@@ -21,6 +21,7 @@ export const CoursesComponent = () => {
   const [PageNum, setPageNum] = useState(1);
   const [paginationSize, setpaginationSize] = useState(null);
   const [searchQuery , setSearchQuery] =useState('')  
+  const [paginationArray , setPaginationArray] =useState('')  
 
 
   const getCourseList =async() => {
@@ -38,14 +39,16 @@ export const CoursesComponent = () => {
      }
    })
 
-   var paginationArray=[]
 
-   for(let i=1 ; i<=paginationSize ;i++){
-    paginationArray.push(i)
-  }
+   var pageArr=[]
+    useEffect(() => {
+      for(let i=1 ; i<=paginationSize ;i++){
+        pageArr.push(i)
+        setPaginationArray(pageArr)
+      }
+    },[]);
 
   const ref = useRef();
-
   const handleSearch = (e)=>{
     clearTimeout(ref.current)
     const timeOut = setTimeout(()=>{
@@ -73,7 +76,8 @@ export const CoursesComponent = () => {
       </div> 
 
       {showType ?  <div className={`flex flex-row flex-wrap w-full ${cardWidth} `}>
-      <Cardcomponentcourses data={data && data} paginationArray={paginationArray} PageNum={PageNum} setPageNum={setPageNum}/> 
+      <Cardcomponentcourses data={data && data} paginationArray={paginationArray && paginationArray} 
+      PageNum={PageNum} setPageNum={setPageNum}/> 
       </div> : <CardItem/>} 
 
      

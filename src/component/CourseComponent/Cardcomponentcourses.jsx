@@ -10,19 +10,6 @@ import { useEffect, useState } from "react";
 export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum}) => {
 
 
-  const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
-  const cardSize=setFiltershow?`w-[22rem]`:`w-[24rem]`
-
-  const [searchQuery , setSearchQuery] =useState('')
-
-  const handleSearch = (e)=>{
-    console.log(e.target.value);
-    setSearchQuery(`&Query=${e.target.value}`)
-    if(!e.target.value){
-      setSearchQuery('')
-    }
-  }
-export const Cardcomponentcourses = () => {
 
   const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
   const cardSize=setFiltershow?`w-[22rem]`:`w-[24rem]`
@@ -61,9 +48,9 @@ export const Cardcomponentcourses = () => {
       </div>
       {/* <button onClick={() => setPageNum(PageNum+1)}>nextpage </button> */}
       <div className="flex flex-row justify-center items-center gap-2 font-[18px]">
-      {paginationArray.length>0 && paginationArray.map(item => {
+      {paginationArray?.length>0 && paginationArray?.map(item => {
           return(
-            <div className="border-2 w-[30px] h-[30px] text-center cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
+            <div key={item.index} className="border-2 w-[30px] h-[30px] text-center cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
           )
         }) }
       </div>
