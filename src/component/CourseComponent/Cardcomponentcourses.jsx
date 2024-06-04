@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import { CardItem } from "../../common/Cource/CardItem";
 // import http from "../../core/services/interceptore"
 // import { useQuery } from "react-query";
+=======
+import { useQuery } from "react-query";
+>>>>>>> 2b3c71f46046d7d11c234a18cb918625a96c9ea3
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 // import { getList } from "../../function/getList";
@@ -43,6 +47,14 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
           );
         })}
       </div>
+
+      {/* <button onClick={() => setPageNum(PageNum+1)}>nextpage </button>
+        {paginationArray?.length>0 && paginationArray?.map(item => {
+          return(
+            <div className='' onClick={() => setPageNum(item)}>{item}</div>
+          )
+        }) }
+======= */}
       {/* <button onClick={() => setPageNum(PageNum+1)}>nextpage </button> */}
       <div className="flex flex-row justify-center items-center gap-2 font-[24px] text-center">
       {paginationArray?.length>0 && paginationArray?.map(item => {

@@ -3,9 +3,21 @@ import coverLanding from '../../../assets/image/Rectangle 70.png'
 import studdent from '../../../assets/image/student.png'
 import teacher from '../../../assets/image/teacher.png'
 import learn from '../../../assets/image/learn.png'
+import http from '../../../core/services/interceptore'
+import { useQuery } from "react-query";
 import '../../../App/App.css'
 
 export const Toplanding = () => {
+
+    const getCourseList =async() => {
+        const res = await http.get(`/Home/LandingReport`)
+        //console.log(res.data.courseFilterDtos);
+    
+        return res
+       }
+    
+       
+       const {data , isLoading ,isError , error} = useQuery('landingReport', getCourseList)
     return(
         <div className="relative flex justify-center items-baseline w-full h-96 md:h-[46.8rem]">
             <div className="shadow-lg shadow-slate-600/50 rounded-bl-[9.5rem] w-full h-full overflow-hidden">
@@ -27,20 +39,20 @@ export const Toplanding = () => {
             </svg>
 
             </div>
-            <div className='md:block md:top-[28rem] absolute md:flex flex-row md:flex-row justify-evenly hidden w-full'> 
+            <div className='md:top-[28rem] absolute md:flex flex-row md:flex-row justify-evenly items-end hidden w-full'> 
                 <div className='flex-col'>
                     <img src={teacher} className='w-[7.7rem] h-[7.7rem]' alt="" />
-                    <span className='block text-center'>53254</span>                    
+                    <span className='block text-center'>{data?.teacherCount}</span>                    
                     <span className='block text-center'> مدرس مجرب</span>
                 </div>
                 <div className='flex-col'>
                     <img src={learn} className='w-[8rem] h-[8rem]' alt="" />
-                    <span className='block text-center'>53254</span>                    
+                    <span className='block text-center'>{data?.courseCount}</span>                    
                     <span className='block text-center'>دقیقه آموزش </span>
                 </div>
                 <div className='flex-col'>
                     <img src={studdent} className='w-[7.7rem] h-[7.7rem]' alt="" />
-                    <span className='block text-center'>53254</span>                    
+                    <span className='block text-center'>{data?.studentCount}</span>                    
                     <span className='block text-center'>نفر دانشجو  </span>
                 </div>
             </div>

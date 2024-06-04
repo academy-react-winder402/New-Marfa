@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Landing from "../screen/Landing/Landing";
 import NewsPage from "../screen/NewsPage/NewsPage";
@@ -17,8 +17,19 @@ import { CourcesDetailPageComponent } from "../component/CourseComponent/Coueces
 import LayOut from "../LayOut/Layout";
 import LayoutProfile from '../LayOut/LayoutProfile'
 import LayoutLogin from '../LayOut/LayoutLogin'
+<<<<<<< HEAD
+import { getItem } from "../localStorage/localStorage";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+// import { getItem } from "../localStorage/localStorage";
+
+// private Rout
+
+const routePrivet = createBrowserRouter([
+=======
 
 const routes = createBrowserRouter([
+>>>>>>> 7911b6104fc1a49e577937a10b9261d45016229c
 
     {
       path: "/",
@@ -46,15 +57,15 @@ const routes = createBrowserRouter([
         },
       ]
     },
-
+    // getItem('token') ? <LayoutProfile /> : <Navigate to='/auth/login'/>
     
     {
       path: "/profile",
-      element:<LayoutProfile />,
+      element: <LayoutProfile />,
       children:[
         {
           path:"/profile",
-          element:<LandingProfile />
+          element:getItem('token') ? <LandingProfile /> : <Navigate to='/auth/login'/>
         },
         {
           path:"/profile/useracount",
@@ -89,8 +100,64 @@ const routes = createBrowserRouter([
       ]
     }
   ]) 
+
+// public Rout
+
+  const routePublic = createBrowserRouter([
+
+    {
+      path: "/",
+      element:<LayOut/>,
+      children:[
+        {
+          path:"/",
+          element:<Landing/>
+        },
+        {
+          path:"/courses",
+          element:<Courses />
+        }, 
+        {
+          path:"/courses/:id",
+          element:<CourcesDetailPageComponent/>
+        },   
+        {
+          path:"/news",
+          element:<NewsPage />
+        },
+        {
+          path:"/news/:id",
+          element:<NewsDitailsPage />
+        },
+      ]
+    },
+    // getItem('token') ? <LayoutProfile /> : <Navigate to='/auth/login'/>
+    
+    {
+      path: "/auth",
+      element:<LayoutLogin />,
+      children:[
+        {
+          path:"/auth/login",
+          element:<Login />
+        },
+        {
+          path:"/auth/register",
+          element:<Register />
+        },
+        {
+          path:"/auth/forget",
+          element:<Forget />
+        }
+      ]
+    }
+  ]) 
 const Router = () => {
-  return <RouterProvider router={routes} />;
+  // const [isLogin,setIslogin]=useState(false)
+  const isLogin = useSelector(state => state.isLogin.isLogin)
+  console.log(isLogin);
+  const token= getItem('token')
+  return <RouterProvider router={isLogin || token ?routePrivet:routePublic} />;
 };
 
 export default Router;

@@ -1,5 +1,9 @@
 import axios from "axios";
 import { json } from "react-router-dom";
+import { getItem } from "../../../localStorage/localStorage";
+
+
+
 
 // const baseURL = 'https://classapi.sepehracademy.ir/api'
 const baseURL = import.meta.env.VITE_BASE_URL
@@ -11,10 +15,9 @@ const instance = axios.create({
 
 instance.interceptors.request.use(opt => {
 
-    //const user = useSelector(state => state.user)
-
       opt.headers['MessageTest'] = "Hello World"; 
-    //  opt.headers['Content-Type'] = "application/json";
+      const token = getItem("token") ? getItem("token") : null;
+      if (token) opt.headers.Authorization = 'Bearer ' + token;
 
     return opt
 })
@@ -28,11 +31,11 @@ const onSuccess = (response) => {
 const onError = (err) => {
     // console.log(err);
 
-    // if(err.response.status === 401){
-    //     // clearStorage()
-    //     removeItem('token');
-    //     window.location.pathname = '/' // or '/login'
-    // }
+     if(err.response.status === 401){
+  
+       removeItem('token');
+       window.location.pathname = '/' // or '/login'
+     }
 
     // if(err.response.status >= 400 && err.response.status < 500){
     //     // alert("Client request error: " + err.response.status);

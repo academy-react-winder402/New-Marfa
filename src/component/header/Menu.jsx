@@ -1,5 +1,5 @@
 
-import {Link} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 import {AiOutlineClose , AiOutlineMenu} from "react-icons/ai"
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -12,16 +12,17 @@ export const Menu = () => {
   const textColor = location.pathname=='/' ? `text-[#E3d4ff]` : `text-[#3f40ea]`;
   const textColorHambergerMenu = location.pathname=='/' ? `text-violec` : `text-[#3f40ea]`;
   const displayMENU = location.pathname=='/' ? `hidden` : `block`;
+  const activeMenu = `border-b-4 border-borderGradiant  border-gradient-to-l via-transparent to-transparent py-[2px] from-borderGradiant`
 
 return (
 
   <div className="flex justify-center items-center px-4  h-24 text-nowrap ">
     
     <ul className={`sm:flex sm:flex-row sm:flex-grow sm:items-center sm:gap-10 hidden  ${textColor}`}>
-      <li className={` ${displayMENU}`} ><Link to="/" onClick={()=>setNav(false)}> صفحه اصلی</Link></li>
-      <li className="p-4"><Link to="/courses" onClick={()=>setNav(false)}>دوره ها</Link></li>
+      <li className={` ${displayMENU}`} ><NavLink to="/" className={({ isActive}) => isActive && `${activeMenu}`}> صفحه اصلی</NavLink></li>
+      <li className="p-4 "><NavLink to="/courses" className={({ isActive}) => isActive && `${activeMenu}`}>دوره ها</NavLink></li>
       {/* <li className="p-4"><Link to="/">اساتید</Link></li> */}
-      <li className=""><Link to="/news" onClick={()=>setNav(false)}>  اخبار و مقالات </Link></li>
+      <li className=""><NavLink to="/news" className={({ isActive}) => isActive && `${activeMenu}`} >  اخبار و مقالات </NavLink></li>
       {/* <li className="p-4"><Link to="/">ارتباط با ما</Link></li> */}
     </ul>
 

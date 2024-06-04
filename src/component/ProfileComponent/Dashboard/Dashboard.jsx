@@ -1,6 +1,8 @@
 import html from "../../../assets/image/3.jpg"
 import { DashboardButtomComponent } from "./DashboardButtomComponent";
 import { DashboardTopComponent } from "./DashboardTopComponent";
+import http from '../../../core/services/interceptore'
+import { useQuery } from "react-query";
 
 export const Dashboard = () => {
   const Data = [
@@ -19,6 +21,16 @@ export const Dashboard = () => {
       priceCourse: "500000",
     },
   ];
+
+
+  const getProfile = async() => {
+    const res= await http.get('/SharePanel/GetProfileInfo')
+    return res
+  }
+
+  const {data } = useQuery('myProfile' , getProfile)
+
+  data && console.log(data);
   return (
     <div className="bg-white 2xl:w-[72rem]">
       <DashboardTopComponent/>

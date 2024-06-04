@@ -4,55 +4,29 @@ import { useState } from 'react';
 // import { Stepper, Button, Group } from '@mantine/core';
 import './StyleStepper.css'
 // import axios from "axios"
-// import http from "../../core/services/interceptore"
+ import http from "../../core/services/interceptore"
+ import { useSelector } from "react-redux";
+ import { useDispatch } from "react-redux";
+ import {onphoneNumberChange} from '../../redux/slices/phoneNumber'
 
 
 const FirstSection = ({description , setCount}) => {
+    const dispatch = useDispatch()
 
     const handleSubmit =async (values) =>{
-        // console.log(values)
-        // const res=await http.post('/Sign/SendVerifyMessage',values)
-        // console.log(res.success);
-        setCount(2)
+
+        dispatch(onphoneNumberChange(values.phoneNumber))
+
+        const res=await http.post('/Sign/SendVerifyMessage',values)
+
+        console.log(res);
+
+        if(res.success===true){
+            setCount(2)
+        }
+
     }
-
-//  steper function
-
-    // const steper = () => {
-    //     const [active, setActive] = useState(1);
-    //     const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
-    //     const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
-
-    //     return (
-    //         <>
-    //          <Group justify="center" mt="xl" className="mt-8 mr-7 pb-8 w-[80%] md:w-[90%] text-[#A193FF] text-[16px] text-center text-nowrap md:text-[18px] //">
-    //             <Button onClick={nextStep} className="bg-[#E7E2FF] ml-28 px-4 py-2 rounded-md text-[#2416E9]">Next step</Button>
-    //             <Button variant="default" onClick={prevStep} className="bg-[#E7E2FF] px-4 py-2 rounded-md text-[#2416E9]">Back</Button>
-                
-    //         </Group>
-    //         <Stepper active={active} onStepClick={setActive} className="flex flex-col mt-8 mr-7 pb-8 w-[80%] md:w-[90%] text-[#A193FF] text-[16px] text-center text-nowrap md:text-[18px] //">
-    //             <Stepper.Step label="First step" description="Create an account" className="border-[#A193FF] border-4 rounded-full w-[41px] h-[41px]">
-    //             Step 1 content: Create an account
-    //             </Stepper.Step>
-    //             <Stepper.Step label="Second step" description="Verify email">
-    //             Step 2 content: Verify email
-    //             </Stepper.Step>
-    //             <Stepper.Step label="Final step" description="Get full access">
-    //             Step 3 content: Get full access
-    //             </Stepper.Step>
-    //             <Stepper.Completed>
-    //             Completed, click back button to get to previous step
-    //             </Stepper.Completed>
-    //         </Stepper>
-
-           
-    //         </>
-    //     );
-    // }
-
-
-    return ( 
-        
+    return (  
         <div className="w-full">
             <div className="text-right mt-4 mr-7 w-full text-[#A193FF] text-nowrap"> {description}</div>
             <Formik initialValues={{phoneNumber:''}} onSubmit={handleSubmit}>
