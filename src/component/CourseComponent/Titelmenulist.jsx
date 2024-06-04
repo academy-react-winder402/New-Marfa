@@ -6,7 +6,7 @@ import { CiCircleList } from "react-icons/ci";
 import { RxTextAlignCenter } from "react-icons/rx";
 
 
-const Titelmenulist = () => {
+const Titelmenulist = ({handleSearch}) => {
   return (
     
       <div className='flex flex-row md:flex-row flex-wrap lg:flex-nowrap justify-center items-center gap-8 m-12 mx-auto px-12 w-[85%]'>
@@ -29,7 +29,7 @@ const Titelmenulist = () => {
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                 </svg>
             </div>
-            <input type="search" id="search" className="block border-2 border-violet-100 dark:border-violet-200 bg-gray-50 dark:bg-violet-950 p-4 rounded-2xl w-full h-14 text-gray-900 text-sm dark:text-violet-200 ps-10 focus:ring-violet-500 dark:placeholder-violet-200" placeholder="جستجو" required />
+            <input onChange={handleSearch}  type="search" id="search" className="block border-2 border-violet-100 dark:border-violet-200 bg-gray-50 dark:bg-violet-950 p-4 rounded-2xl w-full h-14 text-gray-900 text-sm dark:text-violet-200 ps-10 focus:ring-violet-500 dark:placeholder-violet-200" placeholder="جستجو" required />
             
           </div>
           </form>

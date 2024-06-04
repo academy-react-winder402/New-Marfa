@@ -5,14 +5,21 @@ import CourseProudactMenuTabUL from "../../CourcesDetailComponent/CourseProudact
 import OrderCourseComponent from "../../CourcesDetailComponent/OrderCourseComponent";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { getList } from "../../../function/getList";
+import { useEffect } from "react";
+
 
 
 
 
 export const CourcesDetailPageComponent = () => {
-  const params  = useParams()
+    const params  = useParams()
+    
+    const {data , isLoading ,isError , error} = useQuery("courseList2",
+       () => getList(`/Home/GetCourseDetails?CourseId=${params.id}`))
 
-  const x = document.documentElement.classList
+  
+  
 
 
   //  const getCourseDetail =async() => {
@@ -27,7 +34,7 @@ export const CourcesDetailPageComponent = () => {
         
           <div className="bg-bluec w-full">
             <div className="bg-[#D7D5FF] dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
-             <CoursProudactComponents/>
+             <CoursProudactComponents data={data && data}/>
               <CourseProudactMenuTabUL/>
               {/* <UserCommentComponent/> */}
               <AllUsersComment/>

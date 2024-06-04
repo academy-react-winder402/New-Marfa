@@ -3,19 +3,13 @@ import { CardItem } from "../../common/Cource/CardItem";
 import { useQuery } from "react-query";
 import axios from "axios";
 import http from "../../core/services/interceptore"
+import { getList } from "../../function/getList";
+import { useEffect, useState } from "react";
 
-export const Cardcomponentcourses = () => {
-
-    const getCourseList =async() => {
-      const res = await http.get("/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0")
-      //console.log(res.data.courseFilterDtos);
-
-      return res
-     }
-
-      const {data , isLoading ,isError , error} = useQuery("courseList1", getCourseList)
+export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum}) => {
   return (
     <>
+      
       <div className="flex md:flex-row flex-col md:flex-wrap justify-center md:justify-center items-center gap-10 md:gap-3 mx-auto w-[95%]">
         {data?.courseFilterDtos.map((result, index) => {
           return (
@@ -39,7 +33,12 @@ export const Cardcomponentcourses = () => {
           );
         })}
       </div>
-      
+      <button onClick={() => setPageNum(PageNum+1)}>nextpage </button>
+        {paginationArray?.length>0 && paginationArray?.map(item => {
+          return(
+            <div className='' onClick={() => setPageNum(item)}>{item}</div>
+          )
+        }) }
     </>
   );
 };

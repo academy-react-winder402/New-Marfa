@@ -1,8 +1,5 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
-
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
@@ -10,7 +7,7 @@ import store from '../redux/store'
 import Router from '../routes/Router'
 
 function App() {
-  const client = new QueryClient()
+  const client = new QueryClient({defaultOptions: {queries: {refetchOnWindowFocus: true,  cacheTime:6000, }, mutations:{}}})
 
   return (
     <>
