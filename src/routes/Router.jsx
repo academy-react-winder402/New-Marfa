@@ -17,7 +17,6 @@ import { CourcesDetailPageComponent } from "../component/CourseComponent/Coueces
 import LayOut from "../LayOut/Layout";
 import LayoutProfile from '../LayOut/LayoutProfile'
 import LayoutLogin from '../LayOut/LayoutLogin'
-<<<<<<< HEAD
 import { getItem } from "../localStorage/localStorage";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -26,10 +25,6 @@ import { useSelector } from "react-redux";
 // private Rout
 
 const routePrivet = createBrowserRouter([
-=======
-
-const routes = createBrowserRouter([
->>>>>>> 7911b6104fc1a49e577937a10b9261d45016229c
 
     {
       path: "/",

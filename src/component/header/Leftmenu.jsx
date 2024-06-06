@@ -10,18 +10,12 @@ export const Leftmenu = () => {
   // const basketDarkLocation = useLocation();
   // const basketSvgDark = location.pathname !=='/' ? `visible` : `invisible`;
 
-<<<<<<< HEAD
     const bgMoonLocation = useLocation();
-    const moonSvgLitgh = location.pathname=='/' ? `stroke-[#e3d4ff]` : `stroke-[#3F40EA]`;
-    const sunSvgLitgh = location.pathname=='/' ? `stroke-[#e3d4ff]` : `stroke-[#3F40EA]`;
+    const moonSvgLitgh = location.pathname=='/' ? `stroke-[#e3d4ff]` : `stroke-[#3F40EA] dark:stroke-[#e3d4ff] `;
+    const sunSvgLitgh = location.pathname=='/' ? `stroke-[#e3d4ff]` : `stroke-[#3F40EA] dark:stroke-[#e3d4ff]`;
 
 
     const [sunMoonSvg , setSunMoonSvg] = useState(true)
-=======
-  const bgMoonLocation = useLocation();
-  const moonSvgLitgh =
-    location.pathname == "/" ? `stroke-[#e3d4ff]` : `stroke-[#3F40EA]`;
->>>>>>> 7911b6104fc1a49e577937a10b9261d45016229c
 
   const handleDark = () => {
     const themeLocal = localStorage.getItem("theme");
@@ -58,7 +52,7 @@ export const Leftmenu = () => {
     return (
         <div className="flex justify-end ml-6">
           <ul className="flex flex-row items-center">
-            <li onClick={handleDark} className="p-4 relative">
+            <li onClick={handleDark} className="relative p-4">
              {!sunMoonSvg && <svg width="30" height="30" viewBox="0 0 30 30" fill="none" onClick={()  => setSunMoonSvg(!sunMoonSvg)} xmlns="http://www.w3.org/2000/svg" className={`relative cursor-pointer ${moonSvgLitgh}`}>
                 <path d="M1 14.4762C1 22.4949 7.50041 28.9952 15.5191 28.9952C21.6287 28.9952 26.8568 25.2216 29 19.8781C27.3277 20.5501 25.4978 20.9289 23.5852 20.9289C15.5665 20.9289 9.06615 14.4286 9.06615 6.4099C9.06615 4.50623 9.43935 2.66587 10.1054 1C4.76808 3.14611 1 8.3711 1 14.4762Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -92,7 +86,6 @@ export const Leftmenu = () => {
               </Link>
             </li> */}
 
-<<<<<<< HEAD
             <li className="p-4">
               {!getItem('token') && 
                 <Link to="/auth/login"  className="flex flex-row-reverse items-center gap-2 bg-gradient-to-r from-[#732aff] to-[#4136c9] px-6 py-3 rounded-lg text-[12px] text-300 text-center text-nowrap text-white">ورود به سایت 
@@ -121,39 +114,3 @@ export const Leftmenu = () => {
 
 
 
-=======
-        <li className="p-4">
-          <Link
-            to="/auth/login"
-            className="flex flex-row-reverse items-center gap-2 bg-gradient-to-r from-[#732aff] to-[#4136c9] px-6 py-3 rounded-lg text-[12px] text-300 text-center text-nowrap text-white"
-          >
-            ورود به سایت
-            <svg
-              width="16"
-              height="19"
-              viewBox="0 0 16 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.21857 1.33301H14.3768V15.4997C14.3768 16.6174 13.5568 17.5235 12.5452 17.5235H5.21857"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7.96613 12.464L10.7136 9.42831M10.7136 9.42831L7.96613 6.39258M10.7136 9.42831H1.55536"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  );
-}
->>>>>>> 7911b6104fc1a49e577937a10b9261d45016229c

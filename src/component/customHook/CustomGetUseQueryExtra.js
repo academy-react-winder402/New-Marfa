@@ -1,8 +1,6 @@
-import axios from 'axios'
-import React, { useEffect } from 'react'
 import { useQuery } from 'react-query'
-import getList from '../function/getList'
-import {onSuccess , onError} from '../function/onSitu'
+import {getList} from '../../function/getList.js'
+import {onSuccess , onError} from '../../function/onSitu'
 
 
 

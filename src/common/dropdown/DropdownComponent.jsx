@@ -4,12 +4,13 @@ import { Dropdown } from "flowbite-react";
 export const DropdownComponent = () =>{
   return (
  
-      <Dropdown label="titel " className='mx-auto rounded-lg w-auto'  id="accordion-open-heading-1" dismissOnClick={false}>
-        <Dropdown.Item>Item1jbjhvghchgcfgcxgfx </Dropdown.Item>
-        <Dropdown.Item>item2</Dropdown.Item>
-        <Dropdown.Item>item3</Dropdown.Item>
-        <Dropdown.Item>item4</Dropdown.Item>
+      <Dropdown label="دسته بندی  " className='bg-slate-400 mx-auto rounded-lg w-72 text-gray-400'  id="accordion-open-heading-1" dismissOnClick={false}>
+        <Dropdown.Item> Next </Dropdown.Item>
+        <Dropdown.Item>React</Dropdown.Item>
+        <Dropdown.Item>Javascript</Dropdown.Item>
+        <Dropdown.Item>C+</Dropdown.Item>
       </Dropdown>
  
   );
 }
+

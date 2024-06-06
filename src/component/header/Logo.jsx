@@ -8,10 +8,16 @@ export const Logo = () => {
 
     
     const LogoDark = location.pathname !=='/' ? `visible` : `invisible`;
+    const LogoLightAnotherPage = location.pathname !=='/' && `dark:visible` ;
+    const LogoDarkAnotherPage = location.pathname !=='/' && `dark:invisible` ;
+
+    
+
+
     return (
-        <NavLink to="/" className="w-full relative">
-        <img className={`object-contain relative top-16 ${LogoLitgh}`} src={logo} alt="" />
-        <img className={`object-contain relative -top-16  ${LogoDark}`} src={logoDark} alt="" />
+        <NavLink to="/" className="relative w-full">
+        <img className={`object-contain relative top-16 ${LogoLitgh} ${LogoLightAnotherPage} `} src={logo} alt="" />
+        <img className={`object-contain relative -top-16   ${LogoDark} ${LogoDarkAnotherPage}`} src={logoDark} alt="" />
         </NavLink>
     );
   };

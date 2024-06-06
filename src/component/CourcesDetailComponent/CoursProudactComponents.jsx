@@ -8,15 +8,15 @@ const CoursProudactComponents = ({data}) => {
  
   return (
     
-    <div className="bg-[#D7D5FF] dark:bg-violet-950 w-full">
-        <div className='md:w[95%] flex md:flex-row flex-col justify-center items-center mx-auto w-[90%]'>
+    <div className="bg-[#D7D5FF] dark:bg-violet-950 pt-5 w-full">
+        <div className='md:w[95%] flex md:flex-row flex-col justify-center items-center dark:border-2 dark:border-violet-700 mx-auto mb-3 w-[90%]'>
               {/* component course detal right */}
-            <div className='w-full md:w-[50%] lg:w-[65%]'>
+            <div className='mt-12 md:pr-10 w-full md:w-[50%] lg:w-[65%]'>
                 <CourseCardProdact data={data && data} />
             </div> 
             {/* component course detal left */}
             <div className='w-full md:w-[50%] lg:w-[35%]'>
-            <CourseDetailProudact/>
+            <CourseDetailProudact data={data && data}/>
             </div>
         </div>  
     </div>

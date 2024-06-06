@@ -1,49 +1,68 @@
-<<<<<<< HEAD
 import { CardItem } from "../../common/Cource/CardItem";
-// import http from "../../core/services/interceptore"
-// import { useQuery } from "react-query";
-=======
-import { useQuery } from "react-query";
->>>>>>> 2b3c71f46046d7d11c234a18cb918625a96c9ea3
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-// import { getList } from "../../function/getList";
+import { CardItemFull } from "../../common/Cource/CardItemFull";
 
 
 
-export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum}) => {
+
+export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum , showType}) => {
  
 
   
   const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
-  const cardSize=setFiltershow?`w-[22rem]`:`w-[24rem]`
+  const cardSize=setFiltershow?`w-[21rem]`:`w-[23rem]`
+
   
  
 
   return (
     <>
-     <div className="flex flex-col">
-     <div className="flex md:flex-row flex-col md:flex-wrap justify-center md:justify-center items-center gap-10 md:gap-3 mx-auto w-[95%]">
+     <div className="flex flex-col w-full">
+     <div className="flex md:flex-row flex-col md:flex-wrap justify-center md:justify-center gap-3 items-center  mx-auto w-[95%]">
         {data?.courseFilterDtos.map((result, index) => {
           return (
-            <div key={index} className={` mx-auto  ${cardSize}`}>
-              <div className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-1 mb-10 p-[1rem] rounded-[0.9375rem]">
+           <>
+           {showType ?  <div key={index} className={` mx-auto  ${cardSize}`}>
+              <div className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-1 mb-10  p-[1rem] rounded-[0.9375rem]">
                 <CardItem
                   id={result.courseId}
                   title={result.title}
                   img={result.tumbImageAddress}
                   sectionCours={result.sectionCours}
-                  timeCours={result.timeCours}
-                  calender={result.statusName}
+                  timeCours={result.statusName}
+                  calender={result.lastUpdate}
                   master={result.teacherName}
                   like={result.likeCount}
                   dislike={result.dissLikeCount}
                   priceCourse={result.cost}
-                  countStudio={result.currentRegistrants}
+                  countStudio={result.levelName}
+                  currentRegistrants ={result.currentRegistrants}
                 />
               </div>
               
-            </div>
+            </div> :  <div key={index} className={` mx-auto w-full`}>
+              <div className=" w-full  dark:bg-violet-900 dark:shadow-lg mx-auto dark:hover:shadow-violet-600 mt-1 mb-5 p-[1rem] rounded-[0.9375rem]">
+              <CardItemFull 
+                id={result.courseId}
+                title={result.title}
+                img={result.tumbImageAddress}
+                sectionCours={result.sectionCours}
+                timeCours={result.statusName}
+                calender={result.lastUpdate}
+                master={result.teacherName}
+                like={result.likeCount}
+                dislike={result.dissLikeCount}
+                priceCourse={result.cost}
+                countStudio={result.levelName}
+                currentRegistrants ={result.currentRegistrants}
+                describe={result.describe}
+                courseRate={result.courseRate}
+                />
+
+              </div>
+              
+            </div>}
+           </>
           );
         })}
       </div>

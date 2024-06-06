@@ -1,7 +1,7 @@
 
 const ServiceCart = (props) => {
     return (
-        <div className="flex flex-row md:flex-col justify-around border-2 hover:border-1 hover:border-white dark:border-violet-800 hover:bg-[#3F40EA/30] shadow-slate-300 hover:shadow-2xl dark:shadow-violet-800 border-transparent rounded-lg w-[95%] transition-all">
+        <div className="hover:transform hover:translate hover:scale-105 flex flex-row md:flex-col justify-around border-2 hover:border-1 dark:border-violet-800 hover:bg-[#3F40EA/30] shadow-slate-300 hover:shadow-2xl dark:shadow-violet-800 border-transparent hover:border-transparent rounded-lg w-[95%] transition-all" >
             <div className='w-24 md:w-24 h-full md:h-1/4'>
                 <img className='mr-8 py-6' src={props.image} alt="" />
             </div>

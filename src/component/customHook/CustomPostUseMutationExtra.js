@@ -1,19 +1,25 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
-import { useMutation, useQuery } from 'react-query'
-import getList from '../function/getList'
-import {onSuccess , onError} from '../../function/onSitu'
+import http from '../../core/services/interceptore'
+import { useMutation, useQueryClient } from 'react-query'
 
 
 
-const CustomPostUseMutationExtra = (key , url) =>{
+const handleAdd = async ({url , values}) => {
+    const res = await http.post(url, values);
+    return res.data;
+};
+
+const CustomPostUseMutationExtra = () =>{
 
 
-    return useMutation(key , ()=>getList(url),
-        {
-            onSuccess:onSuccess, 
-            onError:onError
-        }
+    const queryClient = useQueryClient();
+
+    return useMutation((obj) => handleAdd(obj),{
+
+        onSuccess:(data)=>{
+            queryClient.invalidateQueries('list2')
+      },
+    } 
     )
 
 

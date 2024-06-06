@@ -6,10 +6,11 @@ import { useLocation } from "react-router-dom";
 export const Nav = () => {
   
   const bgLocation = useLocation();
-  const bgColor = location.pathname=='/' ? `bg-violec` : `bg-[#B4B4FF]`;
+  const bgColor = location.pathname=='/' ? `bg-violec` : `bg-[#B4B4FF] dark:bg-violet-950 dark:text-violet-200 `; 
+ 
   return (
     <>
-      <div className={`flex h-24 w-full flex-row items-center justify-around ${bgColor}`}>
+      <div className={`flex h-24 w-full flex-row items-center justify-around ${bgColor} `}>
         <div className="order-2 sm:order-1 min-w-44 max-w-44">
         <Logo />
         </div>

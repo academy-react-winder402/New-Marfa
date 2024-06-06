@@ -1,25 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-<<<<<<< HEAD
 import userPhoneNumber from "../redux/slices/phoneNumber";
-import isLogin from "./slices/isLogin";
-=======
-import phoneUser from './slices/phoneSlice'
+import isLogin from "../redux/slices/isLogin";
 import setFiltershow from "./slices/setFiltershow";
 import showType  from "./slices/showType";
 const store = configureStore({
     reducer:{
-        phoneUser:phoneUser,
+        phoneUser:userPhoneNumber,
         setFiltershow:setFiltershow,
         showType:showType,
+        isLogin:isLogin,
     }
 })
->>>>>>> 7911b6104fc1a49e577937a10b9261d45016229c
 
-const store = configureStore({
-  reducer: {
-    userPhoneNumber: userPhoneNumber,
-    isLogin: isLogin,
-  },
-});
+
 
 export default store;

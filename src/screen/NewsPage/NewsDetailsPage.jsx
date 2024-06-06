@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NewsDetailsPageComponent from '../../component/NewsComponent/NewsDetailsPageComponent'
 
 const NewsDetailsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, []);
   return (
     <div>
       <NewsDetailsPageComponent/>

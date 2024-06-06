@@ -9,20 +9,20 @@ export const Menu = () => {
     setNav(!nav)
   }
   const textLocation = useLocation();
-  const textColor = location.pathname=='/' ? `text-[#E3d4ff]` : `text-[#3f40ea]`;
-  const textColorHambergerMenu = location.pathname=='/' ? `text-violec` : `text-[#3f40ea]`;
+  const textColor = location.pathname=='/' ? `text-[#E3d4ff]` : `text-[#3f40ea] dark:bg-violet-950 dark:text-violet-200`;
+  const textColorHambergerMenu = location.pathname=='/' ? `text-violec` : `text-[#3f40ea] dark:bg-violet-950 dark:text-violet-200`;
   const displayMENU = location.pathname=='/' ? `hidden` : `block`;
   const activeMenu = `border-b-4 border-borderGradiant  border-gradient-to-l via-transparent to-transparent py-[2px] from-borderGradiant`
 
 return (
 
-  <div className="flex justify-center items-center px-4  h-24 text-nowrap ">
+  <div className="flex justify-center items-center px-4 h-24 text-nowrap">
     
     <ul className={`sm:flex sm:flex-row sm:flex-grow sm:items-center sm:gap-10 hidden  ${textColor}`}>
-      <li className={` ${displayMENU}`} ><NavLink to="/" className={({ isActive}) => isActive && `${activeMenu}`}> صفحه اصلی</NavLink></li>
-      <li className="p-4 "><NavLink to="/courses" className={({ isActive}) => isActive && `${activeMenu}`}>دوره ها</NavLink></li>
+      <li className={` ${displayMENU} hover:transform hover:translate hover:scale-105 `} ><NavLink to="/" className={({ isActive}) => isActive && `${activeMenu}`}> صفحه اصلی</NavLink></li>
+      <li className="p-4 hover:transform hover:translate hover:scale-105"><NavLink to="/courses" className={({ isActive}) => isActive && `${activeMenu}`}>دوره ها</NavLink></li>
       {/* <li className="p-4"><Link to="/">اساتید</Link></li> */}
-      <li className=""><NavLink to="/news" className={({ isActive}) => isActive && `${activeMenu}`} >  اخبار و مقالات </NavLink></li>
+      <li className="hover:transform hover:translate hover:scale-105"><NavLink to="/news" className={({ isActive}) => isActive && `${activeMenu}`} >  اخبار و مقالات </NavLink></li>
       {/* <li className="p-4"><Link to="/">ارتباط با ما</Link></li> */}
     </ul>
 

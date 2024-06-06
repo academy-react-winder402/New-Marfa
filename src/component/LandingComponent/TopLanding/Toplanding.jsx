@@ -6,8 +6,30 @@ import learn from '../../../assets/image/learn.png'
 import http from '../../../core/services/interceptore'
 import { useQuery } from "react-query";
 import '../../../App/App.css'
+import Typewriter from 'typewriter-effect'
+import React from 'react';
+import CountUp, { useCountUp } from 'react-countup';
+
 
 export const Toplanding = () => {
+
+// react couner
+    // useCountUp({ ref: 'counter'});
+    // const [loading, setLoading] = React.useState(false);
+  
+    // const onStart = () => {
+    //   setLoading(true);
+    // };
+  
+    // const onEnd = () => {
+    //   setLoading(false);
+    // };
+  
+    // const containerProps = {
+    //   'aria-busy': loading,
+    // };
+
+//  End react counter
 
     const getCourseList =async() => {
         const res = await http.get(`/Home/LandingReport`)
@@ -29,7 +51,20 @@ export const Toplanding = () => {
             <div className='absolute flex flex-col items-center mt-12 w-10/12 md:max-w-2xl h-5/6 text-white'>
             <div className='text-[#d0cdff] md:text-xl'><span>پلتفرم آموزش طراحی وب</span></div>
             <div className='mt-6 md:mt-10'><h1 className='text-3xl md:text-6xl'>مرجع آموزش برنامه نویسی</h1></div>
-            <div className='mt-6 md:mt-14 text-[#f2e8ff] text-center text-lg text-wrap md:text-3xl leading-8 md:leading-[3.5rem]'><span>مرجع آموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی آموزشی به زبان فارسی</span></div>
+            <div className='mt-6 md:mt-14 text-[#f2e8ff] text-center text-lg text-wrap md:text-3xl leading-8 md:leading-[3.5rem]'>
+
+             <span>مرجع آموزش زنده و تعاملی دسترسی به بیش از هفت هزار </span>
+             <Typewriter
+                options ={{
+                    strings:[
+                        "ویدیوی آموزشی به زبان فارسی",
+                        "ویدیوی آموزشی به زبان فارسی",
+                    ],
+                    autoStart:true , 
+                    loop:true,
+                }}
+              />
+             </div>
             
 
             <div className="absolute mt-60 md:mt-[22rem] w-full">
@@ -42,17 +77,33 @@ export const Toplanding = () => {
             <div className='md:top-[28rem] absolute md:flex flex-row md:flex-row justify-evenly items-end hidden w-full'> 
                 <div className='flex-col'>
                     <img src={teacher} className='w-[7.7rem] h-[7.7rem]' alt="" />
-                    <span className='block text-center'>{data?.teacherCount}</span>                    
+                    <span className='block text-center'>
+                    <CountUp
+                        end={data?.teacherCount}
+                        // duration="3"
+                    />
+                    
+                    </span>                    
                     <span className='block text-center'> مدرس مجرب</span>
                 </div>
                 <div className='flex-col'>
                     <img src={learn} className='w-[8rem] h-[8rem]' alt="" />
-                    <span className='block text-center'>{data?.courseCount}</span>                    
+                    <span className='block text-center'>
+                    <CountUp
+                        end={data?.courseCount}
+                        // duration="3"
+                    />
+                    </span>                    
                     <span className='block text-center'>دقیقه آموزش </span>
                 </div>
                 <div className='flex-col'>
                     <img src={studdent} className='w-[7.7rem] h-[7.7rem]' alt="" />
-                    <span className='block text-center'>{data?.studentCount}</span>                    
+                    <span className='block text-center'>
+                    <CountUp
+                        end={data?.studentCount}
+                        // duration="3"
+                    />
+                    </span>                    
                     <span className='block text-center'>نفر دانشجو  </span>
                 </div>
             </div>
