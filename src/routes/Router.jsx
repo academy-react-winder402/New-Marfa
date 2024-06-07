@@ -20,6 +20,9 @@ import LayoutLogin from '../LayOut/LayoutLogin'
 import { getItem } from "../localStorage/localStorage";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import MyCourses from "../component/ProfileComponent/MyCourses";
+import ReserveCourses from "../component/ProfileComponent/ReserveCourses";
+import FavoriteCourses from "../component/ProfileComponent/FavoriteCourses";
 // import { getItem } from "../localStorage/localStorage";
 
 // private Rout
@@ -71,8 +74,16 @@ const routePrivet = createBrowserRouter([
           element:<ChangePass />
         },
         {
-          path:"/profile/myselected",
-          element:<TableSelectedCourse />
+          path:"/profile/myCorses",
+          element:<MyCourses />
+        },
+        {
+          path:"/profile/reservedCourses",
+          element:<ReserveCourses />
+        },
+        {
+          path:"/profile/favoriteCourses",
+          element:<FavoriteCourses />
         }
       ]
     },

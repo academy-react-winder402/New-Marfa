@@ -1,11 +1,14 @@
-import html from "../../../assets/image/3.jpg"
 import { DashboardButtomComponent } from "./DashboardButtomComponent";
 import { DashboardTopComponent } from "./DashboardTopComponent";
-import http from '../../../core/services/interceptore'
-import { useQuery } from "react-query";
+import { CustomGetUseQueryExtra } from "../../customHook/CustomGetUseQueryExtra";
+import html from '../../../assets/image/3.jpg'
 
 export const Dashboard = () => {
-  const Data = [
+
+  const {data} = CustomGetUseQueryExtra('getFavoriteCourse',`/SharePanel/GetMyFavoriteCourses`)
+  
+
+  const Data2 = [
     {
       id: 1,
       img: html,
@@ -23,22 +26,22 @@ export const Dashboard = () => {
   ];
 
 
-  const getProfile = async() => {
-    const res= await http.get('/SharePanel/GetProfileInfo')
-    return res
-  }
+  // const getProfile = async() => {
+  //   const res= await http.get('/SharePanel/GetProfileInfo')
+  //   return res
+  // }
 
-  const {data } = useQuery('myProfile' , getProfile)
+  // const {data } = useQuery('myProfile' , getProfile)
+  
 
-  data && console.log(data);
   return (
-    <div className="bg-white 2xl:w-[72rem]">
+    <div className="bg-white 2xl:w-[72rem] dark:bg-violet-950  dark:text-violet-200">
       <DashboardTopComponent/>
-      <div className="flex md:flex-row justify-center flex-col text-xs ">
+      <div className="flex md:flex-row justify-center gap-5 flex-col text-xs mt-10 ">
         <div className="">
-          <h2 className="flex text-2xl mb-5">ـاخری دوره ثبت شده</h2>
+          <h2 className="flex text-2xl mb-5 text-fuchsia-700 font-bold dark:text-violet-200">ـ اخری دوره ثبت شده</h2>
           <div className="w-[97%]">
-            {Data.map((result, index) => {
+            {Data2?.map((result, index) => {
               return (
                 <DashboardButtomComponent
                   key={index}
@@ -52,9 +55,9 @@ export const Dashboard = () => {
           </div>
         </div>
         <div>
-          <h2 className="flex text-2xl mb-5">ـدوره های پیشنهادی</h2>
+          <h2 className="flex text-2xl mb-5 text-fuchsia-700 font-bold dark:text-violet-200">ـ دوره های پیشنهادی</h2>
           <div className="w-[97%]">
-            {Data.map((result, index) => {
+            {Data2?.map((result, index) => {
               return (
                 <DashboardButtomComponent
                   key={index}

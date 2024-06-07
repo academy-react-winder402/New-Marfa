@@ -1,10 +1,14 @@
 // import { ProfileButtomComponent } from "./ProfileButtomComponent";
 // import { ProfileTopComponent } from "./ProfileTopComponent";
 import html from "../../assets/image/3.jpg";
+import { CustomGetUseQueryExtra } from "../customHook/CustomGetUseQueryExtra";
 import { TableRowComponent } from "./TableRowComponent";
 
 
 export const TableSelectedCourse = () => {
+
+  const {data} = CustomGetUseQueryExtra('getProfileInfo',`/SharePanel/GetProfileInfo`)
+
   const Data = [
     {
       id: 1,

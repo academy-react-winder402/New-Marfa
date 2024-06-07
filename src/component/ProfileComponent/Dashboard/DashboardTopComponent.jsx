@@ -1,28 +1,46 @@
+import { CustomGetUseQueryExtra } from "../../customHook/CustomGetUseQueryExtra";
+import UserAccount from "../UserAccount";
+
 export const DashboardTopComponent = () => {
+
+  const {data} = CustomGetUseQueryExtra('getProfileInfo',`/SharePanel/GetProfileInfo`)
+
+
+
+  const handleProfileEdit = () => {
+      return(
+        <UserAccount />
+      )
+  }
+
+
   return (
     <>
-      <div className=" relative flex justify-between flex-wrap flex-row  gap-5 border-2
+      <div className="dark:bg-violet-950  dark:text-violet-200 relative flex justify-between flex-wrap flex-row  gap-5 border-2
        border-slate-400 rounded-lg m-3 p-5 ">
-        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500">
+        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500 dark:text-violet-200">
           نام و نام خانوادگی :
-          <span className="text-fuchsia-700"> بیتا قنبری </span>
+          <span className="text-fuchsia-700  dark:text-slate-300">{data?.fName}{"  "} {data?.lName}</span>
         </div>
-        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500">
-          تاریخ تولد :<span className="text-fuchsia-700">1402/03/26</span>
+        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500 dark:text-violet-200">
+          تاریخ تولد :<span className="text-fuchsia-700  dark:text-slate-300">{"   "}{data?.birthDay}</span>
         </div>
-        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500">
-          شماره همراه :<span className="text-fuchsia-700">09031129980</span>
+        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500 dark:text-violet-200">
+          شماره همراه :<span className="text-fuchsia-700  dark:text-slate-300">{"   "}{data?.phoneNumber}</span>
         </div>
-        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500">
-          شماره ملی :<span className="text-fuchsia-700">123456890</span>
+        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-50 dark:text-violet-2000">
+          شماره ملی :<span className="text-fuchsia-700  dark:text-slate-300">{"   "}{data?.nationalCode}</span>
         </div>
-        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500">
+        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500 dark:text-violet-200">
           ایمیل :
-          <span className="text-fuchsia-700">bitaghanbari@gmail.com</span>
+          <span className="text-fuchsia-700  dark:text-slate-300">{"   "}{data?.email}</span>
         </div>
 
         <div className="  w-full md:w-[45%] lg:w-[30%]">
-          <button className="text-fuchsia-700 absolute left-0 bottom-0 h-[2rem] border-2 rounded-tr-lg border-slate-400 rounded-bl-lg align-middle text-center px-5 py-1 mb-[-1px] ml-[-1px]">
+          <button className="text-fuchsia-700  dark:text-slate-300 absolute left-0 bottom-0 h-[2rem] 
+          border-2 rounded-tr-lg border-slate-400 rounded-bl-lg
+          text-center px-5 py-1 mb-[-1px] ml-[-1px] cursor-pointer hover:bg-bluec dark:hover:bg-violet-8 00 bg-opacity-50"
+           onClick={handleProfileEdit}>
             ویرایش
           </button>
         </div>

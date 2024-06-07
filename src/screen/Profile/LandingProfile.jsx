@@ -8,7 +8,7 @@ const LandingProfile = () => {
  
 
     return (
-      <div className="w-full h-full">
+      <div className="w-full h-full dark:bg-violet-950  dark:text-violet-200">
         <Dashboard />
         
       </div>

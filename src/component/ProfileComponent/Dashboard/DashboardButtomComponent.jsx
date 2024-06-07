@@ -1,10 +1,10 @@
 export const DashboardButtomComponent = ({ title, img, master, priceCourse }) => {
   return (
     <>
-      <div className="shadow-inner flex flex-row justify-between rounded-lg mb-4 text-xs ">
+      <div className="dark:bg-violet-950  dark:text-violet-200 shadow-inner flex flex-row justify-between rounded-lg mb-4 text-xs ">
         <div className="flex">
-          <div className=" p-2">
-            <img className="rounded-lg w-24 h-24 " src={img} alt="" />
+          <div className=" p-2 w-24">
+            <img className="rounded-lg  h-24 w-24 " src={img} alt="" />
           </div>
           <div className="p-2 flex flex-col justify-around">
             <div className="text-end font-bold lg:text-[1rem] md:text-xs sm:text-[1rem] leading-[1.25rem] mb-5 whitespace-nowrap">
