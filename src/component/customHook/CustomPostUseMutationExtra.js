@@ -16,8 +16,8 @@ const CustomPostUseMutationExtra = () =>{
 
     return useMutation((obj) => handleAdd(obj),{
 
-        onSuccess:(data)=>{
-            queryClient.invalidateQueries('list2')
+        onSuccess:(obj)=>{
+            queryClient.invalidateQueries(obj.key)
       },
     } 
     )

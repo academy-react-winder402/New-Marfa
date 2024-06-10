@@ -4,7 +4,7 @@ import CourseCardProdact from "./CourseCardProdact";
 
 
 //top component all component pruducts cource
-const CoursProudactComponents = ({data}) => {
+const CoursProudactComponents = ({data , refetch}) => {
  
   return (
     
@@ -16,7 +16,7 @@ const CoursProudactComponents = ({data}) => {
             </div> 
             {/* component course detal left */}
             <div className='w-full md:w-[50%] lg:w-[35%]'>
-            <CourseDetailProudact data={data && data}/>
+            <CourseDetailProudact data={data && data} refetch={refetch}/>
             </div>
         </div>  
     </div>

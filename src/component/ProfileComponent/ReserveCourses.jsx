@@ -1,10 +1,15 @@
+import { CustomGetUseQueryExtra } from "../customHook/CustomGetUseQueryExtra";
 import { TableSelectedCourse } from "./TableSelectedCourse";
 
 const ReserveCourses = () => {
-    return ( 
+    const {data} = CustomGetUseQueryExtra('getFavoritCourse',`/SharePanel/GetMyFavoriteCourses`)
+  return (
     <>
-        <TableSelectedCourse />
-    </> );
-}
- 
+      <div className="w-[95%] mx-auto">
+        <TableSelectedCourse data={data && data.listOfMyCourses} />
+      </div>
+    </>
+  );
+};
+
 export default ReserveCourses;

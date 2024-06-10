@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import html from "../../assets/image/3.jpg";
-import notFound from '../../assets/image/notFound.jpg'
+import notFound from '../../assets/image/Images-for-null 2.svg'
+import http from '../../core/services/interceptore'
 
 export const CardItemFull = ({
   id,
@@ -17,8 +18,37 @@ export const CardItemFull = ({
   priceCourse,
   currentRegistrants,
   describe,
-  courseRate
+  courseRate,
+  userFavorite,
+  userFavoriteId,
+  refetch
   }) => {
+
+    // const token = getItem('token');
+
+    const handleFavourite = async() => {
+      if(!userFavorite){
+        const res = await http.post('/Course/AddCourseFavorite' ,{courseId:id} )
+        refetch()
+      }
+      else{
+        const obj ={CourseFavoriteId:userFavoriteId}
+        const data = new FormData()
+        data.append('CourseFavoriteId' , userFavoriteId)
+        const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
+        refetch()
+      }
+  
+        // if(token && userFavorite=== false) {
+        //   const favorite = {url:`/Course/AddCourseFavorite ${id}`}
+        //   mutate(favorite);
+        //   setUserFavorite(true)
+        // }
+        // else{
+        //   <></>
+        // }
+  
+    }
   const noImage = img=== null || img === 'undefined' || img === ''
 
   return (
@@ -204,14 +234,15 @@ export const CardItemFull = ({
         </div>
       </div>
 
-      <div className="group-hover:visible top-0 left-0 z-20 absolute bg-sky-500 p-1 rounded-tr-lg rounded-br-lg w-12 invisible">
+      <div className="group-hover:visible top-0 left-0 z-20 absolute bg-sky-200 p-1 rounded-tr-lg rounded-br-lg w-12 invisible">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          fill="none"
+          fill={userFavorite ?`red` :`none`}
           viewBox="0 0 24 24"
           stroke-width="1.5"
-          stroke="currentColor"
+          stroke={userFavorite ?`red` :`currentColor`}
           class="size-6"
+          onClick={handleFavourite}
         >
           <path
             stroke-linecap="round"

@@ -15,7 +15,7 @@ import { getList } from "../../../function/getList";
 export const CourcesDetailPageComponent = () => {
     const params  = useParams()
     
-    const {data , isLoading ,isError , error} = useQuery("courseList2",
+    const {data , isLoading ,isError , error , refetch} = useQuery("courseList2",
        () => getList(`/Home/GetCourseDetails?CourseId=${params.id}`))
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const CourcesDetailPageComponent = () => {
         
           <div className="bg-bluec w-full">
             <div className="bg-[#D7D5FF] dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
-             <CoursProudactComponents data={data && data}/>
+             <CoursProudactComponents data={data && data} refetch={refetch}/>
               <CourseProudactMenuTabUL data={data && data} />
               {/* <UserCommentComponent/> */}
               <AllUsersComment/>

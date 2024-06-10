@@ -8,7 +8,7 @@ const ProfileImage = () => {
   const img= data?.currentPictureAddress
 
   const noImage = img==="Not-set" || img=== undefined
-  data && console.log(data);
+ 
 //   img === null || img === "undefined" || img === "" || img===[];
 
 

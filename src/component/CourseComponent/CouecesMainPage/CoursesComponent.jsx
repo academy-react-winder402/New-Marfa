@@ -20,16 +20,17 @@ export const CoursesComponent = () => {
   const [paginationSize, setpaginationSize] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [paginationArray, setPaginationArray] = useState(null);
+  const [CourseLevel, setCourseLevel] = useState('1');
 
   const getCourseList = async () => {
     const res = await http.get(
-      `/Home/GetCoursesWithPagination?PageNumber=${PageNum}&RowsOfPage=6&SortingCol=Active&SortType=DESC${searchQuery}&TechCount=0`
+      `/Home/GetCoursesWithPagination?PageNumber=${PageNum}&RowsOfPage=6&SortingCol=Active&SortType=DESC${searchQuery}&TechCount=0&courseLevelId=${CourseLevel}`
     );
     return res;
   };
 
-  const { data, isLoading, isError, error } = useQuery(
-    ["courseList1", PageNum, searchQuery],
+  const { data, isLoading, isError, error,refetch } = useQuery(
+    ["courseList1", PageNum, searchQuery , CourseLevel],
     getCourseList,
     {
       onSuccess: (data) => {
@@ -69,7 +70,7 @@ export const CoursesComponent = () => {
         <div className="flex flex-row flex-nowrap justify-center mx-auto w-[85%] h-full">
           <div
             className={` lg:block w-0  flex md:item-between mx-auto ${show}`}>
-            <Filtercourses />
+            <Filtercourses setCourseLevel={setCourseLevel} />
           </div>
           <div className={`flex flex-row flex-wra mx-auto  w-full ${cardWidth} `}>
             <Cardcomponentcourses
@@ -78,6 +79,7 @@ export const CoursesComponent = () => {
               PageNum={PageNum}
               setPageNum={setPageNum}
               showType={showType}
+              refetch={refetch}
             />
           </div>
         </div>

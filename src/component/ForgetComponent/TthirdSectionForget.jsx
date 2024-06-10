@@ -1,12 +1,13 @@
 import { Formik, Field, Form } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { Stepper, Button, Group } from '@mantine/core';
 import http from "../../core/services/interceptore";
-import "./StyleStepper.css";
+;
 import { useSelector } from "react-redux";
 import { useMutation } from "react-query";
-const ThirdSection = ({ setCount }) => {
+
+
+const TthirdSectionForget = ({ setCount }) => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const phoneNumber = useSelector((state) => state.userPhoneNumber.phoneNumber);
@@ -36,12 +37,12 @@ const ThirdSection = ({ setCount }) => {
   //     )
 
   const handleSubmit = async (values) => {
-    const res = await http.post("/Sign/Register", values);
+    // const res = await http.post("/Sign/Register", values);
 
-    console.log(res);
-    if (res.success === true) {
-      navigate("/auth/login");
-    }
+    // console.log(res);
+    // if (res.success === true) {
+    //   navigate("/auth/login");
+    // }
   };
   // Return Section
   return (
@@ -52,7 +53,7 @@ const ThirdSection = ({ setCount }) => {
           ایمیل و کلمه رمز خود را وارد کنید
         </div>
         <Formik
-          initialValues={{ gmail: "", password: "", phoneNumber: phoneNumber }}
+          initialValues={{ gmail: "", password: "", phoneNumber: '' }}
           onSubmit={handleSubmit}
         >
           <Form className="">
@@ -216,7 +217,7 @@ const ThirdSection = ({ setCount }) => {
         </div>
         <div className="flex w-[80%] md:w-[90%] pb-4 mx-auto justify-between items-center text-center text-[12px] 2xl:max-w-2xl">
           <div className="  text-[#4E447D] text-nowrap dark:text-violet-200">
-            مشخصات کاربری
+             تغییر رمز عبور
           </div>
           <div className="   text-[#4E447D] text-nowrap dark:text-violet-200">
             دریافت کد
@@ -233,4 +234,4 @@ const ThirdSection = ({ setCount }) => {
   );
 };
 
-export default ThirdSection;
+export default TthirdSectionForget;

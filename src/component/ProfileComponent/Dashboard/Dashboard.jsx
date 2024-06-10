@@ -1,12 +1,23 @@
 import { DashboardButtomComponent } from "./DashboardButtomComponent";
 import { DashboardTopComponent } from "./DashboardTopComponent";
 import { CustomGetUseQueryExtra } from "../../customHook/CustomGetUseQueryExtra";
-import html from '../../../assets/image/3.jpg'
+import html from "../../../assets/image/3.jpg";
+import DonutChart from "react-donut-chart";
 
 export const Dashboard = () => {
 
-  const {data} = CustomGetUseQueryExtra('getFavoriteCourse',`/SharePanel/GetMyFavoriteCourses`)
-  
+  const { data } = CustomGetUseQueryExtra(
+    "getFavoriteCourse",
+    `/SharePanel/GetMyFavoriteCourses`
+  );
+
+  const { data:profileComplete } = CustomGetUseQueryExtra(
+    "getProfileComplete",
+    `/SharePanel/GetProfileInfo`
+  );
+
+  const profileCompletionPercentage = profileComplete?.profileCompletionPercentage
+  // console.log(profileCompletionPercentage);
 
   const Data2 = [
     {
@@ -25,21 +36,45 @@ export const Dashboard = () => {
     },
   ];
 
-
   // const getProfile = async() => {
   //   const res= await http.get('/SharePanel/GetProfileInfo')
   //   return res
   // }
 
   // const {data } = useQuery('myProfile' , getProfile)
-  
+
+  const option = {}
 
   return (
     <div className="bg-white 2xl:w-[72rem] dark:bg-violet-950  dark:text-violet-200">
-      <DashboardTopComponent/>
+      <div className="w-full bg-red flex ">
+        {/* <div className="hiw-[25%]">
+          <DonutChart width={230} height={230}
+            option = {option}
+            data={[
+              {
+                label: "",
+                value: 20,
+              },
+              {
+                label: "",
+                value: 75,
+                isEmpty: true,
+              },
+            ]}
+          />
+          ;
+        </div> */}
+        <div className="bg-gree w-[75%]">
+          <DashboardTopComponent />
+        </div>
+      </div>
+
       <div className="flex md:flex-row justify-center gap-5 flex-col text-xs mt-10 ">
         <div className="">
-          <h2 className="flex text-2xl mb-5 text-fuchsia-700 font-bold dark:text-violet-200">ـ اخری دوره ثبت شده</h2>
+          <h2 className="flex text-2xl mb-5 text-fuchsia-700 font-bold dark:text-violet-200">
+            ـ اخری دوره ثبت شده
+          </h2>
           <div className="w-[97%]">
             {Data2?.map((result, index) => {
               return (
@@ -55,7 +90,9 @@ export const Dashboard = () => {
           </div>
         </div>
         <div>
-          <h2 className="flex text-2xl mb-5 text-fuchsia-700 font-bold dark:text-violet-200">ـ دوره های پیشنهادی</h2>
+          <h2 className="flex text-2xl mb-5 text-fuchsia-700 font-bold dark:text-violet-200">
+            ـ دوره های پیشنهادی
+          </h2>
           <div className="w-[97%]">
             {Data2?.map((result, index) => {
               return (

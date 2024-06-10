@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import notFound from "../../assets/image/notFound.jpg";
-import {CustomPostUseMutationExtra} from '../../component/customHook/CustomPostUseMutationExtra'
+import notFound from "../../assets/image/Images-for-null 2.svg";
 import { getItem } from "../../localStorage/localStorage";
-import { CustomGetUseQueryExtra } from "../../component/customHook/CustomGetUseQueryExtra";
+import http from '../../core/services/interceptore'
 
 export const CardItem = ({
   id,
@@ -18,47 +17,69 @@ export const CardItem = ({
   dislike,
   priceCourse,
   currentRegistrants,
+  userFavorite,
+  userFavoriteId,
+  refetch,
+  userIsLiked,
+  userLikedId,
+  currentUserDissLike
 }) => {
 
 
 // FUNCTION
 
 
-const { mutate } = CustomPostUseMutationExtra();
-
-
-  const {data} = CustomGetUseQueryExtra('getCourseByID',`/Home/GetCoursesWithPagination?PageNumber=1&RowsOfPage=10&SortingCol=Active&SortType=DESC&TechCount=0`)
-  // console.log(data);
   const token = getItem('token');
-  const [userFavorite , setUserFavorite] = useState()
-  const [userLike , setLike] = useState()
-  const [userDisLike , setUserDisLike] = useState()
+
+  // ********************
+
+  const handleFavourite = async() => {
+    if(!userFavorite){
+      const res = await http.post('/Course/AddCourseFavorite' ,{courseId:id} )
+      refetch()
+    }
+    else{
+      // const obj ={CourseFavoriteId:userFavoriteId}
+      const data = new FormData()
+      data.append('CourseFavoriteId' , userFavoriteId)
+      const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
+      refetch()
+    }
+
+  }
+ //******************************************* 
+  const handleLike =async() => {
+    if(!userIsLiked){
+      const res2 = await http.post(`/Course/AddCourseLike?CourseId=${id}` )
+      refetch()
+    }
+    else{
+      // const obj ={CourseLikeId:userLikedId}
+      const data = new FormData()
+      data.append('CourseLikedId' , userLikedId)
+      const res1= await http.delete('/Course/DeleteCourseLike' , {data:data})
+      refetch()
+    }
 
 
-
-  const handleFavourite = (id) => {
-
-      if(token && userFavorite=== false) {
-        const favorite = {url:`/Course/AddCourseFavorite ${id}`}
-        mutate(favorite);
-        setUserFavorite(true)
-      }
-      else{
-        <></>
-      }
-
-    
   }
 
-  const handleLike = (id) => {
-    const like = {url:`/Course/AddCourseLike?CourseId=${id}`} 
-    mutate(like);
-  }
 
-  const handleDisLike = (id) => {
-    const disLike = {url:`/Course/AddCourseDissLike?CourseId=${id}` }
-    mutate(disLike);
+
+  const handleDisLike = async() => {
+    if(!currentUserDissLike){
+      const res = await http.post(`/Course/AddCourseDissLike?CourseId=${id}`)
+      refetch()
+    }
+    else{
+    //   const obj ={CourseFavoriteId:userFavoriteId}
+      const data = new FormData()
+      data.append('CourseFavoriteId' , userFavoriteId)
+      const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
+      refetch()
+    }
   }
+  
 
   const noImage = img === null || img === "undefined" || img === "";
   
@@ -68,7 +89,7 @@ const { mutate } = CustomPostUseMutationExtra();
         <div>
           <div className="mx-auto mb-5 w-full">
             <img
-              className="mx-auto rounded-lg w-[310px] h-[175px] object-fill"
+              className="mx-auto rounded-lg w-[310px] h-[175px] object-fill border-2 bg-violet-300"
               src={noImage ? notFound : img}
               alt=""
             />
@@ -93,7 +114,11 @@ const { mutate } = CustomPostUseMutationExtra();
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"
+                  d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 
+                  6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 
+                  0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 
+                  2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 
+                  12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"
                 />
               </svg>
             </span>
@@ -152,16 +177,17 @@ const { mutate } = CustomPostUseMutationExtra();
                 </svg>
               </div>
               <div className="flex gap-2">
-                <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 dark:bg-violet-500 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
+                <span className="flex flex-row justify-center items-center gap-2 cursor-pointer
+                 bg-slate-200 dark:bg-violet-500 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
                   {like}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    fill={userIsLiked ? `gray` :`none`}
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
-                    stroke="currentColor"
+                    stroke={userIsLiked ? `gray` :`currentColor`}
                     class="w-4 h-4"
-                    onClick={() => handleLike(id)}
+                    onClick={handleLike}
                   >
                     <path
                       stroke-linecap="round"
@@ -170,16 +196,17 @@ const { mutate } = CustomPostUseMutationExtra();
                     />
                   </svg>
                 </span>
-                <span className="flex flex-row justify-center items-center gap-2 bg-slate-200 dark:bg-violet-500 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
+                <span className="flex flex-row justify-center items-center gap-2 cursor-pointer
+                 bg-slate-200 dark:bg-violet-500 rounded-[0.3125rem] w-[3.125rem] h-[1.625rem]">
                   {dislike}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
+                    fill={currentUserDissLike ?`gray` :`none`}
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
-                    stroke="currentColor"
+                    stroke={currentUserDissLike ?`gray` :`currentColor`}
                     class="w-4 h-4"
-                    onClick={()=> handleDisLike(id)}
+                    onClick={handleDisLike}
                   >
                     <path
                       stroke-linecap="round"
@@ -218,15 +245,15 @@ const { mutate } = CustomPostUseMutationExtra();
           </div>
         </div>
 
-        <div className="group-hover:visible top-[-1px] left-[-16px] z-20 absolute bg-violet-300 dark:shadow-lg dark:shadow-violet-600 p-1 rounded-tr-lg rounded-br-lg w-12 invisible">
+        <div className={`group-hover:visible top-[-1px] left-[-16px] z-20 absolute bg-sky-200 cursor-pointer  dark:shadow-lg dark:shadow-violet-600 p-1 rounded-tr-lg rounded-br-lg w-12 invisible`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill={userFavorite ?`red` :`none`}
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-            onClick={() => handleFavourite(id)}
+            stroke={userFavorite ?`red` :`currentColor`}
+            className="size-6 cursor-pointer"
+            onClick={handleFavourite}
           >
             <path
               stroke-linecap="round"

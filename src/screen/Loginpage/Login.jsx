@@ -12,15 +12,18 @@ export const Login = () => {
        
         // <div className="w-full bg-bluec">
             
-            <div className="w-[80%] h-[80%] md:w-[48rem] md:h-[30rem] lg:w-[64rem] lg:h-[32rem] xl:w-[80rem] xl:h-[32rem] mx-auto flex flex-col items-center mt-5 md:mt-[8rem] 
-            md:flex-row md:justify-center md:items-center">
-                <div className="w-full h-1/3 md:w-1/3 md:h-full bg-white  bg-opacity-35 
+            <div className="w-[80%] h-[80%] md:w-[48rem] md:h-[30rem] lg:w-[64rem]
+             lg:h-[32rem] xl:w-[80rem] xl:h-[32rem] mx-auto flex flex-col items-center mt-5 md:mt-[8rem] 
+            md:flex-row md:justify-center md:items-center
+            dark:bg-violet-950 dark:shadow-2xl dark:shadow-violet-600 dark:text-violet-200">
+                <div className="w-full h-1/3 md:w-1/3 md:h-full bg-white  bg-opacity-35 dark:bg-opacity-0
                 rounded-t-2xl md:rounded-t-none md:rounded-r-2xl 
-                z-10 ">
+                 ">
                     <img className="object-contain w-full h-full" src={login} />
                 </div>
                 <div className="w-full h-2/3 md:w-2/3 md:h-full  bg-white bg-opacity-85 
-                rounded-b-2xl md:rounded-b-none  md:rounded-l-2xl z-10 ">
+                rounded-b-2xl md:rounded-b-none  md:rounded-l-2xl z-10 dark:bg-violet-950 
+                dark:shadow-2xl dark:shadow-violet-600 dark:text-violet-200 ">
                 <LoginForm />  
                 </div>
             </div>

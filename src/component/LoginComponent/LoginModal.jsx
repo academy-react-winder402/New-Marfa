@@ -10,7 +10,7 @@ import { setItem } from "../../localStorage/localStorage";
 import { useDispatch } from "react-redux";
 import { onIsLoginChange } from "../../redux/slices/isLogin";
 
-const LoginForm = () => {
+const LoginModal = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -24,7 +24,7 @@ const LoginForm = () => {
     if (res.success === true) {
       setItem("token", res.token);
       dispatch(onIsLoginChange(true));
-      navigate("/profile");
+    //   navigate("/profile");
     }
   };
   return (
@@ -33,9 +33,6 @@ const LoginForm = () => {
         className="bg-[#5c5cad] bg-opacity-5 mx-auto rounded-b-lg md:rounded-l-lg w-full h-full
         dark:bg-violet-950 dark:shadow-2xl dark:shadow-violet-600 dark:text-violet-200"
       >
-        <div className="w-full">
-          <IconMenuLogin />
-        </div>
         <div className="w-full text-[#6359f0] dark:text-violet-200 text-3xl text-center text-nowrap">
           ورود به سایت
         </div>
@@ -170,4 +167,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginModal;

@@ -1,31 +1,29 @@
 import { Formik , Field , Form  } from "formik";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-// import { Stepper, Button, Group } from '@mantine/core';
-import './StyleStepper.css'
 import { useSelector } from "react-redux";
-import http from '../../core/services/interceptore'
 
-const SecondSection = ({setCount , description}) => {
+
+const SecondSectionForget = ({setCount , description}) => {
     const phoneNumber = useSelector(state => state.userPhoneNumber.phoneNumber)
     console.log(phoneNumber);
 
     const handleSubmit =async (values) =>{
         
-         const res=await http.post('/Sign/VerifyMessage',values)
+        //  const res=await http.post('/Sign/VerifyMessage',values)
 
-         console.log(res);
+        //  console.log(res);
 
-         if(res.success===true){
-             setCount(3)
-         }
+        //  if(res.success===true){
+        //      setCount(3)
+        //  }
     }
 
 
     return ( 
         <div className="w-full dark:bg-violet-950 dark:shadow-2xl dark:shadow-violet-600 dark:text-violet-200">
             <div className="w-full text-right mt-4 mr-7 text-[#A193FF] text-nowrap dark:text-violet-200"> شماره و کد را وارد کنید</div>
-            <Formik initialValues={{phoneNumber:phoneNumber ,verifyCode:''}} onSubmit={handleSubmit}>
+            <Formik initialValues={{email:'' ,verifyCode:''}} onSubmit={handleSubmit}>
                 <Form className="">
                     <div className="w-full mt-3 flex flex-col">
 
@@ -63,7 +61,7 @@ const SecondSection = ({setCount , description}) => {
                             </div>
             </div>
             <div className="flex w-[80%] md:w-[90%] pb-4 mx-auto justify-between items-center text-center text-[12px] 2xl:max-w-2xl">
-                            <div className="  text-[#A193FF] text-nowrap dark:text-violet-200">مشخصات کاربری</div>
+                            <div className="  text-[#A193FF] text-nowrap dark:text-violet-200"> تغییر رمز عبور</div>
                             
                             <div className="   text-[#A193FF] text-nowrap dark:text-violet-200" >دریافت کد</div>
                             
@@ -76,4 +74,4 @@ const SecondSection = ({setCount , description}) => {
      );
 }
  
-export default SecondSection;
+export default SecondSectionForget;

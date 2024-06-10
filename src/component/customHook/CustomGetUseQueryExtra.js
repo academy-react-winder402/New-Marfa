@@ -8,12 +8,7 @@ const CustomGetUseQueryExtra = (key , url) =>{
 
 
 
-    return useQuery(key , ()=>getList(url),
-        {
-            onSuccess:onSuccess, 
-            onError:onError
-        }
-    )
+    return useQuery(key , ()=>getList(url))
 
 
 }

@@ -4,9 +4,16 @@ import NewsDtailsExplanation from '../NewsDetailsComponent/NewsDtailsExplanation
 import NewsDetailShare from '../NewsDetailsComponent/NewsDetailShare'
 import AllUsersComment from '../CourcesDetailComponent/AllUsersComment'
 import handleTheme from '../../core/services/handleTheme'
+import { useParams } from 'react-router-dom'
+import { useQuery } from 'react-query'
 
 
 const NewsDetailsPageComponent = () => {
+
+  const params  = useParams()
+    
+  const {data , isLoading ,isError , error} = useQuery("newsList",
+     () => getList(`/News/:${params.id}`))
   
   useEffect(() => {
     handleTheme();

@@ -8,9 +8,11 @@ import License from "../../component/LoginComponent/License";
 const Register = () => {
     return ( 
         <>
-             <div className="w-[80%] h-[80%] md:w-[48rem] md:h-[30rem] lg:w-[64rem] lg:h-[32rem] xl:w-[80rem] xl:h-[32rem] mx-auto flex flex-col items-center mt-5 md:mt-[8rem] 
-              md:flex-row md:justify-center md:items-center">
-                    <div className="w-full h-1/3 md:w-1/3 md:h-full bg-white  bg-opacity-35 
+             <div className="w-[80%] h-[80%] md:w-[48rem] md:h-[30rem] lg:w-[64rem] lg:h-[32rem] 
+             xl:w-[80rem] xl:h-[32rem] mx-auto flex flex-col items-center mt-5 md:mt-[8rem] 
+              md:flex-row md:justify-center md:items-center dark:bg-violet-950 
+             dark:text-violet-200 ">
+                    <div className="w-full h-1/3 md:w-1/3 md:h-full dark:shadow-2xl dark:shadow-violet-600 bg-white dark:bg-opacity-0 bg-opacity-35 
                     rounded-t-2xl md:rounded-t-none md:rounded-r-2xl  
                     z-10 ">
                         <img className="object-contain w-full h-full" src={register} />

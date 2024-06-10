@@ -27,7 +27,7 @@ const FirstSection = ({description , setCount}) => {
 
     }
     return (  
-        <div className="w-full">
+        <div className="w-full dark:bg-violet-950 dark:text-violet-200">
             <div className="text-right mt-4 mr-7 w-full text-[#A193FF] text-nowrap"> {description}</div>
             <Formik initialValues={{phoneNumber:''}} onSubmit={handleSubmit}>
                 <Form className="">
@@ -60,11 +60,11 @@ const FirstSection = ({description , setCount}) => {
                             </div>
             </div>
             <div className="flex justify-between items-center mx-auto pb-4 w-[80%] md:w-[90%] 2xl:max-w-2xl text-[12px] text-center">
-                            <div className="text-[#A193FF] text-nowrap">مشخصات کاربری</div>
+                            <div className="text-[#A193FF] text-nowrap dark:text-violet-200">مشخصات کاربری</div>
                             
-                            <div className="text-[#A193FF] text-nowrap" >دریافت کد</div>
+                            <div className="text-[#A193FF] text-nowrap dark:text-violet-200" >دریافت کد</div>
                             
-                            <div className="text-[#4E447D] text-nowrap">شماره تماس</div>
+                            <div className="text-[#4E447D] text-nowrap dark:text-violet-200">شماره تماس</div>
             </div>
                 {/* <div className="flex flex-row justify-between mt-8 mr-7 pb-8 w-[80%] md:w-[90%] text-[#A193FF] text-[16px] text-center text-nowrap md:text-[18px]">
                 {steper()}

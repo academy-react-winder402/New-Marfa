@@ -1,64 +1,64 @@
 // import { ProfileButtomComponent } from "./ProfileButtomComponent";
 // import { ProfileTopComponent } from "./ProfileTopComponent";
 import html from "../../assets/image/3.jpg";
-import { CustomGetUseQueryExtra } from "../customHook/CustomGetUseQueryExtra";
+
 import { TableRowComponent } from "./TableRowComponent";
 
 
-export const TableSelectedCourse = () => {
+export const TableSelectedCourse = ({data}) => {
 
-  const {data} = CustomGetUseQueryExtra('getProfileInfo',`/SharePanel/GetProfileInfo`)
+  // const {data} = CustomGetUseQueryExtra('getProfileInfo',`/SharePanel/GetProfileInfo`)
 
-  const Data = [
-    {
-      id: 1,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
-      startTime: "1402 / 07 / 09",
-    },
-    {
-      id: 2,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
-      startTime: "1402 / 07 / 09",
-    },
-    {
-      id: 3,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
-      startTime: "1402 / 07 / 09",
-    },
-    {
-      id: 4,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
-      startTime: " 1402 / 07 / 09",
-    },
-    {
-      id: 5,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
-      startTime: " 1402 / 07 / 09",
-    },
-    {
-      id: 6,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
-      startTime: " 1402 / 07 / 09",
-    },
-  ];
+  // const Data = [
+  //   {
+  //     id: 1,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     master: " دکتر بحرالعلوم",
+  //     priceCourse: "500000",
+  //     startTime: "1402 / 07 / 09",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     master: " دکتر بحرالعلوم",
+  //     priceCourse: "500000",
+  //     startTime: "1402 / 07 / 09",
+  //   },
+  //   {
+  //     id: 3,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     master: " دکتر بحرالعلوم",
+  //     priceCourse: "500000",
+  //     startTime: "1402 / 07 / 09",
+  //   },
+  //   {
+  //     id: 4,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     master: " دکتر بحرالعلوم",
+  //     priceCourse: "500000",
+  //     startTime: " 1402 / 07 / 09",
+  //   },
+  //   {
+  //     id: 5,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     master: " دکتر بحرالعلوم",
+  //     priceCourse: "500000",
+  //     startTime: " 1402 / 07 / 09",
+  //   },
+  //   {
+  //     id: 6,
+  //     img: html,
+  //     title: "html آموزش مقدماتی",
+  //     master: " دکتر بحرالعلوم",
+  //     priceCourse: "500000",
+  //     startTime: " 1402 / 07 / 09",
+  //   },
+  // ];
   return (
     <>
     <div className="overflow-x-scroll ">
@@ -81,15 +81,16 @@ export const TableSelectedCourse = () => {
           </thead>
 
           <tbody>
-            {Data.map((result, index) => {
+            {data?.map((result, index) => {
               return (
                 <TableRowComponent
-                  key={index}
-                  title={result.title}
-                  img={result.img}
-                  master={result.master}
-                  priceCourse={result.priceCourse}
-                  startTime={result.startTime}
+                  key={result.courseId}
+                  id={result.courseId}
+                  title={result.courseTitle}
+                  img={result.tumbImageAddress}
+                  master={result.teacheName}
+                  levelName={result.levelName}
+                  typeName={result.typeName}
                 />
               );
             })}

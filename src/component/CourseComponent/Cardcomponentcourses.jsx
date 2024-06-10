@@ -5,7 +5,7 @@ import { CardItemFull } from "../../common/Cource/CardItemFull";
 
 
 
-export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum , showType}) => {
+export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum , showType , refetch}) => {
  
 
   
@@ -25,24 +25,6 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
            {showType ?  <div key={index} className={` mx-auto  ${cardSize}`}>
               <div className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-1 mb-10  p-[1rem] rounded-[0.9375rem]">
                 <CardItem
-                  id={result.courseId}
-                  title={result.title}
-                  img={result.tumbImageAddress}
-                  sectionCours={result.sectionCours}
-                  timeCours={result.statusName}
-                  calender={result.lastUpdate}
-                  master={result.teacherName}
-                  like={result.likeCount}
-                  dislike={result.dissLikeCount}
-                  priceCourse={result.cost}
-                  countStudio={result.levelName}
-                  currentRegistrants ={result.currentRegistrants}
-                />
-              </div>
-              
-            </div> :  <div key={index} className={` mx-auto w-full`}>
-              <div className=" w-full  dark:bg-violet-900 dark:shadow-lg mx-auto dark:hover:shadow-violet-600 mt-1 mb-5 p-[1rem] rounded-[0.9375rem]">
-              <CardItemFull 
                 id={result.courseId}
                 title={result.title}
                 img={result.tumbImageAddress}
@@ -55,8 +37,37 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
                 priceCourse={result.cost}
                 countStudio={result.levelName}
                 currentRegistrants ={result.currentRegistrants}
-                describe={result.describe}
-                courseRate={result.courseRate}
+                userFavorite={result.userFavorite}
+                userFavoriteId={result.userFavoriteId}
+                userIsLiked={result.userIsLiked}
+                userLikedId={result.userLikedId}
+                currentUserDissLike={result.currentUserDissLike}
+                refetch={refetch}
+
+                />
+              </div>
+              
+            </div> :  <div key={index} className={` mx-auto w-full`}>
+              <div className=" w-full  dark:bg-violet-900 dark:shadow-lg mx-auto dark:hover:shadow-violet-600 mt-1 mb-5 p-[1rem] rounded-[0.9375rem]">
+              <CardItemFull 
+                  id={result.courseId}
+                  title={result.title}
+                  img={result.tumbImageAddress}
+                  sectionCours={result.sectionCours}
+                  timeCours={result.statusName}
+                  calender={result.lastUpdate}
+                  master={result.teacherName}
+                  like={result.likeCount}
+                  dislike={result.dissLikeCount}
+                  priceCourse={result.cost}
+                  countStudio={result.levelName}
+                  currentRegistrants ={result.currentRegistrants}
+                  userFavorite={result.userFavorite}
+                  userFavoriteId={result.userFavoriteId}
+                  userIsLiked={result.userIsLiked}
+                  userLikedId={result.userLikedId}
+                  currentUserDissLike={result.currentUserDissLike}
+                  refetch={refetch}
                 />
 
               </div>

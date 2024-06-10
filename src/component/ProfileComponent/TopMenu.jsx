@@ -1,18 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LeftMenu from "./LeftMenu";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useLocation } from "react-router-dom";
-const TopMenu = () => {
-    const bgMoonLocation = useLocation();
-    const moonSvgLitgh =
-      location.pathname == "/profile"
-        ? `stroke-[#e3d4ff]`
-        : `stroke-[#3F40EA] dark:stroke-[#e3d4ff] `;
-    const sunSvgLitgh =
-      location.pathname == "/profile"
-        ? `stroke-[#3F40EA]`
-        : `stroke-[#3F40EA] dark:stroke-[#e3d4ff]`;
-  const [darkMode, setDarkMode] = useState(true);
+const TopMenu = ({menuName, setMenuName}) => {
+
+
+  const lightMode = localStorage.getItem("theme")=== "light" ? true : false
+  const [darkMode, setDarkMode] = useState(lightMode);
 
   const handleDark = () => {
     const themeLocal = localStorage.getItem("theme");
@@ -48,15 +42,15 @@ const TopMenu = () => {
                   : "fixed right-[-100%] "
               }
             >
-              <LeftMenu setNav={setNav} />
+              <LeftMenu setNav={setNav} setMenuName={setMenuName} />
             </div>
           </div>
-          <div>داشبورد</div>
+          <div>{menuName}</div>
         </div>
 
         <div className="flex flex-row gap-4">
           <div onClick={handleDark} className="relative">
-            {!darkMode && (
+            {darkMode && (
               <svg
                 width="30"
                 height="30"
@@ -64,7 +58,7 @@ const TopMenu = () => {
                 fill="none"
                 onClick={() => setDarkMode(!darkMode)}
                 xmlns="http://www.w3.org/2000/svg"
-                className={`relative cursor-pointer text-[#3F40EA] ${sunSvgLitgh} dark:text-[#e3d4ff]`}
+                className={`relative cursor-pointer stroke-[#3F40EA]`}
               >
                 <path
                   d="M1 14.4762C1 22.4949 7.50041 28.9952 15.5191 28.9952C21.6287 
@@ -77,7 +71,7 @@ const TopMenu = () => {
                 />
               </svg>
             )}
-            {darkMode && (
+            {!darkMode && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 onClick={() => setDarkMode(!darkMode)}
@@ -86,8 +80,8 @@ const TopMenu = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.7"
-                stroke="currentColor"
-                className={`cursor-pointer relative w-8 h-8 text-[#3F40EA] ${moonSvgLitgh} dark:text-[#e3d4ff]`}
+                // stroke="currentColor"
+                className={`cursor-pointer relative w-8 h-8 stroke-[#e3d4ff]`}
               >
                 <path
                   stroke-linecap="round"

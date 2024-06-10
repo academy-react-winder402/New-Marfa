@@ -7,7 +7,7 @@ import TeacherIntroducing from './TeacherIntroducing'
 
 
 // left component detail course
-const CourseDetailProudact = ({data}) => {
+const CourseDetailProudact = ({data , refetch}) => {
   return (
     <div className='flex flex-col justify-start items-center dark:bg-violet-950 py-10 rounded-lg md:w-full h-auto'>
       <div className='flex flex-col justify-start items-center bg-[#D7D5FF] dark:bg-violet-900 shadow-bg-bluec shadow-xl pt-10 rounded-md w-[520px] md:w-[90%]'>
@@ -45,7 +45,7 @@ const CourseDetailProudact = ({data}) => {
         </div> 
         <div className='mt-12 w-96 md:w-64 lg:w-72'>
           <h5 className='flex justify-center items-center border-2 border-indigo-600 mt-5 rounded-lg h-16 dark:text-violet-200'>قیمت:  {data?.cost} </h5></div>
-        <div className='py-8 w-96 md:w-72 lg:w-96'> <AllButton title="ثبت نام در دوره"/></div>   
+        <div className='py-8 w-96 md:w-72 lg:w-96'> <AllButton  title="ثبت نام در دوره"/></div>   
       </div>
     
       <div className='shadow-[#B48DFF4D] mt-10 md:w-'>

@@ -13,9 +13,9 @@ const CustomDeletUseMutationExtra = () => {
     const queryClient = useQueryClient()
 
 
-    return useMutation((url) => handleDel(url) , {
-        onSuccess:(data)=>{
-            queryClient.invalidateQueries('list2')
+    return useMutation((obj) => handleDel(obj.url) , {
+        onSuccess:(obj)=>{
+            queryClient.invalidateQueries(obj.key)
             // queryClient.setQueryData('list2' , (oldData)=>{
             //     let newData = [...oldData]
             //     newData.push(data)

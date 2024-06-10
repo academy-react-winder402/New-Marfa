@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const UserAccount = () => {
+const EditAccount = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { mutate } = CustomPutUseMutationExtra();
 
@@ -39,7 +39,7 @@ const UserAccount = () => {
             NationalCode: "",
             HomeAdderess: "",
             gender: false,
-            BirthDay: "2024/01/01",
+            BirthDay: "2000/01/01",
           }}
           onSubmit={ handleUserInfoSubmit}
         >
@@ -144,7 +144,6 @@ const UserAccount = () => {
                     type="text"
                     name="BirthDay"
                     selected={startDate}
-                    value={startDate}
                     onChange={(date) => setStartDate(date)}
                     popperClassName="some-custom-class"
                     popperPlacement="top-end"
@@ -232,4 +231,4 @@ const UserAccount = () => {
   );
 };
 
-export default UserAccount;
+export default EditAccount;
