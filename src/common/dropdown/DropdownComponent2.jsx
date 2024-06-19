@@ -1,15 +1,25 @@
 import React from "react";
-import { Dropdown } from "flowbite-react";
+import { Select } from "@mantine/core";
 
-export const DropdownComponent2 = () =>{
+export const DropdownComponent2 = ({ setSortType, sortType }) => {
   return (
- 
-      <Dropdown label="صعودی " className='bg-slate-400 mx-auto rounded-lg w-auto text-gray-400'  id="accordion-open-heading-1" dismissOnClick={false}>
-        <Dropdown.Item> نزولی </Dropdown.Item>
-        <Dropdown.Item>صعودی</Dropdown.Item>
-     
-      </Dropdown>
- 
+    <div
+      className=" hover:bg-bluec 
+    text-gray-900 dark:text-gray-300 dark:bg-violet-950 placeholder-slate-900"
+    >
+      <Select
+        className="outline-none"
+        placeholder=" مرتب سازی"
+        data={[
+          { value: "DESC", label: "نزولی" },
+          { value: "ASC", label: "صعودی" },
+        ]}
+        nothingFoundMessage="مقداری یافت نشد..."
+        onChange={setSortType}
+        value={sortType}
+        clearable
+        searchable
+      />
+    </div>
   );
-}
-
+};

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import notFound from "../../assets/image/Images-for-null 2.svg";
 import { getItem } from "../../localStorage/localStorage";
 import http from '../../core/services/interceptore'
+import { ToastContainer , toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 export const CardItem = ({
   id,
@@ -37,6 +39,7 @@ export const CardItem = ({
     if(!userFavorite){
       const res = await http.post('/Course/AddCourseFavorite' ,{courseId:id} )
       refetch()
+      toast('به لیست علاقه مندی اضافه شد ')
     }
     else{
       // const obj ={CourseFavoriteId:userFavoriteId}
@@ -54,9 +57,8 @@ export const CardItem = ({
       refetch()
     }
     else{
-      // const obj ={CourseLikeId:userLikedId}
       const data = new FormData()
-      data.append('CourseLikedId' , userLikedId)
+      data.append('CourseLikeId' , userLikedId)
       const res1= await http.delete('/Course/DeleteCourseLike' , {data:data})
       refetch()
     }
@@ -64,23 +66,23 @@ export const CardItem = ({
 
   }
 
-
+//******************************
 
   const handleDisLike = async() => {
     if(!currentUserDissLike){
       const res = await http.post(`/Course/AddCourseDissLike?CourseId=${id}`)
       refetch()
     }
-    else{
-    //   const obj ={CourseFavoriteId:userFavoriteId}
-      const data = new FormData()
-      data.append('CourseFavoriteId' , userFavoriteId)
-      const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
-      refetch()
-    }
+    // else{
+    // //   const obj ={CourseFavoriteId:userFavoriteId}
+    //   const data = new FormData()
+    //   data.append('CourseFavoriteId' , userFavoriteId)
+    //   const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
+    //   refetch()
+    // }
   }
   
-
+//*************************************
   const noImage = img === null || img === "undefined" || img === "";
   
   return (
@@ -101,7 +103,7 @@ export const CardItem = ({
           </div>
           </Link>
           <div className="flex flex-row justify-between h-auto text-[0.625rem] text-slate-500 dark:text-violet-200 leading-[0.625rem]">
-            <span className="flex flex-row gap-2">
+            <span className="flex flex-row text-nowrap gap-2">
               {countStudio}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +124,7 @@ export const CardItem = ({
                 />
               </svg>
             </span>
-            <span className="flex flex-row gap-2">
+            <span className="flex flex-row text-nowrap gap-2">
               {timeCours}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +141,7 @@ export const CardItem = ({
                 />
               </svg>
             </span>
-            <span className="flex flex-row gap-2">
+            <span className="flex flex-row text-nowrap gap-2">
               {calender}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +247,7 @@ export const CardItem = ({
           </div>
         </div>
 
-        <div className={`group-hover:visible top-[-1px] left-[-16px] z-20 absolute bg-sky-200 cursor-pointer  dark:shadow-lg dark:shadow-violet-600 p-1 rounded-tr-lg rounded-br-lg w-12 invisible`}>
+        <div className={` group-hover:w-14 group-hover:duration-500 group-hover:pr-2 top-[-1px] left-[-16px] z-20 absolute bg-blue-400 cursor-pointer  dark:shadow-lg dark:shadow-violet-600 py-2 rounded-tr-lg rounded-br-lg w-0 overflow-hidden`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill={userFavorite ?`red` :`none`}
@@ -255,12 +257,14 @@ export const CardItem = ({
             className="size-6 cursor-pointer"
             onClick={handleFavourite}
           >
+        
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
             />
           </svg>
+          <ToastContainer />
         </div>
       </div>
     

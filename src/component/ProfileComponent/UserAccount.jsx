@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Formik, Field, Form } from "formik";
 import ProfileImage from "./ProfileImage";
-import http from "../../core/services/interceptore";
 import { CustomPutUseMutationExtra } from "../customHook/CustomPutUseMutationExtra";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";

@@ -7,13 +7,9 @@ import { CardItemFull } from "../../common/Cource/CardItemFull";
 
 export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPageNum , showType , refetch}) => {
  
-
-  
   const setFiltershow = useSelector(state=>state.setFiltershow.setFiltershow)
   const cardSize=setFiltershow?`w-[21rem]`:`w-[23rem]`
 
-  
- 
 
   return (
     <>
@@ -68,6 +64,7 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
                   userLikedId={result.userLikedId}
                   currentUserDissLike={result.currentUserDissLike}
                   refetch={refetch}
+                  courseRate={result.courseRate}
                 />
 
               </div>
@@ -86,10 +83,10 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
         }) }
 ======= */}
       {/* <button onClick={() => setPageNum(PageNum+1)}>nextpage </button> */}
-      <div className="flex flex-row justify-center items-center gap-2 font-[24px] text-center">
+      <div className="flex flex-row justify-center items-center gap-2 font-[20px] text-center mb-10">
       {paginationArray?.length>0 && paginationArray?.map(item => {
           return(
-            <div  className="border-2 hover:bg-violet-300 w-[40px] h-[40px] cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
+            <div  className="rounded-full shadow-lg pt-2 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 shadow-violet-700 hover:bg-violet-300 w-[40px] h-[40px] cursor-pointer" onClick={() => setPageNum(item)}>{item}</div>
           )
         }) }
       </div>

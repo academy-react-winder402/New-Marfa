@@ -1,9 +1,11 @@
+import ScrollToTop from "react-scroll-to-top";
 import { Card } from "../../../common/Cource/Card";
 import CategoryCard from "../Categoryfill/CategoryCard";
 import News from "../News/News";
 import Professors from "../Professors/Professors";
 import { Service } from "../Services/Service";
 import { Toplanding } from "../TopLanding/Toplanding";
+
 
 
 const LandingComponent = () => {
@@ -28,7 +30,11 @@ const LandingComponent = () => {
 
             {/* section six News in landing*/}
             <News/>
-
+            <ScrollToTop smooth style={{ backgroundColor: 'rgba(88,0,255,0.4)',
+                right: '60px' ,
+                borderRadius: '50%' ,
+                textAlign: 'center',
+                }}/>
         </div>
      );
 }

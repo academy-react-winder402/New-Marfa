@@ -10,10 +10,12 @@ import store from '../redux/store';
 import '@mantine/core/styles.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import '@mantine/charts/styles.css'
 
 
 function App() {
-  const client = new QueryClient({defaultOptions: {queries: {refetchOnWindowFocus: true,  cacheTime:6000, }, mutations:{}}})
+  const client = new QueryClient()
+  // const client = new QueryClient({defaultOptions: {queries: {refetchOnWindowFocus: true,  cacheTime:6000, }, mutations:{}}})
 
 
   useEffect(() => {

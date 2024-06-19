@@ -8,8 +8,8 @@ import { RatingStarComponent } from '../CourcesDetailComponent/RatingStarCompone
 
 const NewsDetailShare = () => {
   return (
-  <div className='bg-[#D7D5FF] dark:bg-violet-950 xm-auto w-full' >
-      <div className= 'mx-auto flex w-[90%] justify-between border-b-2 border-[#3F40EA]/20 p-6'>
+  <div className='shadow-lg dark:bg-violet-950 xm-auto w-full' >
+      <div className= ' mx-auto flex w-[90%] justify-between border-b-2 border-[#3F40EA]/20 p-6'>
       <h2 className='flex justify-start items-center w-96 text-[#03001C]/50 text-2xl dark:text-violet-200'>اشتراک گذاری:</h2>
        <div className='flex justify-end w-[60%]'>
         <img src={feacebook} alt="" />

@@ -26,7 +26,7 @@ export const SwipperComponent = () => {
     
    }
 
-    const {data , isLoading ,isError , error ,isSuccess} = useQuery("courseListSwiper", getCourseList)
+    const {data , isLoading ,isError , error ,isSuccess , refetch} = useQuery("courseListSwiper", getCourseList)
 
   return (
     <div className="mx-auto p-5 rounded-xl w-[90%]">
@@ -69,17 +69,24 @@ export const SwipperComponent = () => {
                 <div className="max-w-[310px]">
                   <div className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-4 mb-10 p-[1rem] rounded-[0.9375rem]">
                   <CardItem
-                    id={result.courseId}
-                    title={result.title}
-                    img={result.tumbImageAddress}
-                    sectionCours={result.sectionCours}
-                    timeCours={result.timeCours}
-                    calender={result.statusName}
-                    master={result.teacherName}
-                    like={result.likeCount}
-                    dislike={result.dissLikeCount}
-                    priceCourse={result.cost}
-                    countStudio={result.currentRegistrants}
+                  id={result.courseId}
+                  title={result.title}
+                  img={result.tumbImageAddress}
+                  sectionCours={result.sectionCours}
+                  timeCours={result.statusName}
+                  calender={result.lastUpdate}
+                  master={result.teacherName}
+                  like={result.likeCount}
+                  dislike={result.dissLikeCount}
+                  priceCourse={result.cost}
+                  countStudio={result.levelName}
+                  currentRegistrants ={result.currentRegistrants}
+                  userFavorite={result.userFavorite}
+                  userFavoriteId={result.userFavoriteId}
+                  userIsLiked={result.userIsLiked}
+                  userLikedId={result.userLikedId}
+                  currentUserDissLike={result.currentUserDissLike}
+                  refetch={refetch}
                 />
                   </div>
                 </div>

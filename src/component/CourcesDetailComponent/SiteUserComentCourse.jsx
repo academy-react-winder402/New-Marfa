@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 import { getList } from "../../function/getList";
 import http from "../../core/services/interceptore";
 // component one user
-const SiteUserComponent = ({ dataComent, refetch }) => {
+const SiteUserComentCourse = ({ dataComent, refetch }) => {
   
   //*******************************************
   const {
@@ -15,8 +15,8 @@ const SiteUserComponent = ({ dataComent, refetch }) => {
     isError,
     error,
     refetch: refetchReply,
-  } = useQuery("newsreplyComent", () =>
-    getList(`/News/GetRepliesComments?Id=${data.id}`)
+  } = useQuery("courseReplyComent", () =>
+    getList(`/api/Course/GetCourseReplyCommnets/:CourseId/:CommentId${data.id}`)
   );
 
   // ********************************
@@ -176,4 +176,4 @@ const SiteUserComponent = ({ dataComent, refetch }) => {
   );
 };
 
-export default SiteUserComponent;
+export default SiteUserComentCourse;

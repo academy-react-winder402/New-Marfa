@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { CoursesComponent } from '../../component/CourseComponent/CouecesMainPage/CoursesComponent'
+import deskImage from '../../assets/image/svg/Rectangle 90.svg'
 
 const Courses = () => {
   useEffect(() => {
     window.scrollTo(0,0)
 }, []);
   return (
-    <div>
+    <div className='w-full' >
       <CoursesComponent/>
     </div>
   )

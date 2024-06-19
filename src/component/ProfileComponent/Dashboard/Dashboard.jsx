@@ -3,6 +3,7 @@ import { DashboardTopComponent } from "./DashboardTopComponent";
 import { CustomGetUseQueryExtra } from "../../customHook/CustomGetUseQueryExtra";
 import html from "../../../assets/image/3.jpg";
 import DonutChart from "react-donut-chart";
+import {Chart} from '../Dashboard/Chart'
 
 export const Dashboard = () => {
 
@@ -47,24 +48,10 @@ export const Dashboard = () => {
 
   return (
     <div className="bg-white 2xl:w-[72rem] dark:bg-violet-950  dark:text-violet-200">
-      <div className="w-full bg-red flex ">
-        {/* <div className="hiw-[25%]">
-          <DonutChart width={230} height={230}
-            option = {option}
-            data={[
-              {
-                label: "",
-                value: 20,
-              },
-              {
-                label: "",
-                value: 75,
-                isEmpty: true,
-              },
-            ]}
-          />
-          ;
-        </div> */}
+      <div className="w-full bg-red flex justify-center">
+        <div className="visible hidden md:visible md:inline-block my-auto">
+        <Chart chartData={profileComplete?.profileCompletionPercentage} />
+        </div>
         <div className="bg-gree w-[75%]">
           <DashboardTopComponent />
         </div>

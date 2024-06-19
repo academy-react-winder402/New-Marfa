@@ -25,6 +25,7 @@ const News = () => {
             return(
             <div  className='z-10 w-[95%] md:w-[45%]'  key={item.id}> 
               <CardNews 
+              id={item.id}
               title={item.title}
               img={item.currentImageAddressTumb}
               view={item.currentView}

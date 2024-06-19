@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import html from "../../assets/image/3.jpg";
-import notFound from '../../assets/image/Images-for-null 2.svg'
-import http from '../../core/services/interceptore'
+import notFound from "../../assets/image/Images-for-null 2.svg";
+import http from "../../core/services/interceptore";
 
 export const CardItemFull = ({
   id,
@@ -21,49 +21,89 @@ export const CardItemFull = ({
   courseRate,
   userFavorite,
   userFavoriteId,
-  refetch
-  }) => {
+  refetch,
+  userIsLiked,
+  userLikedId,
+  currentUserDissLike
+}) => {
 
-    // const token = getItem('token');
 
-    const handleFavourite = async() => {
-      if(!userFavorite){
-        const res = await http.post('/Course/AddCourseFavorite' ,{courseId:id} )
-        refetch()
-      }
-      else{
-        const obj ={CourseFavoriteId:userFavoriteId}
-        const data = new FormData()
-        data.append('CourseFavoriteId' , userFavoriteId)
-        const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
-        refetch()
-      }
-  
-        // if(token && userFavorite=== false) {
-        //   const favorite = {url:`/Course/AddCourseFavorite ${id}`}
-        //   mutate(favorite);
-        //   setUserFavorite(true)
-        // }
-        // else{
-        //   <></>
-        // }
-  
+  const noImage = img === null || img === "undefined" || img === "";
+  // const token = getItem('token');
+//***********FUNCTION************
+  const handleFavourite = async () => {
+    if (!userFavorite) {
+      const res = await http.post("/Course/AddCourseFavorite", {
+        courseId: id,
+      });
+      refetch();
+    } else {
+      const obj = { CourseFavoriteId: userFavoriteId };
+      const data = new FormData();
+      data.append("CourseFavoriteId", userFavoriteId);
+      const res1 = await http.delete("/Course/DeleteCourseFavorite", {
+        data: data,
+      });
+      refetch();
     }
-  const noImage = img=== null || img === 'undefined' || img === ''
+
+    // if(token && userFavorite=== false) {
+    //   const favorite = {url:`/Course/AddCourseFavorite ${id}`}
+    //   mutate(favorite);
+    //   setUserFavorite(true)
+    // }
+    // else{
+    //   <></>
+    // }
+  };
+  //********************************
+  const handleLike = async () => {
+    if (!userIsLiked) {
+      const res2 = await http.post(`/Course/AddCourseLike?CourseId=${id}`);
+      refetch();
+    } else {
+      const data = new FormData();
+      data.append("CourseLikeId", userLikedId);
+      const res1 = await http.delete("/Course/DeleteCourseLike", {
+        data: data,
+      });
+      refetch();
+    }
+  };
+  //*****************************
+
+  const handleDisLike = async () => {
+    if (!currentUserDissLike) {
+      const res = await http.post(`/Course/AddCourseDissLike?CourseId=${id}`);
+      refetch();
+    }
+    // else{
+    // //   const obj ={CourseFavoriteId:userFavoriteId}
+    //   const data = new FormData()
+    //   data.append('CourseFavoriteId' , userFavoriteId)
+    //   const res1= await http.delete('/Course/DeleteCourseFavorite' , {data:data})
+    //   refetch()
+    // }
+  };
+  //****************************
 
   return (
-    <div  className="relative flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-violet-700 bg-white hover:bg-gray-100 dark:bg-violet-950 shadow mx-auto my-10 border rounded-2xl w-[95%] md:w-[95%] h-auto md:h-80 dark:text-violet-200 group">
+    <div className="relative flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-violet-700 bg-white hover:bg-gray-100 dark:bg-violet-950 shadow mx-auto my-10 border rounded-2xl w-[95%] md:w-[95%] h-auto md:h-80 dark:text-violet-200 group">
       <div className="flex justify-center items-center m-5 rounded-t-lg md:rounded-none md:rounded-s-lg md:w-[30%]">
-        <img className="rounded-lg h-52 object-cover" src={noImage ? notFound : img} alt="" />
+        <img
+          className="rounded-lg h-52 object-cover bg-violet-300"
+          src={noImage ? notFound : img}
+          alt=""
+        />
       </div>
 
       <div className="flex flex-col flex-grow my-5 md:my-0 w-[80%] md:w-[50%] text-lg text-start leading-8">
         <Link to={`/courses/${id}`}>
-        <div className="flex flex-col justify-between p-4 leading-normal">
-          <h5 className="mb-2 text-2xl text-indigo-900 md:text-[26px] dark:text-white tracking-tight">
-           {"    "}آموزش دوره های {title} 
-          </h5>
-        </div>
+          <div className="flex flex-col justify-between p-4 leading-normal">
+            <h5 className="mb-2 text-2xl text-indigo-900 md:text-[26px] dark:text-white tracking-tight">
+              {"    "}آموزش دوره های {title}
+            </h5>
+          </div>
         </Link>
 
         <div className="flex flex-row gap-7 text-lg text-zinc-500">
@@ -74,7 +114,7 @@ export const CardItemFull = ({
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-4 h-4"
+              className="w-4 h-4"
             >
               <path
                 stroke-linecap="round"
@@ -92,7 +132,7 @@ export const CardItemFull = ({
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-4 h-4"
+              className="w-4 h-4"
             >
               <path
                 stroke-linecap="round"
@@ -100,7 +140,7 @@ export const CardItemFull = ({
                 d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
-            <span>{timeCours}   </span>
+            <span>{timeCours} </span>
           </div>
 
           <div className="flex flex-row justify-center items-center gap-2 dark:text-violet-200">
@@ -110,7 +150,7 @@ export const CardItemFull = ({
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-4 h-4"
+              className="w-4 h-4"
             >
               <path
                 stroke-linecap="round"
@@ -122,7 +162,7 @@ export const CardItemFull = ({
           </div>
         </div>
         <p className="mt-10 md:mt-2 px-8 font-normal text-violet-700 dark:text-violet-200">
-         {describe}
+          {describe}
         </p>
         <div className="mt-8 md:mt-2 divide-y-2 divide-slate-200 text-slate-500 text-xs">
           <div className="flex flex-row gap-[50%] text-lg text-zinc-500">
@@ -134,7 +174,7 @@ export const CardItemFull = ({
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-4 h-4"
+                  className="w-4 h-4"
                 >
                   <path
                     stroke-linecap="round"
@@ -149,11 +189,12 @@ export const CardItemFull = ({
               <div className="flex flex-row justify-center items-center gap-2 mt-10 md:mt-2 md:mb-4 dark:text-violet-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
+                  fill={userIsLiked ? `gray` :`none`}
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-4 h-4"
+                  stroke={userIsLiked ? `gray` :`currentColor`}
+                  className="w-4 h-4 cursor-pointer"
+                  onClick={handleLike}
                 >
                   <path
                     stroke-linecap="round"
@@ -166,11 +207,12 @@ export const CardItemFull = ({
               <div className="flex flex-row justify-center items-center gap-2 mt-10 md:mt-2 md:mb-4 dark:text-violet-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
+                  fill={currentUserDissLike ?`gray` :`none`}
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-4 h-4"
+                  stroke={currentUserDissLike ?`gray` :`currentColor`}
+                  className="w-4 h-4 cursor-pointer"
+                  onClick={handleDisLike}
                 >
                   <path
                     stroke-linecap="round"
@@ -191,7 +233,7 @@ export const CardItemFull = ({
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-6"
+                  className="size-6"
                 >
                   <path
                     stroke-linecap="round"
@@ -200,34 +242,32 @@ export const CardItemFull = ({
                   />
                 </svg>
 
-                <span>{courseRate}</span>
+                <span className="">{courseRate}</span>
               </div>
             </div>
             <div className="flex flex-row gap-7 text-lg text-zinc-500">
               <div className="flex flex-row justify-center items-center gap-8 mt-10 md:mt-2 dark:text-violet-200">
                 <div className="flex justify-center items-center gap-2">
-                <span>{currentRegistrants}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-4 h-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
-                  />
-                </svg>
+                  <span>{currentRegistrants}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
+                    />
+                  </svg>
                 </div>
 
                 <div>
-                <span>{priceCourse} </span>
+                  <span>{priceCourse} </span>
                 </div>
-
-                
               </div>
             </div>
           </div>
@@ -237,11 +277,11 @@ export const CardItemFull = ({
       <div className="group-hover:visible top-0 left-0 z-20 absolute bg-sky-200 p-1 rounded-tr-lg rounded-br-lg w-12 invisible">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          fill={userFavorite ?`red` :`none`}
+          fill={userFavorite ? `red` : `none`}
           viewBox="0 0 24 24"
           stroke-width="1.5"
-          stroke={userFavorite ?`red` :`currentColor`}
-          class="size-6"
+          stroke={userFavorite ? `red` : `currentColor`}
+          className="size-6 cursor-pointer"
           onClick={handleFavourite}
         >
           <path

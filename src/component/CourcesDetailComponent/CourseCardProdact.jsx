@@ -1,6 +1,6 @@
 import React from 'react'
 
-import notFound from '../../assets/image/notFound.jpg'
+import notFound from '../../assets/image/Images-for-null 2.svg'
 import { RatingStarComponent } from './RatingStarComponent';
 
 // component star
@@ -8,13 +8,13 @@ import { RatingStarComponent } from './RatingStarComponent';
 
  const CourseCardProdact = ({data}) => {
    const noImage = data?.imageAddress=== null || data?.imageAddress === 'undefined' || data?.imageAddress === ''
-   console.log(data)
+   
 
    return (
    //  component right top course
-   <div className="flex flex-col justify-center items-center hover:bg-[#D7D5FF] dark:hover:bg-violet-800 dark:bg-violet-900 mx-auto mb-2 md:mb-10 md:ml-5 rounded-md w-[520px] md:w-full">
+   <div className="flex flex-col justify-center items-center  dark:hover:bg-violet-800 dark:bg-violet-900 mx-auto mb-2 md:mb-10 md:ml-5 rounded-md w-[520px] md:w-full">
      <div className="mx-auto my-5 px-8 rounded-t-lg md:rounded-none md:rounded-s-lg w-full h-auto">
-      <object data="" type=""></object><img className="mx-auto p-2 rounded-t-lg w-[90%] h-auto md:h-[35rem] object-cover"  src={noImage ? notFound : data?.imageAddress} alt="" />
+      <object data="" type=""></object><img className="mx-auto shadow-xl p-2 rounded-t-lg w-[90%] h-auto md:h-[35rem] object-cover"  src={noImage ? notFound : data?.imageAddress} alt="" />
      </div>
      <div className='w-full leading-8'>
         <div className="flex flex-col md:justify-start m-10 mx-auto px-5 w-[80%] md:w-[90%]">

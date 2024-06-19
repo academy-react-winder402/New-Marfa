@@ -4,7 +4,7 @@ import PreviewCourseComponent from './PreviewCourseComponent ';
 import UserCommentComponent from './UserCommentComponent';
 import { Tabs, rem } from '@mantine/core';
 
-const TabCoursComponent = ()=> {
+const TabCoursComponent = ({data})=> {
     const iconStyle = { width: rem(12), height: rem(12) };
   
     return (
@@ -22,7 +22,7 @@ const TabCoursComponent = ()=> {
         </Tabs.List>
   
         <Tabs.Panel value="Detail">
-          <DetailsTap1Component/>
+          <DetailsTap1Component data={data && data}/>
         </Tabs.Panel>
   
         <Tabs.Panel value="Preview">

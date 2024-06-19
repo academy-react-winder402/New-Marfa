@@ -7,58 +7,7 @@ import { TableRowComponent } from "./TableRowComponent";
 
 export const TableSelectedCourse = ({data}) => {
 
-  // const {data} = CustomGetUseQueryExtra('getProfileInfo',`/SharePanel/GetProfileInfo`)
-
-  // const Data = [
-  //   {
-  //     id: 1,
-  //     img: html,
-  //     title: "html آموزش مقدماتی",
-  //     master: " دکتر بحرالعلوم",
-  //     priceCourse: "500000",
-  //     startTime: "1402 / 07 / 09",
-  //   },
-  //   {
-  //     id: 2,
-  //     img: html,
-  //     title: "html آموزش مقدماتی",
-  //     master: " دکتر بحرالعلوم",
-  //     priceCourse: "500000",
-  //     startTime: "1402 / 07 / 09",
-  //   },
-  //   {
-  //     id: 3,
-  //     img: html,
-  //     title: "html آموزش مقدماتی",
-  //     master: " دکتر بحرالعلوم",
-  //     priceCourse: "500000",
-  //     startTime: "1402 / 07 / 09",
-  //   },
-  //   {
-  //     id: 4,
-  //     img: html,
-  //     title: "html آموزش مقدماتی",
-  //     master: " دکتر بحرالعلوم",
-  //     priceCourse: "500000",
-  //     startTime: " 1402 / 07 / 09",
-  //   },
-  //   {
-  //     id: 5,
-  //     img: html,
-  //     title: "html آموزش مقدماتی",
-  //     master: " دکتر بحرالعلوم",
-  //     priceCourse: "500000",
-  //     startTime: " 1402 / 07 / 09",
-  //   },
-  //   {
-  //     id: 6,
-  //     img: html,
-  //     title: "html آموزش مقدماتی",
-  //     master: " دکتر بحرالعلوم",
-  //     priceCourse: "500000",
-  //     startTime: " 1402 / 07 / 09",
-  //   },
-  // ];
+  
   return (
     <>
     <div className="overflow-x-scroll ">

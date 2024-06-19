@@ -7,26 +7,21 @@ import OrderCourseComponent from "../../CourcesDetailComponent/OrderCourseCompon
 import handleTheme from "../../../core/services/handleTheme";
 import { useQuery } from "react-query";
 import { getList } from "../../../function/getList";
-
-
-
-
+import deskImage from "../../../assets/image/svg/Rectangle 90.svg";
+import ScrollToTop from "react-scroll-to-top";
+import AllUsersCommentCourse from "../../CourcesDetailComponent/AllUsersCommentCourse";
 
 export const CourcesDetailPageComponent = () => {
-    const params  = useParams()
-    
-    const {data , isLoading ,isError , error , refetch} = useQuery("courseList2",
-       () => getList(`/Home/GetCourseDetails?CourseId=${params.id}`))
+  const params = useParams();
 
+  const { data, isLoading, isError, error, refetch } = useQuery(
+    "courseList2",
+    () => getList(`/Home/GetCourseDetails?CourseId=${params.id}`)
+  );
   useEffect(() => {
     handleTheme();
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, []);
-
-
-  
-  
-
 
   //  const getCourseDetail =async() => {
   //   const res = await axios.get(`https://classapi.sepehracademy.ir/api/Home/GetCourseDetails?CourseId=${params.id}`)
@@ -35,18 +30,28 @@ export const CourcesDetailPageComponent = () => {
   //  }
 
   //   const {data , isLoading ,isError , error} = useQuery("courseDetail1", getCourseDetail)
-    
-    return (
-        
-          <div className="bg-bluec w-full">
-            <div className="bg-[#D7D5FF] dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
-             <CoursProudactComponents data={data && data} refetch={refetch}/>
-              <CourseProudactMenuTabUL data={data && data} />
-              {/* <UserCommentComponent/> */}
-              <AllUsersComment/>
-              <OrderCourseComponent/>
-            </div>
-          </div>
-         
-    );
-  };
+
+  return (
+    <div
+      className="w-full bg-no-repeat bg-contain"
+      style={{ backgroundImage: `url(${deskImage}) ` }}
+    >
+      <div className=" dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
+        <CoursProudactComponents data={data && data} refetch={refetch} />
+        <CourseProudactMenuTabUL data={data && data} />
+        {/* <UserCommentComponent/> */}
+        <AllUsersCommentCourse  />
+        <OrderCourseComponent />
+      </div>
+      <ScrollToTop
+        smooth
+        style={{
+          backgroundColor: "rgba(88,0,255,0.4)",
+          right: "60px",
+          borderRadius: "50%",
+          textAlign: "center",
+        }}
+      />
+    </div>
+  );
+};

@@ -27,6 +27,8 @@ import { useSelector } from "react-redux";
 import MyCourses from "../component/ProfileComponent/MyCourses";
 import ReserveCourses from "../component/ProfileComponent/ReserveCourses";
 import FavoriteCourses from "../component/ProfileComponent/FavoriteCourses";
+
+import MasterDetailPage from "../screen/masterDetail/MasterDetailPage";
 // import { getItem } from "../localStorage/localStorage";
 
 // private Rout
@@ -47,6 +49,10 @@ const routePrivet = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <CourcesDetailPageComponent />,
+      },
+      {
+        path: "/master/:id",
+        element: <MasterDetailPage />,
       },
       {
         path: "/news",
@@ -76,6 +82,7 @@ const routePrivet = createBrowserRouter([
         path: "/profile/useracount",
         element: <UserAccount />,
       },
+    
       {
         path: "/profile/changePass",
         element: <ChangePass />,
@@ -134,6 +141,10 @@ const routePublic = createBrowserRouter([
         element: <CourcesDetailPageComponent />,
       },
       {
+        path: "/master/:id",
+        element: <MasterDetailPage/>,
+      },
+      {
         path: "/news",
         element: <NewsPage />,
       },
@@ -165,9 +176,7 @@ const routePublic = createBrowserRouter([
   },
 ]);
 const Router = () => {
-  // const [isLogin,setIslogin]=useState(false)
-  const isLogin = useSelector((state) => state.isLogin.isLogin);
-  console.log(isLogin);
+  const isLogin = useSelector((state) => state.isLogin.isLogin)
   const token = getItem("token");
   return (
     <RouterProvider router={isLogin || token ? routePrivet : routePublic} />

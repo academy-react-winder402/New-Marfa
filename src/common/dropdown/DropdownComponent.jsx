@@ -1,16 +1,29 @@
 import React from "react";
-import { Dropdown } from "flowbite-react";
+import { Select } from "@mantine/core";
 
-export const DropdownComponent = () =>{
+export const DropdownComponent = ({ setSortCol, sortCol }) => {
+
   return (
- 
-      <Dropdown label="دسته بندی  " className='bg-slate-400 mx-auto rounded-lg w-72 text-gray-400'  id="accordion-open-heading-1" dismissOnClick={false}>
-        <Dropdown.Item> Next </Dropdown.Item>
-        <Dropdown.Item>React</Dropdown.Item>
-        <Dropdown.Item>Javascript</Dropdown.Item>
-        <Dropdown.Item>C+</Dropdown.Item>
-      </Dropdown>
- 
+    <div
+      className="bg-white outline-none hover:bg-bluec rounded-lg w-56
+    text-gray-900 dark:text-gray-300 dark:bg-violet-950 placeholder-slate-900"
+    >
+      <Select
+        placeholder="دسته بندی"
+       data={[
+        { value: "TypeName", label: "بر اساس نام" },
+        { value: "StatuseName", label: "بر اساس وصعیت" },
+        { value: "LevelName", label: "بر اساس سطح" },
+        { value: "Cost", label: "بر اساس قیمت" },
+        { value: "LastUpdate", label: "آخرین به روزرسانی" },
+        { value: "InsertDate", label: "بر اساس ورودی" },
+      ]}
+        nothingFoundMessage="مقداری یافت نشد..."
+        onChange={setSortCol}
+        value={sortCol}
+        clearable
+        searchable     
+      />
+    </div>
   );
-}
-
+};

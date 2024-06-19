@@ -1,15 +1,15 @@
+import { Link, useNavigate } from "react-router-dom";
 import { CustomGetUseQueryExtra } from "../../customHook/CustomGetUseQueryExtra";
 import UserAccount from "../EditAccount";
 
 export const DashboardTopComponent = () => {
+
+  const navigat = useNavigate()
   const { data } = CustomGetUseQueryExtra(
     "getProfileInfo",
     `/SharePanel/GetProfileInfo`
   );
 
-  const handleProfileEdit = () => {
-    return <UserAccount />;
-  };
 
   return (
     <>
@@ -54,14 +54,14 @@ export const DashboardTopComponent = () => {
         </div>
 
         <div className="  w-full md:w-[45%] lg:w-[30%]">
-          <button
+          <Link
             className="text-fuchsia-700  dark:text-slate-300 absolute left-0 bottom-0 h-[2rem] 
           border-2 rounded-tr-lg border-slate-400 rounded-bl-lg
           text-center px-5 py-1 mb-[-1px] ml-[-1px] cursor-pointer hover:bg-bluec dark:hover:bg-violet-8 00 bg-opacity-50"
-            onClick={handleProfileEdit}
+            to= '/profile/useracount'
           >
             ویرایش
-          </button>
+          </Link>
         </div>
       </div>
     </>

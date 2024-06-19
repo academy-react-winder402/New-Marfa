@@ -45,7 +45,7 @@ const CategoryCard = () => {
           {category.map((category , index) => {
                   return (
                     
-                      <Minicategorycart id={category.id} title={category.title} image={category.img} />              
+                      <Minicategorycart data-aos="fade-up" data-aos-duration={`(category.id) % 2 === 0 ? 100 : 5000`}  id={category.id} title={category.title} image={category.img} />              
                   )
               })} 
       </div>

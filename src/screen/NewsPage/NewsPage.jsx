@@ -6,7 +6,7 @@ const NewsPage = () => {
     window.scrollTo(0,0)
 }, []);
   return (
-    <div>
+    <div className='w-full'>
       <NewsPageComponent/>
     </div>
   )
