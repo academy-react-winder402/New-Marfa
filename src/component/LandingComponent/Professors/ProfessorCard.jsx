@@ -19,9 +19,9 @@ const ProfessorCard = ({
   return (
     <Link
       to={`/master/${id}`}
-      className="flex md:flex-row flex-col justify-center items-center mx-auto mt-20 py-10 md:w-[80%] group"
+       className="flex md:flex-row flex-col justify-center items-center mx-auto mt-20 py-10 md:w-[80%] group"
     >
-      <div className="relative flex justify-start items-center bg-gradient-to-l from-[#6B3FEA] dark:from-violet-900 to-[#7070FF] dark:to-violet-700 shadow-lg mx-auto rounded-lg w-96 md:w-[90%] h-56 md:h-64">
+      <div data-aos="flip-left" data-aos-duration="3000" data-aos-easing="linear" className="relative flex justify-start items-center bg-gradient-to-l from-[#6B3FEA] dark:from-violet-900 to-[#7070FF] dark:to-violet-700 shadow-lg mx-auto rounded-lg w-96 md:w-[90%] h-56 md:h-64">
         <div className="-top-20 left-44 absolute mx-auto">
           <img
             src={masterPic}

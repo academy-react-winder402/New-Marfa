@@ -28,7 +28,7 @@ export const Service = () => {
             <span className="block w-16 md:w-28 text-[#121242] md:text-2xl dark:text-violet-200">خدمات ما</span>
             <span className="block bg-gradient-to-l via-transparent to-transparent py-[2px] from-borderGradiant w-16 md:w-28"></span>
         </div>
-        <div className="flex md:flex-row flex-col md:justify-center items-end gap-5 dark:bg-violet-950 mx-auto mt-10 p-5 w-[90%] h-auto dark:text-violet-200" data-aos="fade-up" data-aos-duration="2000" >
+        <div data-aos="fade-up" data-aos-duration="2000" className="flex md:flex-row flex-col md:justify-center items-end gap-5 dark:bg-violet-950 mx-auto mt-10 p-5 w-[90%] h-auto dark:text-violet-200" data-aos="fade-up" data-aos-duration="2000" >
             {service.map((service , index) => {
                 return (
                     <ServiceCart title={service.title} image={service.img} description={service.description}/>              

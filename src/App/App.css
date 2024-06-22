@@ -8,9 +8,12 @@
     background-color: transparent;
     padding-left: 2.5rem;
     --tw-shadow: inset 0 2px 22px 0 rgba(255, 255, 255, 0.6);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    -webkit-border-radius: 9999px;
+    -moz-border-radius: 9999px;
+    -ms-border-radius: 9999px;
+    -o-border-radius: 9999px;
+}
   .custom-input:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;

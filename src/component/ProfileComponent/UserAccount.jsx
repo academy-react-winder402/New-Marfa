@@ -1,16 +1,30 @@
 import { Link } from "react-router-dom";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import ProfileImage from "./ProfileImage";
 import { CustomPutUseMutationExtra } from "../customHook/CustomPutUseMutationExtra";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import * as yup from "yup";
 
 const UserAccount = () => {
+
   const [startDate, setStartDate] = useState(new Date());
   const { mutate } = CustomPutUseMutationExtra();
 
+// **********************************************
+  const validation = yup.object().shape({
+    LName:yup.string().required('این فیلد اجباری است'),
+    FName:yup.string().required('این فیلد اجباری است'),
+
+  });
+
+
+ // **********************************************
+
+
   const handleUserInfoSubmit = (values) => {
+    // console.log('values' ,values );
     const data = new FormData()
     const keys = Object.keys(values)
     keys.forEach(Key => {
@@ -25,11 +39,12 @@ const UserAccount = () => {
     };
     mutate(obj);
   };
+ 
   return (
     <div className="w-[90%] h-[90%] mx-auto">
       <ProfileImage />
       <div className="w-full ">
-        <Formik
+        <Formik validationSchema={validation}
           initialValues={{
             LName: "",
             FName: "",
@@ -41,6 +56,7 @@ const UserAccount = () => {
             BirthDay: "2024/01/01",
           }}
           onSubmit={ handleUserInfoSubmit}
+          
         >
           {({ values, handleSubmit, handleChange }) => (
             <Form className="w-full">
@@ -59,6 +75,7 @@ const UserAccount = () => {
                     type="text"
                     name="FName"
                   />
+                  <ErrorMessage name="FName" component={'p'} />
                 </div>
 
                 <div className="w-[70%] flex flex-col md:w-[45%] lg:w-[30%] mx-auto">

@@ -5,10 +5,10 @@ import SortFilterComponent from './SortFilterComponent'
 
 
 
-const ItemFilterNews = ({handleSearch}) => {
+const ItemFilterNews = ({handleSearch , setSortNews ,sortNews }) => {
   return (
-    <div  className='flex md:flex-row flex-col justify-center items-center md:items-start gap-8 md:gap-24 mx-auto my-3 w-[90%]'>
-      <SortFilterComponent/>
+    <div  className='flex md:flex-row flex-col justify-center items-center md:items-start gap-8 md:gap-16 mx-auto my-3 w-[90%]'>
+      <SortFilterComponent setSortNews={setSortNews} sortNews={sortNews} />
       <Searchcomponent handleSearch={handleSearch}/>   
     </div>
   )

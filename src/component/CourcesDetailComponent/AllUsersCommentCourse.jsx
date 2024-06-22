@@ -8,7 +8,7 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 // comment all user
 
-const AllUsersCommentCourse = () => {
+const AllUsersCommentCourse = ({id}) => {
   const params = useParams();
   const {
     data,
@@ -19,6 +19,8 @@ const AllUsersCommentCourse = () => {
   } = useQuery("comentCourse", () =>
     getList(`/Course/GetCourseCommnets/:CourseId=${params.id}`)
   );
+
+  
 
   
   return (

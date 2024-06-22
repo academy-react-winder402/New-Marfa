@@ -8,12 +8,13 @@ import { getList } from "../../function/getList";
 import deskImage from "../../assets/image/svg/Rectangle 90.svg";
 import ScrollToTop from "react-scroll-to-top";
 
-const NewsPageComponent = () => {
+const  NewsPageComponent = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
-  const { data, isLoading, isError, error } = useQuery(["newsList1", searchQuery], () =>
+  const [sortNews, setSortNews] = useState('InsertDate');
+  const { data, isLoading, isError, error } = useQuery(["newsList1", searchQuery,sortNews], () =>
     getList(
-     `/News?PageNumber=1&RowsOfPage=10&SortingCol=InsertDate&SortType=DESC&${searchQuery}`
+     `/News?PageNumber=1&RowsOfPage=10&SortingCol=${sortNews}&SortType=DESC&${searchQuery}`
     )
   );
 
@@ -42,7 +43,7 @@ const NewsPageComponent = () => {
             </div> */}
 
           <Topheaderseconde className="" />
-          <ItemFilterNews className=""  handleSearch={handleSearch} />
+          <ItemFilterNews className=""  handleSearch={handleSearch} sortNews={sortNews} setSortNews={setSortNews}  />
           <div className="flex flex-col justify-center items-center mx-auto px-5 w-[90%]">
             {data?.news.map((item) => {
               return (

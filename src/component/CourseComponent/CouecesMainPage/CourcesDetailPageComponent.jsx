@@ -10,6 +10,7 @@ import { getList } from "../../../function/getList";
 import deskImage from "../../../assets/image/svg/Rectangle 90.svg";
 import ScrollToTop from "react-scroll-to-top";
 import AllUsersCommentCourse from "../../CourcesDetailComponent/AllUsersCommentCourse";
+import { Center, Flex } from "@mantine/core";
 
 export const CourcesDetailPageComponent = () => {
   const params = useParams();
@@ -33,17 +34,17 @@ export const CourcesDetailPageComponent = () => {
 
   return (
     <div
-      className="w-full bg-no-repeat bg-contain"
+      className="relative w-full bg-no-repeat bg-contain"
       style={{ backgroundImage: `url(${deskImage}) ` }}
     >
       <div className=" dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
         <CoursProudactComponents data={data && data} refetch={refetch} />
         <CourseProudactMenuTabUL data={data && data} />
         {/* <UserCommentComponent/> */}
-        <AllUsersCommentCourse  />
+        <AllUsersCommentCourse id={params.id}  />
         <OrderCourseComponent />
       </div>
-      <ScrollToTop
+      <ScrollToTop className="absolute bottom-4 right-4"
         smooth
         style={{
           backgroundColor: "rgba(88,0,255,0.4)",

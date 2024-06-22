@@ -88,7 +88,7 @@ export const CardItemFull = ({
   //****************************
 
   return (
-    <div className="relative flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-violet-700 bg-white hover:bg-gray-100 dark:bg-violet-950 shadow mx-auto my-10 border rounded-2xl w-[95%] md:w-[95%] h-auto md:h-80 dark:text-violet-200 group">
+    <div data-aos="zoom-in-left" data-aos-duration="1000" data-aos-easing="ease-in-sine" className="relative flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-violet-700 bg-white hover:bg-gray-100 dark:bg-violet-950 shadow mx-auto my-10 border rounded-2xl w-[95%] md:w-[95%] h-auto md:h-80 dark:text-violet-200 group">
       <div className="flex justify-center items-center m-5 rounded-t-lg md:rounded-none md:rounded-s-lg md:w-[30%]">
         <img
           className="rounded-lg h-52 object-cover bg-violet-300"

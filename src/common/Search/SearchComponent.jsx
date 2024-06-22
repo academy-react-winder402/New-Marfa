@@ -2,7 +2,7 @@ import React from 'react'
 
 const Searchcomponent = ({handleSearch}) => {
   return (
-    <div className='flex justify-end items-center mb-3 w-96 md:w-[22%]'> 
+    <div className='flex justify-end items-center mb-3 w-96 md:w-[40%]'> 
         <div className='w-full h-10'>   
          <label for="search" className="dark:bg-violet-950 mb-2 p-2 font-medium text-gray-900 text-sm dark:text-violet-200 sr-only">جستجو</label>
          <div className="relative border-violet-100 rounded-3xl md:rounded-2xl w-full">

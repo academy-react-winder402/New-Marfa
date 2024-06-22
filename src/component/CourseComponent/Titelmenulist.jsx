@@ -39,7 +39,7 @@ const Titelmenulist = ({
     <div className="flex flex-row md:flex-row flex-wrap lg:flex-nowrap justify-center items-center gap-8 m-12 mx-auto px-12 w-[80%]">
       <div
         onClick={handelsetFilter}
-        className="float-right flex flex-row justify-center items-center gap-2 md:gap-2 border-4 border-violet-100 hover:bg-gray-50 dark:hover:bg-violet-800 pr-1 rounded-2xl md:rounded-2xl w-48 md:w-52 h-14 text-lg text-nowrap focus:outline-none focus:ring-2 md:text-sm dark:text-violet-200"
+        className="float-right flex cursor-pointer flex-row justify-center items-center gap-2 md:gap-2 border-4 border-violet-100 hover:bg-gray-50 dark:hover:bg-violet-800 pr-1 rounded-2xl md:rounded-2xl w-48 md:w-52 h-14 text-lg text-nowrap focus:outline-none focus:ring-2 md:text-sm dark:text-violet-200"
       >
         <span> فیلتر ها</span>
         <RxTextAlignCenter size={40} />

@@ -2,11 +2,24 @@ import React from "react";
 import Checboxcourscomponent from "./Checboxcourscomponent";
 import { useSelector } from "react-redux";
 import { CustomGetUseQueryExtra } from "../customHook/CustomGetUseQueryExtra";
+import { RangeSlider, Slider } from '@mantine/core';
 
-const Filtercourses = ({ setCourseType ,setCourseLevel }) => {
+const Filtercourses = ({ setCourseType ,setCourseLevel, setTechnology , setCostUp , setCostDown , costDown , costUp , handleTechnology }) => {
   const setFiltershow = useSelector(
     (state) => state.setFiltershow.setFiltershow
   );
+  // **********************************************
+  // const handleTechCourse = (id) => {
+  //   setTechnology((oldData) => {
+  //     if(oldData.includes(id)) {
+  //       return oldData.filter((i) => i !== id)
+  //     }
+  //     else {
+  //       return [...oldData , id]
+  //     }
+  //   })
+  // }
+  // **********************************************
 
   const show = setFiltershow ? `visible` : `invisible`;
 
@@ -19,6 +32,15 @@ const Filtercourses = ({ setCourseType ,setCourseLevel }) => {
     "/CourseLevel/GetAllCourseLevel"
   );
 
+  const { data:techCourse } = CustomGetUseQueryExtra(
+    "techList",
+    "/Home/GetTechnologies"
+  );
+  
+  // const handleSetTechnology= (e) => {
+  //   setTechnology([...]e.target.value)
+  // }
+  
   return (
     <>
       <div
@@ -66,39 +88,66 @@ const Filtercourses = ({ setCourseType ,setCourseLevel }) => {
               );
             })}
           </div>
-
-          {/* filter  topic */}
+          {/* ********************Technology************************ */}
           <div className="md:flex-row flex-col md:space-x-10 rtl:space-x-reverse border-gray-100 md:border-0 dark:border-violet-700 bg-violet-100 md:bg-white md:dark:bg-violet-900 dark:bg-violet-900 mt-4 md:mt-0 pb-8 border rounded-lg w-full md:w-auto">
             <p className="m-3 p-2 border-b-[1px] border-blue-200 text-violec dark:text-violet-200">
               بر اساس موضوع
             </p>
-            <Checboxcourscomponent titel="برنامه نویسی وب" />
-            <Checboxcourscomponent titel="Android" />
-            <Checboxcourscomponent titel="React" />
-            <Checboxcourscomponent titel="Bootstrap" />
-            <Checboxcourscomponent titel="Ruby" />
-            <Checboxcourscomponent titel="TypeScript" />
-            <Checboxcourscomponent titel="Sas" />
-            <Checboxcourscomponent titel="BootStrap" />
-            <Checboxcourscomponent titel="TailwindCss" />
-            <Checboxcourscomponent titel="Python" />
+            {techCourse?.map((item) => {
+              return (
+                <div key={item.id}>
+                  <input
+                    id={item.id}
+                    name="course"
+                    type="checkbox"
+                    value={item.id}
+                    onChange={handleTechnology}
+                  />
+                  <label htmlFor='DESC' className="font-medium text-gray-900 text-sm md:text-lg dark:text-gray-300 ms-2">{item.techName}</label>
+                </div>
+              );
+            })}
           </div>
-          {/* filter  price */}
 
-          <div className="bg-gray-100 dark:bg-violet-900 my-6 p-5 rounded-lg dark:text-violet-200">
-            <p> بر اساس قیمت</p>
-            <Checboxcourscomponent titel="خریدنی" />
-            <Checboxcourscomponent titel="رایگان" />
-            <Checboxcourscomponent titel="همه" />
+          {/* **************************Cost****************************** */}
+          <div className="md:flex-row flex-col md:space-x-10 rtl:space-x-reverse border-gray-100 md:border-0 dark:border-violet-700 bg-violet-100 md:bg-white md:dark:bg-violet-900 dark:bg-violet-900 mt-4 md:mt-0 pb-8 border rounded-lg w-full md:w-auto">
+            <p className="m-3 p-2 border-b-[1px] border-blue-200 text-violec dark:text-violet-200">
+              بر اساس قیمت
+            </p>
+            <div className="w-[80%] mb-5" >
+                  <label htmlFor='costDown' className=" text-gray-900 text-[10px] md:text-lg dark:text-gray-300 ms-2">شروع قیمت</label>
+                  <Slider value={costDown} onChange={setCostDown}
+                    defaultValue={0}
+                    id='costDown'
+                    step={1000}
+                    min={0}
+                    max={1000000000}
+                    label={null}
+                    
+                  />
+
+                </div>
+                <div  className="w-[80%]">
+                 
+                  <label htmlFor='costUp' className=" text-gray-900 text-[10px] md:text-lg dark:text-gray-300 ms-2">پایان قیمت</label>
+                  <Slider value={costUp} onChange={setCostUp}
+                  className="transition"
+                   defaultValue={0}
+                   
+                   id='costUp'
+                   step={1000}
+                    min={0}
+                    max={1000000000}
+                    label={null}
+                    
+                  />
+                </div>
           </div>
-          {/* filter  time */}
+          
 
-          <div className="bg-gray-100 dark:bg-violet-900 mb-5 p-3 rounded-lg dark:text-violet-200">
-            <p> بر اساس مدت زمان دوره</p>
+          
 
-            <Checboxcourscomponent titel="یک ماه" />
-            <Checboxcourscomponent titel="دو ماه" />
-          </div>
+         
         </div>
       </div>
     </>

@@ -39,7 +39,7 @@ const CourseDetailProudact = ({data , refetch}) => {
     // }
   }
   return (
-    <div className='flex flex-col justify-start items-center dark:bg-violet-950 py-10 rounded-lg md:w-full h-auto'>
+    <div data-aos="zoom-in" data-aos-duration="1000" className='flex flex-col justify-start items-center dark:bg-violet-950 py-10 rounded-lg md:w-full h-auto'>
       <div className='flex flex-col justify-start items-center bg-[#D7D5FF] dark:bg-violet-900 shadow-bg-bluec shadow-xl pt-10 rounded-md w-[520px] md:w-[90%]'>
         <div className='flex justify-center items-center border-[#3D00B1]/20 dark: border-indigo-600 border-b-2 w-[90%] h-16 text-[#210654] dark:text-violet-200'><h1>مشخصات دوره</h1></div>
         <div className='flex flex-col justify-between items-center border-[#3D00B1]/20 dark: border-indigo-600 border-b-2 divide-y divide-[#3D00B1]/20 dark:divide-indigo-600 w-[90%]'>

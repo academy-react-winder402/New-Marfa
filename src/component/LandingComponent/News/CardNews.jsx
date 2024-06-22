@@ -12,7 +12,7 @@ const CardNews = ({id,title , img, view , date, description}) => {
 
   return (
        
-     <div className="flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-violet-700 bg-white hover:bg-gray-100 dark:bg-violet-950 shadow mx-auto my-10 border rounded-lg w-full dark:text-violet-200">
+     <div data-aos="zoom-in-down" data-aos-duration="1000" className="flex md:flex-row flex-col justify-center items-center gap-5 border-gray-200 dark:border-violet-700 bg-white hover:bg-gray-100 dark:bg-violet-950 shadow mx-auto my-10 border rounded-lg w-full dark:text-violet-200">
          <div className="flex justify-center items-center m-5 rounded-t-lg md:rounded-none md:rounded-s-lg md:w-[40%]">
           <img className="rounded-lg w-[450px] h-[200px] object-fill bg-violet-300" src={noImage ? notFound : img} alt="" />
          </div>

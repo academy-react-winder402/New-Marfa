@@ -19,7 +19,7 @@ export const Cardcomponentcourses = ({data , paginationArray , PageNum , setPage
           return (
            <>
            {showType ?  <div key={index} className={` mx-auto  ${cardSize}`}>
-              <div className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-1 mb-10  p-[1rem] rounded-[0.9375rem]">
+              <div data-aos="zoom-in" data-aos-duration="500" className="bg-violet-50 dark:bg-violet-900 dark:shadow-lg dark:hover:shadow-violet-600 mt-1 mb-10  p-[1rem] rounded-[0.9375rem]">
                 <CardItem
                 id={result.courseId}
                 title={result.title}

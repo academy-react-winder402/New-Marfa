@@ -13,11 +13,16 @@ import ScrollToTop from "react-scroll-to-top";
 
 export const CoursesComponent = () => {
 
+
+  // *********************************************************
+
   const setFiltershow =useSelector(state => state.setFiltershow.setFiltershow)
   const [showType , setShowType]= useState(true)
   const show = setFiltershow  ? `md:w-[20%]` : `md:w-0`;
   const cardWidth = setFiltershow  ? `md:w-[70%]` : `md:w-[100%]`;
   // const pageNumber = setFiltershow ? `6` : `8`
+
+  // ***********************STATE ***********************************
  
   const [PageNum, setPageNum] = useState(1);
   const [paginationSize, setpaginationSize] = useState(null);
@@ -27,6 +32,14 @@ export const CoursesComponent = () => {
   const [CourseLevel, setCourseLevel] = useState('');
   const [sortType , setSortType] = useState('DESK')
   const [sortCol , setSortCol] = useState()
+  const [techCount, setTechCount] = useState(0)
+  const [listTechnology , setListTechnology]= useState([])
+  const [technology , setTechnology] = useState(``)
+  const [costDown , setCostDown] = useState(0)
+  const [costUp , setCostUp] = useState(1000000000)
+
+
+  // *******************************************************
 
   // `/Home/GetCoursesWithPagination?PageNumber=${PageNum}&RowsOfPage=6&SortingCol=${sortCol}&SortType=${sortType}$Query={searchQuery}&TechCount=0&courseLevelId=${CourseLevel}`
   // /Home/GetCoursesWithPagination?PageNumber=${PageNum}&RowsOfPage=8&SortingCol=${sortCol}&SortType=${sortType}&Query=${searchQuery}&CostDown=&CostUp=&TechCount=0&ListTech=&courseLevelId=${CourseLevel}&CourseTypeId=&StartDate=&EndDate=&TeacherId=2
@@ -34,7 +47,7 @@ export const CoursesComponent = () => {
   const getCourseList = async () => {
     try{
       const res = await http.get(
-        `/Home/GetCoursesWithPagination?PageNumber=${PageNum}&RowsOfPage=8&SortingCol=${sortCol}&SortType=${sortType}${searchQuery}&TechCount=0&courseLevelId=${CourseLevel}&CourseTypeId=${CourseType}`
+        `/Home/GetCoursesWithPagination?PageNumber=${PageNum}&RowsOfPage=8&SortingCol=${sortCol}&SortType=${sortType}${searchQuery}&CostDown=${costDown}&CostUp=${costUp}&TechCount=${techCount}${technology}&courseLevelId=${CourseLevel}&CourseTypeId=${CourseType}`
       );
       return res;
     }
@@ -43,8 +56,8 @@ export const CoursesComponent = () => {
     }
   };
 
-  const { data, isLoading, isError, error,refetch } = useQuery(
-    ["courseListAll", PageNum, searchQuery , CourseLevel , sortType , sortCol, CourseType],
+  const { data, isLoading, isError, error,refetch, onSuccess } = useQuery(
+    ["courseListAll", PageNum, searchQuery , CourseLevel , sortType , sortCol, CourseType , technology, costDown, costUp],
     getCourseList,
     {
       onSuccess: (data) => {
@@ -52,7 +65,35 @@ export const CoursesComponent = () => {
       },
     }
   );
+  // console.log('data', data);
   
+  // if(onSuccess){
+  //   setpaginationSize(Math.ceil(data.totalCount / 8));
+  // }
+
+  // ***************************************************
+  const handleTechnology = (e) => {
+    const item= e.target.value
+    var newListTechnology = [...listTechnology]
+    if(!newListTechnology.includes(item) && e.target.checked){
+      newListTechnology.push(item)
+      // console.log('newListTechnology' , newListTechnology);
+      setListTechnology(newListTechnology)
+      setTechCount(1)
+      setTechnology(`&listTechnology=${newListTechnology}`)
+    }
+    else{
+      const filterArrey = newListTechnology.filter(recordd => {
+        return recordd !==item
+      })
+      setListTechnology(filterArrey)
+      setTechnology(`&listTechnology=${filterArrey}`)
+    }
+  }
+
+
+
+  // ****************************************************
 
   var pageArr = [];
 
@@ -92,7 +133,8 @@ export const CoursesComponent = () => {
         <div className="flex flex-row flex-nowrap justify-center mx-auto w-[85%] h-full">
           <div
             className={` lg:block w-0  flex md:item-between mx-auto ${show}`}>
-            <Filtercourses setCourseType={setCourseType} setCourseLevel={setCourseLevel} />
+            <Filtercourses setCourseType={setCourseType} setCourseLevel={setCourseLevel} setTechnology={setTechnology}
+            setCostDown={setCostDown} setCostUp={setCostUp} costDown={costDown} costUp={costUp} handleTechnology={handleTechnology}   />
           </div>
           <div className={`flex flex-row flex-wra mx-auto  w-full ${cardWidth} `}>
             <Cardcomponentcourses

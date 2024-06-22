@@ -17,6 +17,8 @@ export const DropdownComponent = ({ setSortCol, sortCol }) => {
         { value: "Cost", label: "بر اساس قیمت" },
         { value: "LastUpdate", label: "آخرین به روزرسانی" },
         { value: "InsertDate", label: "بر اساس ورودی" },
+        { value: "TeacherName", label: "بر اساس استاد" },
+
       ]}
         nothingFoundMessage="مقداری یافت نشد..."
         onChange={setSortCol}

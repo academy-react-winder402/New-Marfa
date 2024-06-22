@@ -12,7 +12,7 @@ import { RatingStarComponent } from './RatingStarComponent';
 
    return (
    //  component right top course
-   <div className="flex flex-col justify-center items-center  dark:hover:bg-violet-800 dark:bg-violet-900 mx-auto mb-2 md:mb-10 md:ml-5 rounded-md w-[520px] md:w-full">
+   <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000" className="flex flex-col justify-center items-center  dark:hover:bg-violet-800 dark:bg-violet-900 mx-auto mb-2 md:mb-10 md:ml-5 rounded-md w-[520px] md:w-full">
      <div className="mx-auto my-5 px-8 rounded-t-lg md:rounded-none md:rounded-s-lg w-full h-auto">
       <object data="" type=""></object><img className="mx-auto shadow-xl p-2 rounded-t-lg w-[90%] h-auto md:h-[35rem] object-cover"  src={noImage ? notFound : data?.imageAddress} alt="" />
      </div>

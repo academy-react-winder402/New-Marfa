@@ -29,7 +29,7 @@ const LoginModal = () => {
   };
   return (
     <>
-      <div
+      <div data-aos="zoom-in-up" data-aos-duration="1500"
         className="bg-[#5c5cad] bg-opacity-5 mx-auto rounded-b-lg md:rounded-l-lg w-full h-full
         dark:bg-violet-950 dark:shadow-2xl dark:shadow-violet-600 dark:text-violet-200"
       >
