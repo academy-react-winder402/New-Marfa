@@ -1,7 +1,13 @@
 import { DashboardButtomComponent } from "./DashboardButtomComponent";
 import { DashboardTopComponent } from "./DashboardTopComponent";
 import { CustomGetUseQueryExtra } from "../../customHook/CustomGetUseQueryExtra";
-import html from "../../../assets/image/3.jpg";
+// import html from "../../../assets/image/3.jpg";
+import html1 from "../../../assets/image/Rectangle55.png";
+import html2 from '../../../assets/image/8MbtJ4hTAaOk3KPcptqZ_e271cac0-aa80-42e1-bada-e178eac9ab6a.webp'
+import html4 from '../../../assets/image/React-JS-library_e5d3e77f-883b-43fe-9ec6-21174518a099.png'
+import html3 from '../../../assets/image/N1.png'
+
+
 import DonutChart from "react-donut-chart";
 import {Chart} from '../Dashboard/Chart'
 
@@ -23,19 +29,39 @@ export const Dashboard = () => {
   const Data2 = [
     {
       id: 1,
-      img: html,
+      img: html3,
       title: "html آموزش مقدماتی",
       master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
+      priceCourse: "256438",
     },
     {
       id: 2,
-      img: html,
-      title: "html آموزش مقدماتی",
-      master: " دکتر بحرالعلوم",
-      priceCourse: "500000",
+      img: html4,
+      title: "آموزش مقدماتی ری کت ",
+      master: " مصطفی ",
+      priceCourse: "1234568",
     },
   ];
+
+  const Data3 = [
+    {
+      id: 1,
+      img: html1,
+      title: " آموزش مقدماتی جاوا",
+      master: " دکتر بحرالعلوم",
+      priceCourse: "8000000",
+    },
+    {
+      id: 2,
+      img: html2,
+      title: "آموزش مقدماتی Node.js ",
+      master: " نابغه ",
+      priceCourse: "9856987",
+    },
+  ];
+
+  // const {data:data2} = CustomGetUseQueryExtra('getFavoritCourse',`/SharePanel/GetMyFavoriteCourses`)
+
 
   // const getProfile = async() => {
   //   const res= await http.get('/SharePanel/GetProfileInfo')
@@ -81,7 +107,7 @@ export const Dashboard = () => {
             ـ دوره های پیشنهادی
           </h2>
           <div className="w-[97%]">
-            {Data2?.map((result, index) => {
+            {Data3?.map((result, index) => {
               return (
                 <DashboardButtomComponent
                   key={index}

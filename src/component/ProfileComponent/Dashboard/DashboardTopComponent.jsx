@@ -38,7 +38,7 @@ export const DashboardTopComponent = () => {
             {data?.phoneNumber}
           </span>
         </div>
-        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-50 dark:text-violet-2000">
+        <div className="w-full md:w-[45%] lg:w-[30%] text-slate-500 dark:text-violet-200">
           شماره ملی :
           <span className="text-fuchsia-700  dark:text-slate-300">
             {"   "}

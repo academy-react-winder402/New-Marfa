@@ -35,7 +35,9 @@ export const CardItemFull = ({
     if (!userFavorite) {
       const res = await http.post("/Course/AddCourseFavorite", {
         courseId: id,
+
       });
+      return (toast.response.message)
       refetch();
     } else {
       const obj = { CourseFavoriteId: userFavoriteId };

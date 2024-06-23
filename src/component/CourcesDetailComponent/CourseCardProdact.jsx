@@ -22,7 +22,7 @@ import { RatingStarComponent } from './RatingStarComponent';
            <div><p className="mt-10 font-normal text-gray-700 text-xl lg:text-2xl dark:text-gray-400"> {data?.courseStatusName} </p></div>
            <div className='flex justify-start items-center gap-5 mt-8'>
                <div><h5 className="font-bold text-indigo-900 text-wrap text-xl md:text-xl dark:text-white leading-8 tracking-tight">میزان رضایت مندی خود را نسبت به این دوره ثبت نمایید!</h5></div>
-               <div><RatingStarComponent /></div>
+               <div><RatingStarComponent  /></div>
             </div>
        
            <div><h5 className="mt-5 font-bold text-indigo-900 text-xl md:text-sm dark:text-white tracking-tight"> آیا از این دوره راضی بودید ؟    </h5></div>

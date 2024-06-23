@@ -6,7 +6,7 @@ import Topheaderseconde from "../Topheaderseconde";
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import http from "../../../core/services/interceptore";
-import { CardItem } from "../../../common/Cource/CardItem";
+// import { CardItem } from "../../../common/Cource/CardItem";
 import deskImage from '../../../assets/image/svg/Rectangle 90.svg'
 import ScrollToTop from "react-scroll-to-top";
 
@@ -30,7 +30,7 @@ export const CoursesComponent = () => {
   const [paginationArray, setPaginationArray] = useState(null);
   const [CourseType, setCourseType] = useState('');
   const [CourseLevel, setCourseLevel] = useState('');
-  const [sortType , setSortType] = useState('DESK')
+  const [sortType , setSortType] = useState('DESC')
   const [sortCol , setSortCol] = useState()
   const [techCount, setTechCount] = useState(0)
   const [listTechnology , setListTechnology]= useState([])
