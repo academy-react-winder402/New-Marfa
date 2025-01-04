@@ -27,10 +27,12 @@ return (
     </ul>
 
     <div onClick={handleNav} className="block sm:hidden">
-        {!nav ? <AiOutlineMenu className={`cursor-pointer ${textColor}`} size={30} /> : <AiOutlineClose size={30} className={`z-[3] cursor-pointer ${textColor}`} />  }       
+        {!nav ? <AiOutlineMenu className={`cursor-pointer ${textColor}`} size={30} />
+         : <AiOutlineClose size={30} className={`z-[3] cursor-pointer ${textColor}`} />  }       
     </div>
     
-    <div className={nav ? "fixed z-[1] h-auto bg-opacity-90  text-right top-11 right-11 bg-white rounded-lg w-[80%] ease-in-out duration-500" : "fixed right-[-100%]"} >
+    <div className={nav ? "fixed z-[1] h-auto bg-opacity-90  text-right top-11 right-11 bg-white rounded-lg w-[80%] ease-in-out duration-500"
+                        : "fixed right-[-100%]"} >
     <ul className={`p-4 ${textColorHambergerMenu}`}>
       <li className={`p-4 ${displayMENU}`}><Link to="/" onClick={()=>setNav(false)}> صفحه اصلی</Link></li>
       <li className="hover:shadow-lg p-4"><Link to="/courses" onClick={()=>setNav(false)}>دوره ها</Link></li>

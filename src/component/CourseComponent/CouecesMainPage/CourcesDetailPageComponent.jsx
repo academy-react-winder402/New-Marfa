@@ -7,7 +7,7 @@ import OrderCourseComponent from "../../CourcesDetailComponent/OrderCourseCompon
 import handleTheme from "../../../core/services/handleTheme";
 import { useQuery } from "react-query";
 import { getList } from "../../../function/getList";
-import deskImage from "../../../assets/image/svg/Rectangle 90.svg";
+import deskImage from "../../../assets/image/SVG/Rectangle 90.svg";
 import ScrollToTop from "react-scroll-to-top";
 import AllUsersCommentCourse from "../../CourcesDetailComponent/AllUsersCommentCourse";
 import { Center, Flex } from "@mantine/core";
@@ -34,17 +34,17 @@ export const CourcesDetailPageComponent = () => {
 
   return (
     <div
-      className="relative w-full bg-no-repeat bg-contain"
+      className="relative bg-contain bg-no-repeat w-full"
       style={{ backgroundImage: `url(${deskImage}) ` }}
     >
-      <div className=" dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
+      <div className="dark:bg-violet-950 shadow-2xl shadow-bg-bluec dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
         <CoursProudactComponents data={data && data} refetch={refetch} />
         <CourseProudactMenuTabUL data={data && data} />
         {/* <UserCommentComponent/> */}
         <AllUsersCommentCourse id={params.id}  />
         <OrderCourseComponent />
       </div>
-      <ScrollToTop className="absolute bottom-4 right-4"
+      <ScrollToTop className="right-4 bottom-4 absolute"
         smooth
         style={{
           backgroundColor: "rgba(88,0,255,0.4)",

@@ -1,7 +1,7 @@
 import React from 'react'
 import SiteUserComponent from './SiteUserComponent'
 import RerplayCommentUser from './RerplayCommentUser'
-import comment from '../../assets/image/svg/comment.svg'
+import comment from '../../assets/image/SVG/comment.svg'
 import SiteUserComentCourse from './SiteUserComentCourse'
 import { getList } from '../../function/getList'
 import { useQuery } from 'react-query'

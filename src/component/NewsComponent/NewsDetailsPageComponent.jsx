@@ -7,7 +7,7 @@ import AllUsersComment from '../CourcesDetailComponent/AllUsersComment'
 import handleTheme from '../../core/services/handleTheme'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
-import deskImage from '../../assets/image/svg/Rectangle 90.svg'
+import deskImage from '../../assets/image/SVG/Rectangle 90.svg'
 import {getList} from '../../function/getList'
 
 
@@ -23,8 +23,8 @@ const NewsDetailsPageComponent = () => {
   }, []);
 
   return (
-    <div className="w-full bg-no-repeat bg-contain" style={{backgroundImage:`url(${deskImage}) `}}>
-        <div className="dark:bg-violet-950 shadow-2xl  dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
+    <div className="bg-contain bg-no-repeat w-full" style={{backgroundImage:`url(${deskImage}) `}}>
+        <div className="dark:bg-violet-950 shadow-2xl dark:shadow-2xl dark:shadow-violet-600 mx-auto max-w-[1920px]">
             <NewsDetailTopComponent data={data?.detailsNewsDto}  />
             <NewsDtailsExplanation  data={data?.detailsNewsDto} />
             <NewsDetailShare />

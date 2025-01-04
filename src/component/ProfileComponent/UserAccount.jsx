@@ -5,6 +5,7 @@ import { CustomPutUseMutationExtra } from "../customHook/CustomPutUseMutationExt
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import http from '../../core/services/interceptore'
 import * as yup from "yup";
 
 const UserAccount = () => {
@@ -23,7 +24,7 @@ const UserAccount = () => {
  // **********************************************
 
 
-  const handleUserInfoSubmit = (values) => {
+  const handleUserInfoSubmit = async(values) => {
     // console.log('values' ,values );
     const data = new FormData()
     const keys = Object.keys(values)
@@ -38,12 +39,13 @@ const UserAccount = () => {
       key:'getProfileInfoImage'
     };
     mutate(obj);
+    // const respon = await http.put(`/SharePanel/UpdateProfileInfo` , {data:data})
   };
  
   return (
-    <div className="w-[90%] h-[90%] mx-auto">
+    <div className="mx-auto w-[90%] h-[90%]">
       <ProfileImage />
-      <div className="w-full ">
+      <div className="w-full">
         <Formik validationSchema={validation}
           initialValues={{
             LName: "",
@@ -53,7 +55,7 @@ const UserAccount = () => {
             NationalCode: "",
             HomeAdderess: "",
             gender: false,
-            BirthDay: "2024/01/01",
+            // BirthDay: "2024/01/01",
           }}
           onSubmit={ handleUserInfoSubmit}
           
@@ -61,70 +63,69 @@ const UserAccount = () => {
           {({ values, handleSubmit, handleChange }) => (
             <Form className="w-full">
               <div
-                className="w-full mt-3 flex flex-row item-center
-                  text-gray-500 flex-wrap md:justify-around  text-[20px] text-nowrap"
+                className="flex flex-row flex-wrap md:justify-around item-center mt-3 w-full text-[20px] text-gray-500 text-nowrap"
               >
-                <div className="w-[70%] flex flex-col md:w-[45%] lg:w-[30%] mx-auto ">
-                  <label for="FName" className=" mb-1 ">
+                <div className="flex flex-col mx-auto w-[70%] md:w-[45%] lg:w-[30%]">
+                  <label for="FName" className="mb-1">
                     {" "}
                     نام{" "}
                   </label>
                   <Field
                     id="FName"
-                    className="w-full h-10 rounded-lg pr-3 mb-4 border-2 border-[#a193ff] "
+                    className="border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10"
                     type="text"
                     name="FName"
                   />
                   <ErrorMessage name="FName" component={'p'} />
                 </div>
 
-                <div className="w-[70%] flex flex-col md:w-[45%] lg:w-[30%] mx-auto">
-                  <label for="LName" className="w-full  mb-1">
+                <div className="flex flex-col mx-auto w-[70%] md:w-[45%] lg:w-[30%]">
+                  <label for="LName" className="mb-1 w-full">
                     {" "}
                     نام خانوادگی{" "}
                   </label>
 
                   <Field
                     id="LName"
-                    className="w-full h-10 rounded-lg pr-3 mb-4  border-2 border-[#a193ff]"
+                    className="border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10"
                     type="text"
                     name="LName"
                   />
                 </div>
-                <div className="w-[70%] flex flex-col md:w-[45%] lg:w-[30%] mx-auto ">
-                  <label for="UserAbout" className=" mb-1 ">
+                <div className="flex flex-col mx-auto w-[70%] md:w-[45%] lg:w-[30%]">
+                  <label for="UserAbout" className="mb-1">
                     {" "}
                     درباره من{" "}
                   </label>
                   <Field
                     id="UserAbout"
-                    className="w-full h-10 rounded-lg pr-3 mb-4 border-2 border-[#a193ff] "
+                    className="border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10"
                     type="text"
                     name="UserAbout"
                   />
                 </div>
-                <div className="w-[70%] flex flex-col  md:w-[45%] lg:w-[30%] mx-auto ">
+                <div className="flex flex-col mx-auto w-[70%] md:w-[45%] lg:w-[30%]">
                   <div>جنسیت</div>
-                  <div className="flex flex-row justify-start gap-4 leading-[3rem] items-center">
-                    <label for="fmail" className="pr-4 mt-2 ">
+                  <div className="flex flex-row justify-start items-center gap-4 leading-[3rem]">
+                    <label for="fmail" className="mt-2 pr-4">
                       {" "}
                       زن{" "}
                     </label>
                     <Field
                       id="fmail"
-                      className=" pr-4 rounded-lg mt-2 border-2 border-[#a193ff] "
+                      className="border-[#a193ff] border-2 mt-2 pr-4 rounded-lg"
                       onChange={handleChange}
                       value="false"
                       type="radio"
                       name="gender"
                     />
-                    <label for="mail" className="pr-4 mt-2 ">
+                    <label for="mail" className="mt-2 pr-4">
                       {" "}
                       مرد{" "}
                     </label>
                     <Field
                       id="mail"
-                      className="pr-4 mt-2 border-2 border-[#a193ff] "
+                      className="border-[#a193ff] border-2 mt-2 pr-4"
                       onChange={handleChange}
                       value="true"
                       type="radio"
@@ -132,30 +133,30 @@ const UserAccount = () => {
                     />
                   </div>
                 </div>
-                <div className="w-[70%] flex flex-col mx-auto md:w-[45%] lg:w-[30%]">
-                  <label for="NationalCode" className=" mb-1">
+                <div className="flex flex-col mx-auto w-[70%] md:w-[45%] lg:w-[30%]">
+                  <label for="NationalCode" className="mb-1">
                     {" "}
                     کد ملی{" "}
                   </label>
 
                   <Field
                     id="NationalCode"
-                    className="w-full h-10 mb-4  rounded-lg pr-3 border-2 border-[#a193ff]"
+                    className="border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10"
                     type="text"
                     name="NationalCode"
                   />
                 </div>
-                <div className="w-[70%] relative flex flex-col mx-auto md:w-[45%] lg:w-[30%] ">
-                  <label for="BirthDay" className=" mb-1">
+                <div className="relative flex flex-col mx-auto w-[70%] md:w-[45%] lg:w-[30%]">
+                  <label for="BirthDay" className="mb-1">
                     {" "}
                     تاریخ تولد{" "}
                   </label>
 
-                  {/* <Field id="BirthDay" className="w-full h-10 mb-4  rounded-lg pr-3 border-2 border-[#a193ff]" type='text' name='BirthDay' /> */}
+                  {/* <Field id="BirthDay" className="border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10" type='text' name='BirthDay' /> */}
                   
                    <DatePicker
                     id="BirthDay"
-                    className="w-full h-10 mb-4 gap-10 rounded-lg pr-3 text-left border-2 border-[#a193ff] "
+                    className="gap-10 border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10 text-left"
                     showIcon
                     type="text"
                     name="BirthDay"
@@ -203,37 +204,35 @@ const UserAccount = () => {
                 </div>
                 
                 
-                <div className="w-[70%] flex flex-col mx-auto md:w-[60%] ">
-                  <label for="HomeAdderess" className=" mb-1 ">
+                <div className="flex flex-col mx-auto w-[70%] md:w-[60%]">
+                  <label for="HomeAdderess" className="mb-1">
                     {" "}
                     آدرس منزل{" "}
                   </label>
                   <Field
                     id="HomeAdderess"
-                    className="w-full h-10 rounded-lg pr-3 mb-4 border-2 border-[#a193ff] "
+                    className="border-[#a193ff] border-2 mb-4 pr-3 rounded-lg w-full h-10"
                     type="text"
                     name="HomeAdderess"
                   />
                 </div>
-                <div className="w-[70%] md:w-[35%] pt-4 flex justify-start mx-auto md:items-center ">
+                <div className="flex justify-start md:items-center mx-auto pt-4 w-[70%] md:w-[35%]">
                  
                   <Field
                     id="ReceiveMessageEvent"
-                    className="rounded-lg pr-1 border-2 border-[#a193ff] "
+                    className="border-[#a193ff] border-2 pr-1 rounded-lg"
                     type="checkbox"
                     name="ReceiveMessageEvent"
                   />
-                   <label for="ReceiveMessageEvent" className="pr-2 ">
+                   <label for="ReceiveMessageEvent" className="pr-2">
                     {" "}
                     دریافت پیامک{" "}
                   </label>
                 </div>
               </div>
-              <div className="w-[80%] mx-auto mt-4">
+              <div className="mx-auto mt-4 w-[80%]">
                 <button
-                  className="flex justify-center mb-10 md:mb-20 lg:mb-7 text-lg md:text-xl font-bold mx-auto text-nowrap 
-                 rounded-lg bg-gradient-to-r from-[#7b2aff] to-[#4545ff] w-[60%] py-2 md:py-4 text-center  
-                 text-white "
+                  className="flex justify-center bg-gradient-to-r from-[#7b2aff] to-[#4545ff] mx-auto mb-10 md:mb-20 lg:mb-7 py-2 md:py-4 rounded-lg w-[60%] font-bold text-center text-lg text-nowrap text-white md:text-xl"
                   type="submit"
                 >
                   {" "}

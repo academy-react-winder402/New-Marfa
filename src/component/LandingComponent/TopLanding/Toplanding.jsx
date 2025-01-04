@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 
 export const Toplanding = () => {
   // *************VARIABLE****************
+
   const [show, setShow] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -36,7 +37,9 @@ export const Toplanding = () => {
     "landingReport",
     getLandingReport
   );
+
   // *******************API SEARCH COURSE******************
+
   const getCourseSearch = async () => {
     try {
       const res1 = await http.get(
@@ -147,7 +150,7 @@ export const Toplanding = () => {
           <div
             className={`h-[200px] md:h-[20rem] overflow-y-scroll flex ${ms} dark:bg-violet-900`}
           >
-            <div className="w-full flex gap-5 bg-bluec h-[250px] dark:bg-violet-900  z-100 pt-5">
+            <div className="z-100 flex gap-5 bg-bluec dark:bg-violet-900 pt-5 w-full h-[250px]">
               <Searching
                 courseSearch={courseSearch?.courseFilterDtos}
                 newsSearch={newsSearch?.news}
